@@ -1,13 +1,10 @@
-"""
-frontend/pages/admin.py
-
-Admin panel — user management and model versions.
-"""
-
 from __future__ import annotations
 
 import streamlit as st
-from services.api_client import APIError, create_user, list_users, list_model_versions, update_user
+from services.api_client import (
+    APIError, create_user, list_users, list_model_versions,
+    update_user, activate_model_version, sync_model_versions,
+)
 
 
 def render_admin():
@@ -98,6 +95,25 @@ def _render_models():
         "Train a model using `ml/scripts/train_model.py`, then register it here. "
         "Only the active model is used for classification."
     )
+    # Sync button — always available
+    col_sync, _ = st.columns([1, 2])
+    with col_sync:
+        if st.button("🔄 Sync Models from Disk", use_container_width=True):
+            try:
+                result = sync_model_versions()
+                registered = result.get("registered", 0)
+                skipped = result.get("skipped", 0)
+                if registered > 0:
+                    st.success(f"✅ Registered {registered} new model(s). Skipped {skipped} already-registered.")
+                else:
+                    st.info(f"No new models found. {skipped} already registered.")
+                if result.get("errors"):
+                    st.warning("Sync warnings: " + "; ".join(result["errors"]))
+                st.rerun()
+            except APIError as e:
+                st.error(f"Sync failed: {e.detail}")
+
+    st.divider()
 
     try:
         versions = list_model_versions()
@@ -108,20 +124,40 @@ def _render_models():
     if not versions:
         st.info(
             "No model versions registered yet.\n\n"
-            "Train a model and register it via the admin API, "
-            "or run `ml/scripts/train_model.py` after providing your dataset."
+            "Train a model using `ml/scripts/train_model.py`, then click **Sync Models from Disk** above."
         )
         return
 
     for v in versions:
         active_badge = "🟢 **ACTIVE**" if v["is_active"] else "⚪ Inactive"
+        macro_f1 = v.get("test_macro_f1")
+        f1_label = f"{macro_f1:.4f}" if macro_f1 is not None else "N/A"
         with st.expander(
-            f"{active_badge} — v{v['version_tag']} | macro-F1: {v.get('test_macro_f1', 'N/A')}"
+            f"{active_badge} — v{v['version_tag']} | macro-F1: {f1_label}"
         ):
             c1, c2, c3 = st.columns(3)
             with c1:
-                st.metric("Macro F1", f"{v.get('test_macro_f1', 0):.4f}" if v.get("test_macro_f1") else "N/A")
+                st.metric("Macro F1", f"{macro_f1:.4f}" if macro_f1 is not None else "N/A")
             with c2:
-                st.metric("Weighted F1", f"{v.get('test_weighted_f1', 0):.4f}" if v.get("test_weighted_f1") else "N/A")
+                wf1 = v.get("test_weighted_f1")
+                st.metric("Weighted F1", f"{wf1:.4f}" if wf1 is not None else "N/A")
             with c3:
                 st.metric("Training Samples", v.get("training_samples", "N/A"))
+
+            st.write(f"**Artifact:** `{v.get('artifact_filename', 'N/A')}`")
+            if v.get("deployed_at"):
+                st.write(f"**Deployed:** {v['deployed_at'][:19]}")
+            if v.get("description"):
+                st.caption(v["description"])
+
+            if not v["is_active"]:
+                if st.button("🚀 Activate this Model", key=f"activate_{v['id']}", type="primary"):
+                    try:
+                        activate_model_version(v["id"])
+                        st.success(f"Model v{v['version_tag']} is now active. Classification service cache cleared.")
+                        st.rerun()
+                    except APIError as e:
+                        st.error(f"Failed to activate: {e.detail}")
+            else:
+                st.success("✅ This model is currently active and serving predictions.")
+

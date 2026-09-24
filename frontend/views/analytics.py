@@ -107,7 +107,7 @@ def _render_score_histogram():
     with col1:
         st.metric("Total Screened", total)
     with col2:
-        st.metric("Mean Score", f"{mean_score:.1f}%" if mean_score else "N/A")
+        st.metric("Mean Score", f"{mean_score:.1f}%" if mean_score is not None else "N/A")
 
     ranges = [b["range"] for b in buckets]
     counts = [b["count"] for b in buckets]

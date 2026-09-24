@@ -111,9 +111,9 @@ export function Jobs() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {jobs.map(job => (
-            <div key={job.id} className="glass-card rounded-xl p-6 border border-white/5 relative group">
+            <div key={job.public_id} className="glass-card rounded-xl p-6 border border-white/5 relative group">
               <button 
-                onClick={() => handleDelete(job.id)}
+                onClick={() => handleDelete(job.public_id)}
                 className="absolute top-4 right-4 p-2 text-gray-500 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
               >
                 <Trash2 className="w-4 h-4" />

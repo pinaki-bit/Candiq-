@@ -87,5 +87,9 @@ elif page == "audit":
     from views.audit_logs import render_audit_logs
     render_audit_logs()
 
+elif page == "change_password":
+    from views.change_password import render_change_password
+    render_change_password()
+
 else:
     st.error(f"Unknown page: {page!r}")

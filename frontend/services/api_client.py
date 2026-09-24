@@ -290,3 +290,48 @@ def list_model_versions() -> list[dict]:
         timeout=_TIMEOUT,
     )
     return _handle_response(resp)
+
+
+def sync_model_versions() -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/admin/model-versions/sync",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def activate_model_version(version_id: int) -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/admin/model-versions/{version_id}/activate",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+# ---------------------------------------------------------------------------
+# Auth extras
+# ---------------------------------------------------------------------------
+
+def logout() -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/auth/logout",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    try:
+        return _handle_response(resp)
+    except APIError:
+        return {}  # Ignore errors on logout
+
+
+def change_password(current_password: str, new_password: str) -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/auth/change-password",
+        json={"current_password": current_password, "new_password": new_password},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+

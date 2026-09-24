@@ -67,7 +67,7 @@ def _render_ranked_results():
     st.caption(f"**{len(ranked)} candidates** screened for {selected_title}")
 
     # Score bar chart
-    names = [f"#{r['rank']} Resume {str(r['resume_id'])}" for r in ranked]
+    names = [f"#{r['rank']} — {r.get('public_id', '')[:8]}… ({r.get('predicted_domain') or 'Unknown'})" for r in ranked]
     scores = [r["relevance_score"] for r in ranked]
     colors = [_TIER_COLOR.get(r["tier"], "#888") for r in ranked]
 

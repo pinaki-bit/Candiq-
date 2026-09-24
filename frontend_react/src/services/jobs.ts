@@ -8,7 +8,8 @@ export interface JobRequirement {
 }
 
 export interface Job {
-  id: string
+  id: number
+  public_id: string
   title: string
   department: string
   description: string

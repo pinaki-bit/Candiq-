@@ -7,6 +7,7 @@ Sidebar navigation component.
 from __future__ import annotations
 
 import streamlit as st
+from services.api_client import APIError, logout
 
 
 def render_sidebar():
@@ -18,6 +19,14 @@ def render_sidebar():
         st.markdown("## 🎯 Resume Intelligence")
         st.caption(f"Logged in as **{name}** `[{role}]`")
         st.divider()
+
+        # Force password change banner
+        if user.get("must_change_password"):
+            st.warning("⚠️ You must change your default password before continuing.")
+            if st.button("🔑 Change Password Now", use_container_width=True, type="primary"):
+                st.session_state["page"] = "change_password"
+                st.rerun()
+            st.divider()
 
         # Navigation buttons
         nav_items = [
@@ -44,6 +53,12 @@ def render_sidebar():
 
         st.divider()
         if st.button("🚪 Logout", use_container_width=True):
+            # Revoke token server-side first
+            try:
+                logout()
+            except Exception:
+                pass
             for key in list(st.session_state.keys()):
                 del st.session_state[key]
             st.rerun()
+

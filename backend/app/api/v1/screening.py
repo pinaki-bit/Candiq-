@@ -112,7 +112,7 @@ def match_resume_to_job(
         domain_bonus = 10.0 if resume.prediction_confidence == "high" else 5.0
 
     # Cap at 100
-    relevance_score = min(100.0, round(match.combined_match * 0.90 + domain_bonus, 2))
+    relevance_score = min(100.0, round(match.combined_match + domain_bonus, 2))
 
     score_breakdown = {
         **match.score_breakdown,
@@ -207,7 +207,9 @@ def get_job_results(
     ranked = ranking_service.rank_results_for_job(
         db, job.id, review_status_filter=review_status
     )
-    results = [r.__dict__ for r in ranked]
+
+    from dataclasses import asdict
+    results = [asdict(r) for r in ranked]
 
     # IDOR guard: readonly users only see their own results
     if current_user.role == "readonly":

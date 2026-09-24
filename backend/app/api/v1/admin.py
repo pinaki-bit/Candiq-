@@ -292,3 +292,117 @@ def activate_model_version(
         "detail": f"Model version '{version.version_tag}' is now active.",
         "note": "Classification service cache cleared — next request will load new model.",
     }
+
+
+# ---------------------------------------------------------------------------
+# Model version auto-discovery (sync from disk)
+# ---------------------------------------------------------------------------
+
+@router.post("/model-versions/sync", status_code=status.HTTP_200_OK)
+def sync_model_versions_from_disk(
+    request: Request,
+    current_user: AdminUser,
+    db: Session = Depends(get_db),
+) -> dict:
+    """
+    Scan the ml/artifacts/ directory for model metadata JSON files and register
+    any unregistered model versions into the database.
+
+    This is idempotent — already-registered versions are skipped.
+    Auto-activates the newest model if no model is currently active.
+    """
+    import json
+    from pathlib import Path
+    from app.config import get_settings
+
+    settings = get_settings()
+    artifact_dir = Path(settings.model_dir)
+
+    if not artifact_dir.exists():
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Artifact directory not found: {artifact_dir}",
+        )
+
+    registered = 0
+    skipped = 0
+    errors = []
+
+    # Find all metadata JSON files (exclude dataset_report.json)
+    meta_files = sorted(artifact_dir.glob("model_*_metadata.json"))
+
+    for meta_file in meta_files:
+        try:
+            with meta_file.open("r", encoding="utf-8") as f:
+                meta = json.load(f)
+
+            version_tag = meta.get("version")
+            if not version_tag:
+                errors.append(f"{meta_file.name}: missing 'version' field")
+                continue
+
+            # Check if already registered
+            existing = db.query(ModelVersion).filter(
+                ModelVersion.version_tag == version_tag
+            ).first()
+            if existing:
+                skipped += 1
+                continue
+
+            # Derive artifact filename from version tag
+            artifact_filename = f"model_{version_tag}.joblib"
+            artifact_path = artifact_dir / artifact_filename
+            if not artifact_path.exists():
+                errors.append(f"{meta_file.name}: artifact file not found: {artifact_filename}")
+                continue
+
+            version = ModelVersion(
+                version_tag=version_tag,
+                artifact_filename=artifact_filename,
+                description=f"Auto-registered from disk. Model: {meta.get('model_name', 'Unknown')}",
+                training_samples=meta.get("training_samples"),
+                random_seed=meta.get("random_seed"),
+                test_macro_f1=meta.get("test_macro_f1"),
+                test_weighted_f1=meta.get("test_weighted_f1"),
+                classification_report_json=meta.get("classification_report"),
+                is_active=False,
+            )
+            db.add(version)
+            db.flush()
+            registered += 1
+
+        except Exception as exc:
+            errors.append(f"{meta_file.name}: {exc}")
+
+    # Auto-activate the newest model if none is active
+    active_count = db.query(ModelVersion).filter(ModelVersion.is_active == True).count()  # noqa: E712
+    if active_count == 0 and registered > 0:
+        newest = db.query(ModelVersion).order_by(ModelVersion.version_tag.desc()).first()
+        if newest:
+            newest.is_active = True
+            newest.deployed_at = datetime.datetime.now(datetime.timezone.utc)
+            newest.deployed_by = current_user.id
+
+            from app.services.classification_service import invalidate_model_cache
+            invalidate_model_cache()
+
+    db.commit()
+
+    audit_service.log_event(
+        db,
+        event_type="admin.model_sync",
+        summary=f"Synced {registered} model(s) from disk",
+        actor_id=current_user.id,
+        actor_email=current_user.email,
+        resource_type="model_version",
+        resource_id=None,
+        ip_address=request.client.host if request.client else None,
+    )
+
+    return {
+        "registered": registered,
+        "skipped": skipped,
+        "errors": errors,
+        "detail": f"Registered {registered} new model(s), skipped {skipped} already-registered.",
+    }
+

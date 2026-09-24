@@ -60,6 +60,9 @@ def _load_model() -> tuple[Any, str, dict[str, Any]] | None:
     """
     Load the trained pipeline artifact with integrity verification.
 
+    Checks the database for the currently active model version.
+    Falls back to model_latest.joblib if no DB is available.
+
     Security:
       - Computes SHA-256 hash of the artifact file before loading.
       - If a .sha256 sidecar file exists, verifies the hash matches.
@@ -74,7 +77,38 @@ def _load_model() -> tuple[Any, str, dict[str, Any]] | None:
     import joblib
     settings = get_settings()
 
-    model_path = Path(settings.active_model_path)
+    # Try to resolve the active model from the database
+    model_path = None
+    try:
+        from app.database import get_db
+        from app.models.model_version import ModelVersion
+        db = next(get_db())
+        try:
+            active = db.query(ModelVersion).filter(
+                ModelVersion.is_active == True  # noqa: E712
+            ).first()
+            if active:
+                candidate = Path(settings.model_dir) / active.artifact_filename
+                if candidate.exists():
+                    model_path = candidate
+                    logger.info(
+                        "Loading DB-registered active model: %s (tag=%s)",
+                        active.artifact_filename, active.version_tag,
+                    )
+                else:
+                    logger.warning(
+                        "DB active model artifact not found at %s; falling back to model_latest.joblib",
+                        candidate,
+                    )
+        finally:
+            db.close()
+    except Exception as exc:
+        logger.warning("Could not resolve active model from DB (%s); using default path.", exc)
+
+    # Fall back to the configured default path
+    if model_path is None:
+        model_path = Path(settings.active_model_path)
+
     if not model_path.exists():
         logger.warning(
             "Model artifact not found at %s. "
@@ -82,6 +116,7 @@ def _load_model() -> tuple[Any, str, dict[str, Any]] | None:
             model_path,
         )
         return None
+
 
     try:
         # --- Integrity check: compute SHA-256 hash ---
@@ -159,9 +194,9 @@ def predict(text: str) -> ClassificationResult:
     try:
         predicted_label = pipeline.predict([text])[0]
         
-        # XGBoost models might output integer labels that need decoding
+        # XGBoost / encoded models might output integer labels that need decoding
         label_encoder = artifact.get("label_encoder") if artifact else None
-        if label_encoder is not None and isinstance(predicted_label, (int, float, type(predicted_label).__bases__[0])): 
+        if label_encoder is not None and isinstance(predicted_label, (int, float)):
             # Decode the int back to string
             try:
                 predicted_label = label_encoder.inverse_transform([int(predicted_label)])[0]
