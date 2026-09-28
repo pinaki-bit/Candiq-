@@ -93,14 +93,34 @@ class Settings(BaseSettings):
         return {ext.strip().lower() for ext in self.allowed_extensions.split(",")}
 
     # ------------------------------------------------------------------
-    # ML / model artifacts
+    # ML / model artifacts & OOD Policy
     # ------------------------------------------------------------------
     model_dir: str = str(_BACKEND_ROOT.parent / "ml" / "artifacts")
     active_model_filename: str = "model_latest.joblib"
+    ood_enabled: bool = True
+    ood_confidence_threshold: float = 0.85  # Frozen Phase 24 OP-4 threshold (91.01% test coverage, 96.85% OOD dev rejection)
+    ood_policy_version: str = "v1.0-phase24-op4"
 
     @property
     def active_model_path(self) -> str:
         return os.path.join(self.model_dir, self.active_model_filename)
+
+    # ------------------------------------------------------------------
+    # Embeddings / Semantic Search
+    # ------------------------------------------------------------------
+    embedding_provider: str = "sentence_transformer"  # "sentence_transformer" | "local" | "openai" | "bge"
+    sentence_transformer_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    embedding_device: str = "cpu"
+    openai_api_key: str = ""
+    openai_embedding_model: str = "text-embedding-3-small"
+
+    # ------------------------------------------------------------------
+    # Generative AI / LLM Architecture
+    # ------------------------------------------------------------------
+    ai_provider: str = "mock"             # "mock" | "openai" | "gemini"
+    gemini_api_key: str = ""
+    gemini_model: str = "gemini-1.5-flash"
+    openai_model: str = "gpt-4o-mini"
 
     # ------------------------------------------------------------------
     # NLP

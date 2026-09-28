@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Intelligence Sourcer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 320px;
+            padding: 16px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #0b0f19;
+            color: #f1f5f9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1e293b;
+        }
+        .header h3 {
+            font-size: 14px;
+            color: #818cf8;
+        }
+        .badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #312e81;
+            color: #c7d2fe;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: #f8fafc;
+            font-size: 12px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .status-msg {
+            margin-top: 10px;
+            font-size: 11px;
+            text-align: center;
+            word-break: break-all;
+        }
+        .success { color: #34d399; }
+        .error { color: #f87171; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>🎯 Resume Intel Sourcer</h3>
+        <span class="badge">v1.0.0</span>
+    </div>
+
+    <div id="auth-section">
+        <div class="form-group">
+            <label>Server Login Email</label>
+            <input type="email" id="login-email" value="test@example.com">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="login-pass" value="testpass123">
+        </div>
+        <button class="btn" id="btn-login">🔑 Connect Server</button>
+    </div>
+
+    <div id="sourcer-section" style="display: none;">
+        <div class="form-group">
+            <label>Candidate Name</label>
+            <input type="text" id="cand-name" placeholder="Extracting...">
+        </div>
+        <div class="form-group">
+            <label>Title / Headline</label>
+            <input type="text" id="cand-title" placeholder="Job Title">
+        </div>
+        <div class="form-group">
+            <label>Skills (Comma Separated)</label>
+            <input type="text" id="cand-skills" placeholder="Python, FastAPI, ML">
+        </div>
+        <button class="btn" id="btn-ingest">⚡ One-Click Ingest Candidate</button>
+    </div>
+
+    <div class="status-msg" id="status-box"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Resume Intelligence Candidate Sourcer",
+  "version": "1.0.0",
+  "description": "One-click candidate profile sourcing and AI domain classification directly from LinkedIn, Indeed, and GitHub.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "http://127.0.0.1:8000/*",
+    "https://*.linkedin.com/*",
+    "https://*.indeed.com/*",
+    "https://*.github.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Resume Intelligence Sourcer"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.linkedin.com/in/*",
+        "https://*.indeed.com/*",
+        "https://github.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

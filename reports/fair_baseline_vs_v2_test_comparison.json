@@ -1,0 +1,145 @@
+{
+  "evaluation_dataset": "ml/data/processed/test.csv (278 records)",
+  "baseline_model": "model_latest.joblib (LinearSVC v20260922_235001)",
+  "v2_candidate_model": "model_v2.joblib (Calibrated LinearSVC v2.0.0)",
+  "overall_metrics_comparison": {
+    "accuracy": {
+      "baseline": 0.8885,
+      "v2_candidate": 0.9784,
+      "absolute_diff": 0.0899
+    },
+    "macro_precision": {
+      "baseline": 0.7101,
+      "v2_candidate": 0.984,
+      "absolute_diff": 0.2739
+    },
+    "macro_recall": {
+      "baseline": 0.7474,
+      "v2_candidate": 0.9783,
+      "absolute_diff": 0.2309
+    },
+    "macro_f1": {
+      "baseline": 0.7205,
+      "v2_candidate": 0.981,
+      "absolute_diff": 0.2605
+    },
+    "weighted_f1": {
+      "baseline": 0.8721,
+      "v2_candidate": 0.9784,
+      "absolute_diff": 0.1063
+    }
+  },
+  "per_class_f1_comparison": {
+    "Cloud Computing": {
+      "baseline_f1": 0.0,
+      "v2_f1": 1.0,
+      "baseline_recall": 0.0,
+      "v2_recall": 1.0,
+      "absolute_f1_diff": 1.0
+    },
+    "Cybersecurity": {
+      "baseline_f1": 0.9533,
+      "v2_f1": 0.9821,
+      "baseline_recall": 0.9107,
+      "v2_recall": 0.9821,
+      "absolute_f1_diff": 0.0288
+    },
+    "Data Science": {
+      "baseline_f1": 0.8983,
+      "v2_f1": 0.9836,
+      "baseline_recall": 0.8548,
+      "v2_recall": 0.9677,
+      "absolute_f1_diff": 0.0853
+    },
+    "DevOps": {
+      "baseline_f1": 0.7885,
+      "v2_f1": 0.963,
+      "baseline_recall": 1.0,
+      "v2_recall": 0.9512,
+      "absolute_f1_diff": 0.1745
+    },
+    "Web Development": {
+      "baseline_f1": 0.9623,
+      "v2_f1": 0.9765,
+      "baseline_recall": 0.9714,
+      "v2_recall": 0.9905,
+      "absolute_f1_diff": 0.0142
+    }
+  },
+  "confusion_matrices": {
+    "baseline": [
+      [
+        0,
+        0,
+        0,
+        13,
+        1
+      ],
+      [
+        1,
+        51,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        53,
+        5,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        41,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        0,
+        102
+      ]
+    ],
+    "v2_candidate": [
+      [
+        14,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        55,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        60,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        39,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        104
+      ]
+    ]
+  }
+}

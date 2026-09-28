@@ -1,0 +1,85 @@
+{
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.12.4",
+    "torch_version": "2.14.0+cpu",
+    "sentence_transformers_version": "6.1.0",
+    "transformers_version": "5.17.0",
+    "cpu_count": 12
+  },
+  "latency": {
+    "cold_model_load_ms": 18313.83,
+    "local_single_warm_mean_ms": 0.1236,
+    "minilm_single_warm_mean_ms": 13.0829,
+    "local_batch_10_ms": 0.99,
+    "minilm_batch_10_ms": 82.64
+  },
+  "pair_results": [
+    {
+      "id": "PAIR_01_STRONG_RELEVANT",
+      "category": "STRONGLY RELEVANT",
+      "is_positive": true,
+      "local_hash_sim": 0.4097,
+      "minilm_sim": 0.8013,
+      "difference_st_minus_local": 0.3916
+    },
+    {
+      "id": "PAIR_02_PARTIAL_RELEVANT",
+      "category": "PARTIALLY RELEVANT",
+      "is_positive": true,
+      "local_hash_sim": 0.2863,
+      "minilm_sim": 0.2638,
+      "difference_st_minus_local": -0.0225
+    },
+    {
+      "id": "PAIR_03_UNRELATED",
+      "category": "UNRELATED",
+      "is_positive": false,
+      "local_hash_sim": 0.18,
+      "minilm_sim": 0.176,
+      "difference_st_minus_local": -0.004
+    },
+    {
+      "id": "PAIR_04_PARAPHRASED",
+      "category": "PARAPHRASED / SEMANTICALLY EQUIVALENT",
+      "is_positive": true,
+      "local_hash_sim": 0.4523,
+      "minilm_sim": 0.5794,
+      "difference_st_minus_local": 0.1271
+    },
+    {
+      "id": "PAIR_05_KEYWORD_DIFF_CONTEXT",
+      "category": "SAME KEYWORDS / DIFFERENT CONTEXT",
+      "is_positive": false,
+      "local_hash_sim": 0.2434,
+      "minilm_sim": 0.3323,
+      "difference_st_minus_local": 0.0889
+    },
+    {
+      "id": "PAIR_06_DOMAIN_RELATED_NOT_IDENTICAL",
+      "category": "DOMAIN-RELATED BUT NOT IDENTICAL",
+      "is_positive": false,
+      "local_hash_sim": 0.1336,
+      "minilm_sim": 0.08,
+      "difference_st_minus_local": -0.0536
+    },
+    {
+      "id": "PAIR_07_CROSS_DOMAIN_NEGATIVE",
+      "category": "CROSS-DOMAIN NEGATIVE PAIRS",
+      "is_positive": false,
+      "local_hash_sim": 0.1867,
+      "minilm_sim": 0.136,
+      "difference_st_minus_local": -0.0507
+    }
+  ],
+  "metrics": {
+    "local_mean_positive_sim": 0.3828,
+    "local_mean_negative_sim": 0.1859,
+    "local_separation_margin": 0.1969,
+    "minilm_mean_positive_sim": 0.5482,
+    "minilm_mean_negative_sim": 0.1811,
+    "minilm_separation_margin": 0.3671,
+    "local_paraphrase_gap": 0.2089,
+    "minilm_paraphrase_gap": 0.2471
+  }
+}

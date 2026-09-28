@@ -1,0 +1,18 @@
+source_category,count,dominant_predicted_class,dominant_class_pct,mean_confidence,high_confidence_count,high_confidence_rate_pct
+Accountant,284,UNMAPPED,100.0,0.0,0,0.0
+Accountant resumes,67,UNMAPPED,100.0,0.0,0,0.0
+Advocate,247,UNMAPPED,100.0,0.0,0,0.0
+Advocate resumes,94,UNMAPPED,100.0,0.0,0,0.0
+Agricultural,199,UNMAPPED,100.0,0.0,0,0.0
+Agricultural resumes,68,UNMAPPED,100.0,0.0,0,0.0
+Agriculture,79,UNMAPPED,100.0,0.0,0,0.0
+Apparel,69,UNMAPPED,100.0,0.0,0,0.0
+Apparel resumes,51,UNMAPPED,100.0,0.0,0,0.0
+Architect,84,UNMAPPED,100.0,0.0,0,0.0
+Architects resumes,60,UNMAPPED,100.0,0.0,0,0.0
+Arts,255,UNMAPPED,100.0,0.0,0,0.0
+Arts resumes,68,UNMAPPED,100.0,0.0,0,0.0
+Automobile,73,UNMAPPED,100.0,0.0,0,0.0
+Automobile resumes,40,UNMAPPED,100.0,0.0,0,0.0
+Aviation,85,UNMAPPED,100.0,0.0,0,0.0
+Aviation resumes,51,UNMAPPED,100.0,0.0,0,0.0

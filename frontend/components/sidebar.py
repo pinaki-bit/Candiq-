@@ -34,6 +34,7 @@ def render_sidebar():
             ("💼 Jobs", "jobs"),
             ("📤 Upload Resume", "upload"),
             ("🔍 Screening Results", "results"),
+            ("🌐 3D Talent Visualizer", "visualizer_3d"),
             ("📈 Analytics", "analytics"),
         ]
 

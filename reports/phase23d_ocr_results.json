@@ -1,0 +1,682 @@
+[
+  {
+    "id": 1,
+    "file": "Accountant\\0.pdf",
+    "source_category": "Accountant",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2444,
+    "ocr_latency_ms": 9407.859200029634,
+    "predicted_class": "Web Development",
+    "confidence": 0.7643890954981383,
+    "probabilities": {
+      "Cloud Computing": 0.01061853153519458,
+      "Cybersecurity": 0.027796515384742548,
+      "Data Science": 0.19221603461231623,
+      "DevOps": 0.004979822969608363,
+      "Web Development": 0.7643890954981383
+    },
+    "inference_latency_ms": 18.50060001015663,
+    "total_latency_ms": 9426.35980003979
+  },
+  {
+    "id": 2,
+    "file": "Accountant\\0287439839da10d2.pdf",
+    "source_category": "Accountant",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1220,
+    "ocr_latency_ms": 3917.9902999894693,
+    "predicted_class": "Web Development",
+    "confidence": 0.537195856384137,
+    "probabilities": {
+      "Cloud Computing": 0.0064628488978366455,
+      "Cybersecurity": 0.04330189583262315,
+      "Data Science": 0.40440590078684213,
+      "DevOps": 0.008633498098561055,
+      "Web Development": 0.537195856384137
+    },
+    "inference_latency_ms": 4.7018000041134655,
+    "total_latency_ms": 3922.692099993583
+  },
+  {
+    "id": 3,
+    "file": "Accountant resumes\\Image_10.pdf",
+    "source_category": "Accountant resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1490,
+    "ocr_latency_ms": 27832.19809998991,
+    "predicted_class": "Data Science",
+    "confidence": 0.5195699251522855,
+    "probabilities": {
+      "Cloud Computing": 0.007756044130908049,
+      "Cybersecurity": 0.03878466494831778,
+      "Data Science": 0.5195699251522855,
+      "DevOps": 0.006267968328553736,
+      "Web Development": 0.427621397439935
+    },
+    "inference_latency_ms": 93.00719999009743,
+    "total_latency_ms": 27925.205299980007
+  },
+  {
+    "id": 4,
+    "file": "Accountant resumes\\Image_11.pdf",
+    "source_category": "Accountant resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1725,
+    "ocr_latency_ms": 12260.913099977188,
+    "predicted_class": "Web Development",
+    "confidence": 0.6663483044561975,
+    "probabilities": {
+      "Cloud Computing": 0.005930194732562883,
+      "Cybersecurity": 0.06920848713447914,
+      "Data Science": 0.22481732142463925,
+      "DevOps": 0.03369569225212107,
+      "Web Development": 0.6663483044561975
+    },
+    "inference_latency_ms": 13.199999986682087,
+    "total_latency_ms": 12274.11309996387
+  },
+  {
+    "id": 5,
+    "file": "Advocate\\0.pdf",
+    "source_category": "Advocate",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 4569,
+    "ocr_latency_ms": 16305.45240000356,
+    "predicted_class": "Data Science",
+    "confidence": 0.6313084249561565,
+    "probabilities": {
+      "Cloud Computing": 0.022536377190942695,
+      "Cybersecurity": 0.01665214637134042,
+      "Data Science": 0.6313084249561565,
+      "DevOps": 0.0020783510038184243,
+      "Web Development": 0.327424700477742
+    },
+    "inference_latency_ms": 19.124300044495612,
+    "total_latency_ms": 16324.576700048055
+  },
+  {
+    "id": 6,
+    "file": "Advocate\\0d8820b479266502.pdf",
+    "source_category": "Advocate",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1696,
+    "ocr_latency_ms": 16747.705099987797,
+    "predicted_class": "Web Development",
+    "confidence": 0.6670041665786208,
+    "probabilities": {
+      "Cloud Computing": 0.014942435816325362,
+      "Cybersecurity": 0.042362973745413826,
+      "Data Science": 0.2707862219290595,
+      "DevOps": 0.004904201930580507,
+      "Web Development": 0.6670041665786208
+    },
+    "inference_latency_ms": 17.428799998015165,
+    "total_latency_ms": 16765.133899985813
+  },
+  {
+    "id": 7,
+    "file": "Advocate resumes\\Image_1.pdf",
+    "source_category": "Advocate resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2369,
+    "ocr_latency_ms": 15013.652399997227,
+    "predicted_class": "Web Development",
+    "confidence": 0.6747389401381785,
+    "probabilities": {
+      "Cloud Computing": 0.011857037214710976,
+      "Cybersecurity": 0.04056631706426338,
+      "Data Science": 0.26458932545170555,
+      "DevOps": 0.008248380131141576,
+      "Web Development": 0.6747389401381785
+    },
+    "inference_latency_ms": 9.289100009482354,
+    "total_latency_ms": 15022.94150000671
+  },
+  {
+    "id": 8,
+    "file": "Advocate resumes\\Image_100.pdf",
+    "source_category": "Advocate resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 3239,
+    "ocr_latency_ms": 11559.802000003401,
+    "predicted_class": "Web Development",
+    "confidence": 0.561209323138762,
+    "probabilities": {
+      "Cloud Computing": 0.020537194857399625,
+      "Cybersecurity": 0.05898650679261693,
+      "Data Science": 0.35337896059425533,
+      "DevOps": 0.005888014616965924,
+      "Web Development": 0.561209323138762
+    },
+    "inference_latency_ms": 11.185000010300428,
+    "total_latency_ms": 11570.987000013702
+  },
+  {
+    "id": 9,
+    "file": "Agricultural\\1.pdf",
+    "source_category": "Agricultural",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 7135,
+    "ocr_latency_ms": 26753.358100017067,
+    "predicted_class": "Web Development",
+    "confidence": 0.5332413191971977,
+    "probabilities": {
+      "Cloud Computing": 0.032523144422934774,
+      "Cybersecurity": 0.045424812859860234,
+      "Data Science": 0.38505138145936096,
+      "DevOps": 0.00375934206064628,
+      "Web Development": 0.5332413191971977
+    },
+    "inference_latency_ms": 16.75569999497384,
+    "total_latency_ms": 26770.11380001204
+  },
+  {
+    "id": 10,
+    "file": "Agricultural\\10.pdf",
+    "source_category": "Agricultural",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 4425,
+    "ocr_latency_ms": 16914.868500025477,
+    "predicted_class": "Data Science",
+    "confidence": 0.5632806418992766,
+    "probabilities": {
+      "Cloud Computing": 0.017285556727186475,
+      "Cybersecurity": 0.026968227973040253,
+      "Data Science": 0.5632806418992766,
+      "DevOps": 0.0023447801632489017,
+      "Web Development": 0.3901207932372478
+    },
+    "inference_latency_ms": 9.939699957612902,
+    "total_latency_ms": 16924.80819998309
+  },
+  {
+    "id": 11,
+    "file": "Agricultural resumes\\Image_1.pdf",
+    "source_category": "Agricultural resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1913,
+    "ocr_latency_ms": 7447.901699983049,
+    "predicted_class": "Web Development",
+    "confidence": 0.5568556676269263,
+    "probabilities": {
+      "Cloud Computing": 0.02000172175430478,
+      "Cybersecurity": 0.05645047919727466,
+      "Data Science": 0.3622140249050661,
+      "DevOps": 0.0044781065164282,
+      "Web Development": 0.5568556676269263
+    },
+    "inference_latency_ms": 6.406599946785718,
+    "total_latency_ms": 7454.308299929835
+  },
+  {
+    "id": 12,
+    "file": "Agricultural resumes\\Image_10.pdf",
+    "source_category": "Agricultural resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2553,
+    "ocr_latency_ms": 14921.505799982697,
+    "predicted_class": "Web Development",
+    "confidence": 0.616224810475846,
+    "probabilities": {
+      "Cloud Computing": 0.010274161994277586,
+      "Cybersecurity": 0.07680559964283548,
+      "Data Science": 0.2721054117633722,
+      "DevOps": 0.024590016123668706,
+      "Web Development": 0.616224810475846
+    },
+    "inference_latency_ms": 6.263999966904521,
+    "total_latency_ms": 14927.769799949601
+  },
+  {
+    "id": 13,
+    "file": "Agriculture\\02a5a1f9ff80817d.pdf",
+    "source_category": "Agriculture",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1178,
+    "ocr_latency_ms": 4786.047699977644,
+    "predicted_class": "Web Development",
+    "confidence": 0.4821637006841771,
+    "probabilities": {
+      "Cloud Computing": 0.01756737403652888,
+      "Cybersecurity": 0.048008109485356006,
+      "Data Science": 0.4442402396984842,
+      "DevOps": 0.008020576095453855,
+      "Web Development": 0.4821637006841771
+    },
+    "inference_latency_ms": 6.39019999653101,
+    "total_latency_ms": 4792.437899974175
+  },
+  {
+    "id": 14,
+    "file": "Agriculture\\035a6c9b5ae923b0.pdf",
+    "source_category": "Agriculture",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2791,
+    "ocr_latency_ms": 14558.941399969626,
+    "predicted_class": "Web Development",
+    "confidence": 0.626200455379243,
+    "probabilities": {
+      "Cloud Computing": 0.01975530764860892,
+      "Cybersecurity": 0.03629447755644612,
+      "Data Science": 0.31261782973727437,
+      "DevOps": 0.005131929678427682,
+      "Web Development": 0.626200455379243
+    },
+    "inference_latency_ms": 7.5736999860964715,
+    "total_latency_ms": 14566.515099955723
+  },
+  {
+    "id": 15,
+    "file": "Apparel\\0ca5c2be0dba2bdc.pdf",
+    "source_category": "Apparel",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2468,
+    "ocr_latency_ms": 15679.582300013863,
+    "predicted_class": "Web Development",
+    "confidence": 0.8800313639008015,
+    "probabilities": {
+      "Cloud Computing": 0.011076602024109778,
+      "Cybersecurity": 0.01717291909325631,
+      "Data Science": 0.0867499820894664,
+      "DevOps": 0.00496913289236596,
+      "Web Development": 0.8800313639008015
+    },
+    "inference_latency_ms": 18.42679997207597,
+    "total_latency_ms": 15698.009099985939
+  },
+  {
+    "id": 16,
+    "file": "Apparel\\131bb10b4e9b172c.pdf",
+    "source_category": "Apparel",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1583,
+    "ocr_latency_ms": 9014.87149996683,
+    "predicted_class": "Web Development",
+    "confidence": 0.8749579875157038,
+    "probabilities": {
+      "Cloud Computing": 0.0064282014098554245,
+      "Cybersecurity": 0.02685960408176937,
+      "Data Science": 0.08800412460380724,
+      "DevOps": 0.003750082388864237,
+      "Web Development": 0.8749579875157038
+    },
+    "inference_latency_ms": 9.228600014466792,
+    "total_latency_ms": 9024.100099981297
+  },
+  {
+    "id": 17,
+    "file": "Apparel resumes\\Image_1.pdf",
+    "source_category": "Apparel resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1010,
+    "ocr_latency_ms": 4864.442699996289,
+    "predicted_class": "Web Development",
+    "confidence": 0.815820952260545,
+    "probabilities": {
+      "Cloud Computing": 0.00771698247711766,
+      "Cybersecurity": 0.028219426981760286,
+      "Data Science": 0.14164248160052342,
+      "DevOps": 0.006600156680053798,
+      "Web Development": 0.815820952260545
+    },
+    "inference_latency_ms": 10.773500020150095,
+    "total_latency_ms": 4875.216200016439
+  },
+  {
+    "id": 18,
+    "file": "Apparel resumes\\Image_14.pdf",
+    "source_category": "Apparel resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1486,
+    "ocr_latency_ms": 19366.25030002324,
+    "predicted_class": "Web Development",
+    "confidence": 0.8900783438279053,
+    "probabilities": {
+      "Cloud Computing": 0.006902578973792204,
+      "Cybersecurity": 0.02636725739637625,
+      "Data Science": 0.0720535556138671,
+      "DevOps": 0.004598264188059125,
+      "Web Development": 0.8900783438279053
+    },
+    "inference_latency_ms": 40.624700020998716,
+    "total_latency_ms": 19406.875000044238
+  },
+  {
+    "id": 19,
+    "file": "Architect\\02657761cacdda99.pdf",
+    "source_category": "Architect",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2319,
+    "ocr_latency_ms": 16503.687599964906,
+    "predicted_class": "Web Development",
+    "confidence": 0.83510515579368,
+    "probabilities": {
+      "Cloud Computing": 0.02359647942319206,
+      "Cybersecurity": 0.05208125782462246,
+      "Data Science": 0.0864231203829752,
+      "DevOps": 0.002793986575530094,
+      "Web Development": 0.83510515579368
+    },
+    "inference_latency_ms": 18.570200016256422,
+    "total_latency_ms": 16522.257799981162
+  },
+  {
+    "id": 20,
+    "file": "Architect\\07f563f4cb2b5dd3.pdf",
+    "source_category": "Architect",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1451,
+    "ocr_latency_ms": 7764.802699966822,
+    "predicted_class": "Web Development",
+    "confidence": 0.4918317445028455,
+    "probabilities": {
+      "Cloud Computing": 0.020272331944821448,
+      "Cybersecurity": 0.04594557594671733,
+      "Data Science": 0.42513441396139473,
+      "DevOps": 0.016815933644220904,
+      "Web Development": 0.4918317445028455
+    },
+    "inference_latency_ms": 11.002100014593452,
+    "total_latency_ms": 7775.804799981415
+  },
+  {
+    "id": 21,
+    "file": "Architects resumes\\Image_10.pdf",
+    "source_category": "Architects resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2419,
+    "ocr_latency_ms": 10850.843299995176,
+    "predicted_class": "Web Development",
+    "confidence": 0.8278557116905974,
+    "probabilities": {
+      "Cloud Computing": 0.019484089116403404,
+      "Cybersecurity": 0.030129235401920917,
+      "Data Science": 0.11108178662146054,
+      "DevOps": 0.011449177169617814,
+      "Web Development": 0.8278557116905974
+    },
+    "inference_latency_ms": 12.35970004927367,
+    "total_latency_ms": 10863.20300004445
+  },
+  {
+    "id": 22,
+    "file": "Architects resumes\\Image_100.pdf",
+    "source_category": "Architects resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 3093,
+    "ocr_latency_ms": 11092.593699984718,
+    "predicted_class": "Web Development",
+    "confidence": 0.7800064125844959,
+    "probabilities": {
+      "Cloud Computing": 0.015089334451338168,
+      "Cybersecurity": 0.03151073180918715,
+      "Data Science": 0.16907291645302117,
+      "DevOps": 0.004320604701957722,
+      "Web Development": 0.7800064125844959
+    },
+    "inference_latency_ms": 11.851599963847548,
+    "total_latency_ms": 11104.445299948566
+  },
+  {
+    "id": 23,
+    "file": "Arts\\0.pdf",
+    "source_category": "Arts",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 9285,
+    "ocr_latency_ms": 31323.98159999866,
+    "predicted_class": "Data Science",
+    "confidence": 0.5582931957630233,
+    "probabilities": {
+      "Cloud Computing": 0.01056640492523973,
+      "Cybersecurity": 0.02261594801533965,
+      "Data Science": 0.5582931957630233,
+      "DevOps": 0.00291054688107265,
+      "Web Development": 0.40561390441532474
+    },
+    "inference_latency_ms": 13.83219996932894,
+    "total_latency_ms": 31337.81379996799
+  },
+  {
+    "id": 24,
+    "file": "Arts\\09691ede66af3f08.pdf",
+    "source_category": "Arts",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 98,
+    "ocr_latency_ms": 1616.5997000061907,
+    "predicted_class": "Web Development",
+    "confidence": 0.6090387420988586,
+    "probabilities": {
+      "Cloud Computing": 0.006639185388315767,
+      "Cybersecurity": 0.08268005438506125,
+      "Data Science": 0.26516919411728623,
+      "DevOps": 0.036472824010478314,
+      "Web Development": 0.6090387420988586
+    },
+    "inference_latency_ms": 5.597200011834502,
+    "total_latency_ms": 1622.1969000180252
+  },
+  {
+    "id": 25,
+    "file": "Arts resumes\\Image_1.pdf",
+    "source_category": "Arts resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2312,
+    "ocr_latency_ms": 32513.196699961554,
+    "predicted_class": "Web Development",
+    "confidence": 0.5860815319885853,
+    "probabilities": {
+      "Cloud Computing": 0.006792852346621549,
+      "Cybersecurity": 0.06469987750535047,
+      "Data Science": 0.3193420181794342,
+      "DevOps": 0.02308371998000846,
+      "Web Development": 0.5860815319885853
+    },
+    "inference_latency_ms": 109.29359996225685,
+    "total_latency_ms": 32622.49029992381
+  },
+  {
+    "id": 26,
+    "file": "Arts resumes\\Image_10.pdf",
+    "source_category": "Arts resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2057,
+    "ocr_latency_ms": 10061.617700033821,
+    "predicted_class": "Web Development",
+    "confidence": 0.6479051715081183,
+    "probabilities": {
+      "Cloud Computing": 0.006005678031411331,
+      "Cybersecurity": 0.024065466368355947,
+      "Data Science": 0.31392469983072535,
+      "DevOps": 0.008098984261388994,
+      "Web Development": 0.6479051715081183
+    },
+    "inference_latency_ms": 18.758999998681247,
+    "total_latency_ms": 10080.376700032502
+  },
+  {
+    "id": 27,
+    "file": "Automobile\\01bbe10e9499781e.pdf",
+    "source_category": "Automobile",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 761,
+    "ocr_latency_ms": 4082.5701999710873,
+    "predicted_class": "Web Development",
+    "confidence": 0.639366402176308,
+    "probabilities": {
+      "Cloud Computing": 0.012552258985984225,
+      "Cybersecurity": 0.08319657014649498,
+      "Data Science": 0.23048755134459645,
+      "DevOps": 0.034397217346616334,
+      "Web Development": 0.639366402176308
+    },
+    "inference_latency_ms": 12.884999974630773,
+    "total_latency_ms": 4095.455199945718
+  },
+  {
+    "id": 28,
+    "file": "Automobile\\0208bced325792f0.pdf",
+    "source_category": "Automobile",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1570,
+    "ocr_latency_ms": 12384.972000028938,
+    "predicted_class": "Data Science",
+    "confidence": 0.7375077591691216,
+    "probabilities": {
+      "Cloud Computing": 0.0033172577495297327,
+      "Cybersecurity": 0.037082552641660715,
+      "Data Science": 0.7375077591691216,
+      "DevOps": 0.014955739648826353,
+      "Web Development": 0.2071366907908616
+    },
+    "inference_latency_ms": 8.945600013248622,
+    "total_latency_ms": 12393.917600042187
+  },
+  {
+    "id": 29,
+    "file": "Automobile resumes\\Image_12.pdf",
+    "source_category": "Automobile resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1896,
+    "ocr_latency_ms": 8025.263099989388,
+    "predicted_class": "Web Development",
+    "confidence": 0.6604674922478413,
+    "probabilities": {
+      "Cloud Computing": 0.023480740210365208,
+      "Cybersecurity": 0.07133486909980498,
+      "Data Science": 0.23973279997281383,
+      "DevOps": 0.004984098469174701,
+      "Web Development": 0.6604674922478413
+    },
+    "inference_latency_ms": 7.5734000420197845,
+    "total_latency_ms": 8032.836500031408
+  },
+  {
+    "id": 30,
+    "file": "Automobile resumes\\Image_13.pdf",
+    "source_category": "Automobile resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1801,
+    "ocr_latency_ms": 7190.511900000274,
+    "predicted_class": "Web Development",
+    "confidence": 0.6751078862538972,
+    "probabilities": {
+      "Cloud Computing": 0.018291027110155664,
+      "Cybersecurity": 0.07874659871130363,
+      "Data Science": 0.22140448001281046,
+      "DevOps": 0.006450007911833229,
+      "Web Development": 0.6751078862538972
+    },
+    "inference_latency_ms": 8.421699982136488,
+    "total_latency_ms": 7198.933599982411
+  },
+  {
+    "id": 31,
+    "file": "Aviation\\0.pdf",
+    "source_category": "Aviation",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 5313,
+    "ocr_latency_ms": 20636.468600016087,
+    "predicted_class": "Data Science",
+    "confidence": 0.5410513046530732,
+    "probabilities": {
+      "Cloud Computing": 0.030734624150488436,
+      "Cybersecurity": 0.0464635655150044,
+      "Data Science": 0.5410513046530732,
+      "DevOps": 0.003090431163007006,
+      "Web Development": 0.378660074518427
+    },
+    "inference_latency_ms": 16.31529995938763,
+    "total_latency_ms": 20652.783899975475
+  },
+  {
+    "id": 32,
+    "file": "Aviation\\1.pdf",
+    "source_category": "Aviation",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 5059,
+    "ocr_latency_ms": 18461.950699973386,
+    "predicted_class": "Cybersecurity",
+    "confidence": 0.47420504829038157,
+    "probabilities": {
+      "Cloud Computing": 0.027643923921465512,
+      "Cybersecurity": 0.47420504829038157,
+      "Data Science": 0.3762550091082281,
+      "DevOps": 0.0013956723774104613,
+      "Web Development": 0.12050034630251438
+    },
+    "inference_latency_ms": 9.172899997793138,
+    "total_latency_ms": 18471.12359997118
+  },
+  {
+    "id": 33,
+    "file": "Aviation resumes\\Image_1.pdf",
+    "source_category": "Aviation resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1643,
+    "ocr_latency_ms": 6903.91069999896,
+    "predicted_class": "Data Science",
+    "confidence": 0.4555128828283318,
+    "probabilities": {
+      "Cloud Computing": 0.007914799381409238,
+      "Cybersecurity": 0.08622907241770392,
+      "Data Science": 0.4555128828283318,
+      "DevOps": 0.03264327336528816,
+      "Web Development": 0.41769997200726683
+    },
+    "inference_latency_ms": 6.809299986343831,
+    "total_latency_ms": 6910.719999985304
+  },
+  {
+    "id": 34,
+    "file": "Aviation resumes\\Image_10.pdf",
+    "source_category": "Aviation resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 3369,
+    "ocr_latency_ms": 10902.758400014136,
+    "predicted_class": "Data Science",
+    "confidence": 0.4599513752176249,
+    "probabilities": {
+      "Cloud Computing": 0.021751193379938905,
+      "Cybersecurity": 0.06282293107701342,
+      "Data Science": 0.4599513752176249,
+      "DevOps": 0.0047028591008681266,
+      "Web Development": 0.4507716412245547
+    },
+    "inference_latency_ms": 6.997699965722859,
+    "total_latency_ms": 10909.756099979859
+  }
+]

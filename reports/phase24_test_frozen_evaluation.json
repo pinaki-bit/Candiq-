@@ -1,0 +1,30 @@
+{
+  "OP-1 (High Coverage >=95%)": {
+    "threshold": 0.82,
+    "test_in_domain_coverage_pct": 92.80575539568345,
+    "test_in_domain_rejection_pct": 7.194244604316546,
+    "val_in_domain_coverage_pct": 95.30685920577618,
+    "coverage_delta_pct": -2.5011038100927294
+  },
+  "OP-2 (Balanced Coverage >=90%)": {
+    "threshold": 0.91,
+    "test_in_domain_coverage_pct": 85.61151079136691,
+    "test_in_domain_rejection_pct": 14.388489208633093,
+    "val_in_domain_coverage_pct": 90.25270758122743,
+    "coverage_delta_pct": -4.6411967898605155
+  },
+  "OP-3 (High OOD Rejection >=85%)": {
+    "threshold": 0.81,
+    "test_in_domain_coverage_pct": 93.5251798561151,
+    "test_in_domain_rejection_pct": 6.474820143884892,
+    "val_in_domain_coverage_pct": 95.30685920577618,
+    "coverage_delta_pct": -1.7816793496610757
+  },
+  "OP-4 (Strict OOD Rejection >=95%)": {
+    "threshold": 0.85,
+    "test_in_domain_coverage_pct": 91.00719424460432,
+    "test_in_domain_rejection_pct": 8.992805755395683,
+    "val_in_domain_coverage_pct": 93.86281588447653,
+    "coverage_delta_pct": -2.8556216398722114
+  }
+}

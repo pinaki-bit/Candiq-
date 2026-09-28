@@ -32,8 +32,21 @@ from app.database import get_db
 from app.models.job import Job
 from app.models.resume import Resume, ProcessingStatus
 from app.models.screening import ScreeningResult, ReviewStatus
-from app.schemas.screening import ReviewUpdate, ScreeningResultRead
+from app.schemas.screening import (
+    InterviewKitRequest,
+    InterviewKitResponse,
+    InterviewQuestionSchema,
+    ReviewUpdate,
+    ScreeningResultRead,
+    TalentCandidateResultSchema,
+    TalentSearchRequest,
+    TalentSearchResponse,
+)
 from app.services import audit_service, matching_service, ranking_service
+from app.services.interview_service import generate_interview_kit
+from app.services.talent_search_service import search_talent_pool
+from app.config import get_settings
+from app.rate_limiter import limiter
 
 logger = logging.getLogger(__name__)
 
@@ -124,6 +137,8 @@ def match_resume_to_job(
             else "No domain alignment bonus applied"
         ),
         "final_relevance_score": relevance_score,
+        "missing_required_skills": match.missing_required,
+        "matched_evidence_snippets": match.matched_evidence,
         "ethical_note": (
             "Score is based exclusively on technical skills and domain alignment. "
             "Protected characteristics are not used."
@@ -313,3 +328,102 @@ def update_review(
     )
 
     return result
+
+
+@router.post(
+    "/interview-kit",
+    response_model=InterviewKitResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Generate grounded 5-category technical interview questions",
+)
+@limiter.limit(get_settings().rate_limit_default)
+def create_interview_kit(
+    request: Request,
+    payload: InterviewKitRequest,
+    current_user: AnyAuthUser,
+) -> InterviewKitResponse:
+    """
+    Generate a 5-category technical interview question kit grounded in candidate background and skill gaps.
+    Categories:
+      1. Technical Fundamentals
+      2. Practical Implementation
+      3. Project-Based Deep Dive
+      4. Scenario-Based Problem Solving
+      5. Verification / Claim Validation
+    """
+    result = generate_interview_kit(
+        job_title=payload.job_title or "Software Engineer",
+        candidate_skills=payload.candidate_skills,
+        missing_skills=payload.missing_skills,
+        resume_text=payload.resume_text,
+        job_description=payload.job_description,
+    )
+
+    questions_schema = [
+        InterviewQuestionSchema(
+            question_id=q.question_id,
+            category=q.category,
+            question=q.question,
+            why_this_question=q.why_this_question,
+            expected_key_points=q.expected_key_points,
+            difficulty=q.difficulty,
+        )
+        for q in result.questions
+    ]
+
+    return InterviewKitResponse(
+        job_title=result.job_title,
+        questions=questions_schema,
+        tokens_used=result.tokens_used,
+        estimated_cost_usd=result.estimated_cost_usd,
+        guardrail_warnings=result.guardrail_warnings,
+    )
+
+
+@router.post(
+    "/talent-search",
+    response_model=TalentSearchResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Natural language semantic talent search pipeline",
+)
+@limiter.limit(get_settings().rate_limit_default)
+def search_candidates(
+    request: Request,
+    payload: TalentSearchRequest,
+    current_user: AnyAuthUser,
+    db: Session = Depends(get_db),
+) -> TalentSearchResponse:
+    """
+    Search talent pool using hybrid semantic vector similarity, NLP skill matching, and confidence bonuses.
+    Query → Embed → Hybrid Filter & Rank.
+    """
+    result = search_talent_pool(
+        db=db,
+        query=payload.query,
+        domain_filter=payload.domain_filter,
+        min_confidence=payload.min_confidence,
+        required_skills=payload.required_skills,
+        limit=payload.limit,
+    )
+
+    results_schema = [
+        TalentCandidateResultSchema(
+            resume_id=c.resume_id,
+            public_id=c.public_id,
+            original_filename=c.original_filename,
+            predicted_domain=c.predicted_domain,
+            prediction_confidence=c.prediction_confidence,
+            hybrid_score=c.hybrid_score,
+            semantic_similarity=c.semantic_similarity,
+            matched_skills=c.matched_skills,
+            snippet=c.snippet,
+        )
+        for c in result.results
+    ]
+
+    return TalentSearchResponse(
+        query=result.query,
+        total_candidates_searched=result.total_candidates_searched,
+        results_count=result.results_count,
+        results=results_schema,
+    )

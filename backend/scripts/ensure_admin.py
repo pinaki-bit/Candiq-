@@ -16,7 +16,7 @@ def main():
         user = User(
             email=email,
             full_name="System Admin",
-            hashed_password=hash_password("Admin123!"),
+            hashed_password=hash_password("changeme123"),
             role="admin",
             is_active=True
         )
@@ -24,8 +24,8 @@ def main():
         db.commit()
         print("Admin user created successfully.")
     else:
-        print("Admin user already exists. Resetting password to Admin123! for testing.")
-        user.hashed_password = hash_password("Admin123!")
+        print("Admin user already exists. Resetting password to changeme123 for testing.")
+        user.hashed_password = hash_password("changeme123")
         db.commit()
     db.close()
 

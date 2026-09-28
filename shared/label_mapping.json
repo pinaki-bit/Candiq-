@@ -1,63 +1,134 @@
 {
   "_meta": {
-    "version": "1.0.1",
-    "description": "Label normalization mapping for the Resume Classification Model. Maps dataset-specific category names to the five canonical target categories. Only verified mappings are listed here — do NOT add a mapping unless the relationship is clearly justified.",
+    "version": "2.0.0",
+    "description": "Defensible Label Mapping for Resume Intel 5-Class Domain Classifier.",
     "target_categories": [
       "Data Science",
       "Web Development",
       "Cloud Computing",
       "DevOps",
       "Cybersecurity"
-    ],
-    "instructions": "The 'dataset_label' field is the exact string as it appears in your dataset's category column. The 'canonical' field is the target category. The 'justification' field must explain why the mapping is valid. If a dataset label does not map cleanly to any target category, add it to 'unmapped_labels' with a note."
+    ]
   },
   "mappings": [
     {
       "dataset_label": "Data Science",
       "canonical": "Data Science",
-      "justification": "Exact match"
+      "justification": "Exact category match for data science & ML analytics."
+    },
+    {
+      "dataset_label": "Machine Learning Engineer",
+      "canonical": "Data Science",
+      "justification": "Core machine learning modeling and data science role."
+    },
+    {
+      "dataset_label": "AI Engineer",
+      "canonical": "Data Science",
+      "justification": "Artificial Intelligence modeling and NLP data science role."
     },
     {
       "dataset_label": "Web Designing",
       "canonical": "Web Development",
-      "justification": "Frontend web development role"
+      "justification": "Frontend web development & web interface design."
     },
     {
       "dataset_label": "React Developer",
       "canonical": "Web Development",
-      "justification": "Frontend web development"
+      "justification": "Frontend React web application development."
     },
     {
-      "dataset_label": "DevOps Engineer",
-      "canonical": "DevOps",
-      "justification": "Exact match"
+      "dataset_label": "Frontend Developer",
+      "canonical": "Web Development",
+      "justification": "Client-side Web Development role."
+    },
+    {
+      "dataset_label": "Backend Developer",
+      "canonical": "Web Development",
+      "justification": "Server-side web API & Web Development role."
+    },
+    {
+      "dataset_label": "Full Stack Developer",
+      "canonical": "Web Development",
+      "justification": "End-to-end Web Development role."
+    },
+    {
+      "dataset_label": "Cloud Engineer",
+      "canonical": "Cloud Computing",
+      "justification": "AWS/Azure/GCP Cloud Computing infrastructure role."
     },
     {
       "dataset_label": "DevOps",
       "canonical": "DevOps",
-      "justification": "Exact match"
+      "justification": "Exact match for CI/CD and infrastructure automation."
+    },
+    {
+      "dataset_label": "Site Reliability Engineer",
+      "canonical": "DevOps",
+      "justification": "SRE infrastructure, automation & DevOps monitoring role."
     },
     {
       "dataset_label": "Network Security Engineer",
       "canonical": "Cybersecurity",
-      "justification": "Core cybersecurity role"
+      "justification": "Core network security & cybersecurity engineering role."
+    },
+    {
+      "dataset_label": "Cybersecurity Analyst",
+      "canonical": "Cybersecurity",
+      "justification": "Core cybersecurity threat monitoring & incident response role."
     },
     {
       "dataset_label": "Cyber Security",
       "canonical": "Cybersecurity",
-      "justification": "Exact match"
+      "justification": "Exact match for cybersecurity domain."
     }
   ],
   "unmapped_labels": [
     "Python Developer",
-    "SAP Developer",
-    "Blockchain",
-    "Testing",
-    "Information Technology",
-    "SQL Developer",
-    "Database",
     "Java Developer",
     "DotNet Developer",
-    "ETL Developer"
+    "Software Developer",
+    "SQL Developer",
+    "Database",
+    "Database Administrator",
+    "ETL Developer",
+    "SAP Developer",
+    "Blockchain",
+    "Blockchain Developer",
+    "Testing",
+    "QA Engineer",
+    "System Administrator",
+    "UI/UX Designer",
+    "Designing",
+    "Digital Media",
+    "Business Analyst",
+    "PMO",
+    "Product Manager",
+    "Technical Lead",
+    "Engineering Manager",
+    "Consultant",
+    "Information Technology",
+    "Accountant",
+    "Advocate",
+    "Agriculture",
+    "Apparel",
+    "Architecture",
+    "Arts",
+    "Automobile",
+    "Aviation",
+    "Banking",
+    "BPO",
+    "Building and Construction",
+    "Civil Engineer",
+    "Education",
+    "Electrical Engineering",
+    "Finance",
+    "Food and Beverages",
+    "Health and Fitness",
+    "Human Resources",
+    "Management",
+    "Mechanical Engineer",
+    "Operations Manager",
+    "Public Relations",
+    "Sales"
   ]
 }

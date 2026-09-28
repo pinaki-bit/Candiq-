@@ -15,7 +15,7 @@ import uuid
 from typing import TYPE_CHECKING
 
 from sqlalchemy import (
-    DateTime, ForeignKey, Integer, String, Text, func
+    Boolean, DateTime, ForeignKey, Integer, String, Text, func
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -77,6 +77,13 @@ class Resume(Base):
     model_version_id: Mapped[int | None] = mapped_column(
         Integer, ForeignKey("model_versions.id", ondelete="SET NULL"), nullable=True
     )
+
+    # OOD Policy & Abstention Layer fields (Phase 25)
+    classification_status: Mapped[str | None] = mapped_column(String(32), nullable=True)  # "accepted" | "review"
+    review_required: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
+    ood_status: Mapped[str | None] = mapped_column(String(64), nullable=True)             # "in_domain_like" | "possible_out_of_domain"
+    policy_version: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    policy_reason: Mapped[str | None] = mapped_column(String(128), nullable=True)
 
     uploaded_by: Mapped[int | None] = mapped_column(
         Integer, ForeignKey("users.id", ondelete="SET NULL"), nullable=True

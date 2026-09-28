@@ -37,12 +37,28 @@ from app.database import get_db
 from app.models.candidate import Candidate
 from app.models.resume import Resume, ProcessingStatus
 from app.models.skill import ExtractedSkill
-from app.schemas.resume import ResumeDetailRead, ResumeRead, ResumeUploadResponse
+from app.schemas.resume import (
+    ATSCheckRequest,
+    ATSCheckResponse,
+    BulletRewriteRequest,
+    BulletRewriteResponse,
+    CoverLetterRequest,
+    CoverLetterResponse,
+    LiveResumeAnalysisRequest,
+    LiveResumeAnalysisResponse,
+    ResumeDetailRead,
+    ResumeRead,
+    ResumeUploadResponse,
+)
 from app.services import audit_service
 from app.services import pdf_service
 from app.services.pdf_service import PDFValidationError
 from app.services import skill_service
 from app.services import classification_service
+from app.services.bullet_rewriter import rewrite_bullet_point
+from app.services.cover_letter_service import generate_cover_letter
+from app.services.resume_builder_service import analyze_live_resume
+from app.services.ats_analyzer_service import analyze_ats_compatibility
 from app.rate_limiter import limiter
 
 logger = logging.getLogger(__name__)
@@ -61,6 +77,19 @@ def _get_resume_or_404(db: Session, resume_id: str) -> Resume:
     return resume
 
 
+import asyncio
+from app.services.websocket_manager import ws_manager
+
+
+def _broadcast_pipeline_event(event_type: str, data: dict) -> None:
+    """Safely emit WebSocket events without blocking pipeline execution."""
+    try:
+        loop = asyncio.get_running_loop()
+        loop.create_task(ws_manager.broadcast_event(event_type, data))
+    except Exception as exc:
+        logger.debug(f"WebSocket broadcast skipped ({exc})")
+
+
 def _run_processing_pipeline(
     resume: Resume,
     file_path: str,
@@ -74,13 +103,19 @@ def _run_processing_pipeline(
       2. Extract skills via NLP PhraseMatcher
       3. Classify domain with ML model
       4. Persist results
+      5. Emit real-time WebSocket state events
 
     This function updates the Resume record in-place.
     Must be called within an active DB transaction.
     """
     resume.status = ProcessingStatus.PROCESSING
+    _broadcast_pipeline_event(
+        "resume.uploaded",
+        {"resume_id": resume.public_id, "filename": resume.original_filename},
+    )
 
     # --- Step 1: Extract text ---
+    _broadcast_pipeline_event("resume.extracting", {"resume_id": resume.public_id})
     extraction = pdf_service.extract_text_from_path(file_path)
 
     if not extraction.success:
@@ -88,6 +123,10 @@ def _run_processing_pipeline(
         resume.error_message = extraction.error
         resume.page_count = extraction.page_count
         resume.processed_at = datetime.datetime.now(datetime.timezone.utc)
+        _broadcast_pipeline_event(
+            "pipeline.failed",
+            {"resume_id": resume.public_id, "error": extraction.error},
+        )
         logger.warning(
             "PDF extraction failed for resume %s: %s",
             resume.public_id, extraction.error
@@ -115,23 +154,57 @@ def _run_processing_pipeline(
         for m in matched_skills
     ]
 
-    # Add skill objects (cascade will save with resume)
     for skill in skill_objects:
         db.add(skill)
 
-    # --- Step 3: ML Classification ---
+    _broadcast_pipeline_event(
+        "resume.nlp_extracted",
+        {"resume_id": resume.public_id, "skill_count": len(skill_objects)},
+    )
+
+    # --- Step 3: ML Classification & OOD Policy Evaluation ---
     classification = classification_service.predict(extraction.text)
 
     resume.predicted_domain = classification.predicted_domain
     resume.prediction_confidence = classification.confidence_label
+    resume.classification_status = classification.status
+    resume.review_required = classification.review_required
+    resume.ood_status = classification.ood_status
+    resume.policy_version = classification.policy_version
+    resume.policy_reason = classification.reason
 
-    # Decide final status
-    if classification.is_uncertain:
+    _broadcast_pipeline_event(
+        "resume.classified",
+        {
+            "resume_id": resume.public_id,
+            "predicted_domain": classification.predicted_domain,
+            "prediction_confidence": classification.confidence_label,
+            "status": classification.status,
+            "review_required": classification.review_required,
+            "ood_status": classification.ood_status,
+            "policy_version": classification.policy_version,
+            "reason": classification.reason,
+        },
+    )
+
+    # Decide final status (NEEDS_REVIEW if review_required or low confidence)
+    if classification.review_required or classification.is_uncertain:
         resume.status = ProcessingStatus.NEEDS_REVIEW
     else:
         resume.status = ProcessingStatus.COMPLETED
 
     resume.processed_at = datetime.datetime.now(datetime.timezone.utc)
+    _broadcast_pipeline_event(
+        "pipeline.completed",
+        {
+            "resume_id": resume.public_id,
+            "status": resume.status,
+            "predicted_domain": resume.predicted_domain,
+            "confidence": resume.prediction_confidence,
+            "review_required": classification.review_required,
+        },
+    )
+
     logger.info(
         "Processed resume %s: domain=%s confidence=%s skills=%d",
         resume.public_id,
@@ -302,3 +375,188 @@ def archive_resume(
     resume.error_message = f"Archived by admin {current_user.email}."
     db.commit()
     return {"detail": f"Resume {resume_id} archived."}
+
+
+@router.post(
+    "/rewrite-bullet",
+    response_model=BulletRewriteResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Rewrite and optimize a resume bullet point using AI",
+)
+@limiter.limit(get_settings().rate_limit_default)
+def rewrite_bullet(
+    request: Request,
+    payload: BulletRewriteRequest,
+    current_user: AnyAuthUser,
+) -> BulletRewriteResponse:
+    """
+    Rewrite a candidate resume bullet point using STAR, Technical, or ATS optimization modes.
+    Enforces strict anti-hallucination factual guardrails and metric placeholder injection.
+    """
+    result = rewrite_bullet_point(
+        bullet=payload.bullet,
+        mode=payload.mode,
+        target_job_title=payload.target_job_title,
+        target_skills=payload.target_skills,
+    )
+
+    return BulletRewriteResponse(
+        original_bullet=result.original_bullet,
+        optimized_bullet=result.optimized_bullet,
+        mode=result.mode,
+        key_changes=result.key_changes,
+        action_verb_used=result.action_verb_used,
+        placeholders_needed=result.placeholders_needed,
+        tokens_used=result.tokens_used,
+        estimated_cost_usd=result.estimated_cost_usd,
+        guardrail_warnings=result.guardrail_warnings,
+    )
+
+
+@router.post(
+    "/generate-cover-letter",
+    response_model=CoverLetterResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Generate a tailored, professional cover letter",
+)
+@limiter.limit(get_settings().rate_limit_default)
+def create_cover_letter(
+    request: Request,
+    payload: CoverLetterRequest,
+    current_user: AnyAuthUser,
+) -> CoverLetterResponse:
+    """
+    Generate a personalized cover letter matching candidate background to target job title and company.
+    Enforces anti-hallucination factual guardrails.
+    """
+    result = generate_cover_letter(
+        job_title=payload.job_title,
+        company_name=payload.company_name,
+        candidate_name=payload.candidate_name,
+        candidate_skills=payload.candidate_skills,
+        candidate_text=payload.candidate_text,
+        job_description=payload.job_description,
+        tone=payload.tone,
+    )
+
+    return CoverLetterResponse(
+        salutation=result.salutation,
+        opening_hook=result.opening_hook,
+        core_value_proposition=result.core_value_proposition,
+        company_alignment_paragraph=result.company_alignment_paragraph,
+        closing_call_to_action=result.closing_call_to_action,
+        full_cover_letter=result.full_cover_letter,
+        tone_used=result.tone_used,
+        tokens_used=result.tokens_used,
+        estimated_cost_usd=result.estimated_cost_usd,
+        guardrail_warnings=result.guardrail_warnings,
+    )
+
+
+@router.post(
+    "/live-analysis",
+    response_model=LiveResumeAnalysisResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Real-time debounced live resume builder analysis",
+)
+@limiter.limit(get_settings().rate_limit_default)
+def live_resume_analysis(
+    request: Request,
+    payload: LiveResumeAnalysisRequest,
+    current_user: AnyAuthUser,
+) -> LiveResumeAnalysisResponse:
+    """
+    Perform instantaneous, debounced ATS readability scoring, skill extraction,
+    and job match simulation on raw resume text or markdown.
+    """
+    result = analyze_live_resume(
+        resume_markdown=payload.resume_markdown,
+        job_description=payload.job_description,
+        target_skills=payload.target_skills,
+    )
+
+    return LiveResumeAnalysisResponse(
+        char_count=result.char_count,
+        word_count=result.word_count,
+        estimated_pages=result.estimated_pages,
+        ats_score=result.ats_score,
+        extracted_skills=result.extracted_skills,
+        matched_skills=result.matched_skills,
+        missing_skills=result.missing_skills,
+        live_match_score=result.live_match_score,
+        ats_warnings=result.ats_warnings,
+        suggestions=result.suggestions,
+    )
+
+
+@router.post(
+    "/ats-check",
+    response_model=ATSCheckResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Run comprehensive ATS compatibility scan on raw text",
+)
+@limiter.limit(get_settings().rate_limit_default)
+def check_ats_compatibility(
+    request: Request,
+    payload: ATSCheckRequest,
+    current_user: AnyAuthUser,
+) -> ATSCheckResponse:
+    """
+    Run 4-dimension ATS compatibility scan on provided resume text.
+    Dimensions: Document Structure (25%), Readability (25%), Contact Info (25%), Keyword Density (25%).
+    """
+    result = analyze_ats_compatibility(payload.resume_text)
+
+    return ATSCheckResponse(
+        overall_score=result.overall_score,
+        structure_score=result.structure_score,
+        readability_score=result.readability_score,
+        contact_score=result.contact_score,
+        density_score=result.density_score,
+        compliance_category=result.compliance_category,
+        detected_sections=result.detected_sections,
+        missing_essential_sections=result.missing_essential_sections,
+        critical_issues=result.critical_issues,
+        warnings=result.warnings,
+        actionable_recommendations=result.actionable_recommendations,
+    )
+
+
+@router.post(
+    "/{resume_id}/ats-check",
+    response_model=ATSCheckResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Run ATS compatibility scan on an uploaded resume record",
+)
+@limiter.limit(get_settings().rate_limit_default)
+def check_uploaded_resume_ats(
+    resume_id: str,
+    request: Request,
+    current_user: AnyAuthUser,
+    db: Session = Depends(get_db),
+) -> ATSCheckResponse:
+    """
+    Run ATS compatibility analysis on an existing uploaded resume record.
+    """
+    resume = _get_resume_or_404(db, resume_id)
+    if not resume.extracted_text:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Resume has no extracted text to analyze.",
+        )
+
+    result = analyze_ats_compatibility(resume.extracted_text)
+
+    return ATSCheckResponse(
+        overall_score=result.overall_score,
+        structure_score=result.structure_score,
+        readability_score=result.readability_score,
+        contact_score=result.contact_score,
+        density_score=result.density_score,
+        compliance_category=result.compliance_category,
+        detected_sections=result.detected_sections,
+        missing_essential_sections=result.missing_essential_sections,
+        critical_issues=result.critical_issues,
+        warnings=result.warnings,
+        actionable_recommendations=result.actionable_recommendations,
+    )

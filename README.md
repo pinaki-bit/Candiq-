@@ -63,7 +63,7 @@ The implemented architecture fulfills the following core engineering objectives:
 | **ML Domain Classification** | **IMPLEMENTED AND VERIFIED** | Scikit-Learn (LinearSVC) | `backend/app/services/classification_service.py` | Predicts 5 canonical tech categories with LRU caching. |
 | **OOD Policy Engine** | **IMPLEMENTED AND VERIFIED** | Pure Python Policy Engine | `backend/app/services/ood_policy.py` | Threshold $\tau = 0.85$, policy `v1.0-phase24-op4`. Non-destructive abstention. |
 | **Job Matching & Ranking** | **IMPLEMENTED AND VERIFIED** | Deterministic Match Engine | `backend/app/services/matching_service.py` | Calculates required/preferred skill coverage and domain alignment. |
-| **Semantic Search** | **IMPLEMENTED BUT EXPERIMENTAL** | TF-IDF / Hashing Vectorizer | `backend/app/services/embedding_service.py` | Cosine similarity fallback matching. |
+| **Semantic Search** | **IMPLEMENTED AND VERIFIED** | `sentence-transformers` (`all-MiniLM-L6-v2`) | `backend/app/services/embedding_service.py` | 384-dim dense vectors, CPU-compatible, Local MD5 fallback. |
 | **AI LLM Guardrails** | **IMPLEMENTED (WITH MOCK FALLBACK)** | OpenAI / Gemini / Mock | `backend/app/services/ai_service.py` | Bullet rewriter, cover letter, interview kit. Uses Mock provider when API keys missing. |
 | **Real-Time WebSockets** | **IMPLEMENTED AND VERIFIED** | FastAPI WebSockets | `backend/app/services/websocket_manager.py` | Real-time candidate processing events broadcast. |
 | **Streamlit Web UI** | **IMPLEMENTED AND VERIFIED** | Streamlit | `frontend/app.py` | Upload, screening results, live builder, ATS check, analytics. |

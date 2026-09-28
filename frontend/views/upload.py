@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import streamlit as st
 from services.api_client import APIError, upload_resume
+from components.resume_advisor import render_resume_advisor
 
 
 _CONFIDENCE_COLOR = {
@@ -122,6 +123,16 @@ def _display_result(result: dict):
         )
     if result.get("error_message"):
         st.error(f"Processing note: {result['error_message']}")
+
+    st.divider()
+    # Resume Optimization & Confidence Advisor
+    render_resume_advisor(
+        confidence=conf,
+        predicted_domain=result.get("predicted_domain"),
+        char_count=result.get("text_char_count", 0),
+        skill_count=len(skills),
+    )
+    st.divider()
 
     # Actions
     col_l, col_r = st.columns(2)

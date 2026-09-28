@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import streamlit as st
 from services.api_client import APIError, get_resume
+from components.resume_advisor import render_resume_advisor
 
 
 def render_candidate_profile():
@@ -54,6 +55,18 @@ def render_candidate_profile():
                         st.caption(f"> {s['evidence_snippet']}")
     else:
         st.info("No skills extracted.")
+
+    st.divider()
+
+    # Render Resume Optimization & Confidence Advisor
+    render_resume_advisor(
+        confidence=resume.get("prediction_confidence", "low"),
+        predicted_domain=resume.get("predicted_domain"),
+        char_count=resume.get("text_char_count", 0),
+        skill_count=len(skills),
+    )
+
+    st.divider()
 
     # File metadata
     with st.expander("📄 File Metadata"):

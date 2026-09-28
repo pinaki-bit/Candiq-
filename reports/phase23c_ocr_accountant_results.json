@@ -1,0 +1,4530 @@
+[
+  {
+    "status": "success",
+    "text_len": 1490,
+    "pred_class": "Data Science",
+    "confidence": 0.5195699251522855,
+    "probabilities": {
+      "Cloud Computing": 0.007756044130908049,
+      "Cybersecurity": 0.03878466494831778,
+      "Data Science": 0.5195699251522855,
+      "DevOps": 0.006267968328553736,
+      "Web Development": 0.427621397439935
+    },
+    "latency_ms": 3.8103999686427414,
+    "id": 0,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2320,
+    "pred_class": "Web Development",
+    "confidence": 0.7094183881210344,
+    "probabilities": {
+      "Cloud Computing": 0.01267665518672852,
+      "Cybersecurity": 0.04581204556402684,
+      "Data Science": 0.22287672267936368,
+      "DevOps": 0.009216188448846533,
+      "Web Development": 0.7094183881210344
+    },
+    "latency_ms": 4.043499997351319,
+    "id": 1,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2741,
+    "pred_class": "Web Development",
+    "confidence": 0.7530779856054632,
+    "probabilities": {
+      "Cloud Computing": 0.012045082166920473,
+      "Cybersecurity": 0.042483224805278136,
+      "Data Science": 0.1865835875449143,
+      "DevOps": 0.005810119877423842,
+      "Web Development": 0.7530779856054632
+    },
+    "latency_ms": 3.7043000338599086,
+    "id": 2,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2763,
+    "pred_class": "Web Development",
+    "confidence": 0.725277405477458,
+    "probabilities": {
+      "Cloud Computing": 0.010598761145486439,
+      "Cybersecurity": 0.04969971811471409,
+      "Data Science": 0.207860401048476,
+      "DevOps": 0.006563714213865446,
+      "Web Development": 0.725277405477458
+    },
+    "latency_ms": 3.410500008612871,
+    "id": 3,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1901,
+    "pred_class": "Web Development",
+    "confidence": 0.7795393204847308,
+    "probabilities": {
+      "Cloud Computing": 0.008734851267214605,
+      "Cybersecurity": 0.05121992110222022,
+      "Data Science": 0.14661265266959564,
+      "DevOps": 0.013893254476238678,
+      "Web Development": 0.7795393204847308
+    },
+    "latency_ms": 3.2489000004716218,
+    "id": 4,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2717,
+    "pred_class": "Web Development",
+    "confidence": 0.7507395819639692,
+    "probabilities": {
+      "Cloud Computing": 0.012204239020515458,
+      "Cybersecurity": 0.03718270624053214,
+      "Data Science": 0.19350730662997367,
+      "DevOps": 0.006366166145009631,
+      "Web Development": 0.7507395819639692
+    },
+    "latency_ms": 3.4320999984629452,
+    "id": 5,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1865,
+    "pred_class": "Web Development",
+    "confidence": 0.5846213594185948,
+    "probabilities": {
+      "Cloud Computing": 0.009267220935622596,
+      "Cybersecurity": 0.0769647671439494,
+      "Data Science": 0.3116210026257299,
+      "DevOps": 0.017525649876103274,
+      "Web Development": 0.5846213594185948
+    },
+    "latency_ms": 3.2813999569043517,
+    "id": 6,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2977,
+    "pred_class": "Web Development",
+    "confidence": 0.7257926152894798,
+    "probabilities": {
+      "Cloud Computing": 0.013277608076166241,
+      "Cybersecurity": 0.0366196958720695,
+      "Data Science": 0.2190230593638514,
+      "DevOps": 0.005287021398433114,
+      "Web Development": 0.7257926152894798
+    },
+    "latency_ms": 3.361399983987212,
+    "id": 7,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2409,
+    "pred_class": "Web Development",
+    "confidence": 0.7651527333417477,
+    "probabilities": {
+      "Cloud Computing": 0.010512027815883975,
+      "Cybersecurity": 0.07953880691127622,
+      "Data Science": 0.11714776818889164,
+      "DevOps": 0.027648663742200437,
+      "Web Development": 0.7651527333417477
+    },
+    "latency_ms": 3.512499970383942,
+    "id": 8,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2722,
+    "pred_class": "Web Development",
+    "confidence": 0.7287211766017611,
+    "probabilities": {
+      "Cloud Computing": 0.01583776915597517,
+      "Cybersecurity": 0.03666056724355249,
+      "Data Science": 0.21294320965191044,
+      "DevOps": 0.005837277346800868,
+      "Web Development": 0.7287211766017611
+    },
+    "latency_ms": 3.2811000128276646,
+    "id": 9,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2134,
+    "pred_class": "Web Development",
+    "confidence": 0.7276583937259093,
+    "probabilities": {
+      "Cloud Computing": 0.01075483214891338,
+      "Cybersecurity": 0.04468051084957134,
+      "Data Science": 0.20766678690373652,
+      "DevOps": 0.009239476371869379,
+      "Web Development": 0.7276583937259093
+    },
+    "latency_ms": 3.2618999830447137,
+    "id": 10,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2567,
+    "pred_class": "Web Development",
+    "confidence": 0.7613183577476288,
+    "probabilities": {
+      "Cloud Computing": 0.009469314722030713,
+      "Cybersecurity": 0.036274715300973925,
+      "Data Science": 0.18580008350117924,
+      "DevOps": 0.0071375287281874355,
+      "Web Development": 0.7613183577476288
+    },
+    "latency_ms": 3.1921000336296856,
+    "id": 11,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2216,
+    "pred_class": "Web Development",
+    "confidence": 0.7673349624774234,
+    "probabilities": {
+      "Cloud Computing": 0.01130134527629428,
+      "Cybersecurity": 0.03695092145441934,
+      "Data Science": 0.17663191280802126,
+      "DevOps": 0.007780857983841717,
+      "Web Development": 0.7673349624774234
+    },
+    "latency_ms": 3.4636000054888427,
+    "id": 12,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3455,
+    "pred_class": "Web Development",
+    "confidence": 0.6519672564199379,
+    "probabilities": {
+      "Cloud Computing": 0.02978528461881087,
+      "Cybersecurity": 0.06235221504355716,
+      "Data Science": 0.24845573907334134,
+      "DevOps": 0.0074395048443528814,
+      "Web Development": 0.6519672564199379
+    },
+    "latency_ms": 3.2475999905727804,
+    "id": 13,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3204,
+    "pred_class": "Web Development",
+    "confidence": 0.6654869110251437,
+    "probabilities": {
+      "Cloud Computing": 0.021005861890560498,
+      "Cybersecurity": 0.06864868201798162,
+      "Data Science": 0.23744082342942824,
+      "DevOps": 0.0074177216368859255,
+      "Web Development": 0.6654869110251437
+    },
+    "latency_ms": 3.3017999958246946,
+    "id": 14,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3176,
+    "pred_class": "Web Development",
+    "confidence": 0.7397666081241956,
+    "probabilities": {
+      "Cloud Computing": 0.025916196425383387,
+      "Cybersecurity": 0.03759103537547776,
+      "Data Science": 0.19260718140735614,
+      "DevOps": 0.004118978667587203,
+      "Web Development": 0.7397666081241956
+    },
+    "latency_ms": 3.184199973475188,
+    "id": 15,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2249,
+    "pred_class": "Web Development",
+    "confidence": 0.5698552645255541,
+    "probabilities": {
+      "Cloud Computing": 0.014063160621553,
+      "Cybersecurity": 0.038354410181458375,
+      "Data Science": 0.3722868891546517,
+      "DevOps": 0.005440275516782867,
+      "Web Development": 0.5698552645255541
+    },
+    "latency_ms": 3.183299966622144,
+    "id": 16,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1950,
+    "pred_class": "Web Development",
+    "confidence": 0.6969508873391183,
+    "probabilities": {
+      "Cloud Computing": 0.009708540922925325,
+      "Cybersecurity": 0.051141504694497096,
+      "Data Science": 0.23199491298338498,
+      "DevOps": 0.010204154060074327,
+      "Web Development": 0.6969508873391183
+    },
+    "latency_ms": 3.3505000174045563,
+    "id": 17,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2174,
+    "pred_class": "Web Development",
+    "confidence": 0.6317286002652969,
+    "probabilities": {
+      "Cloud Computing": 0.013447698123606768,
+      "Cybersecurity": 0.03943212273579111,
+      "Data Science": 0.31028080840540373,
+      "DevOps": 0.005110770469901438,
+      "Web Development": 0.6317286002652969
+    },
+    "latency_ms": 3.209899994544685,
+    "id": 18,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1895,
+    "pred_class": "Web Development",
+    "confidence": 0.4941211033514591,
+    "probabilities": {
+      "Cloud Computing": 0.016623083917079874,
+      "Cybersecurity": 0.100409895204907,
+      "Data Science": 0.3761240741610507,
+      "DevOps": 0.01272184336550323,
+      "Web Development": 0.4941211033514591
+    },
+    "latency_ms": 3.2003000378608704,
+    "id": 19,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2694,
+    "pred_class": "Web Development",
+    "confidence": 0.7569980932370303,
+    "probabilities": {
+      "Cloud Computing": 0.009324230007075711,
+      "Cybersecurity": 0.035794639723267616,
+      "Data Science": 0.19061049690322227,
+      "DevOps": 0.007272540129404112,
+      "Web Development": 0.7569980932370303
+    },
+    "latency_ms": 3.1834000255912542,
+    "id": 20,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1687,
+    "pred_class": "Web Development",
+    "confidence": 0.7218922243166375,
+    "probabilities": {
+      "Cloud Computing": 0.01496700339042,
+      "Cybersecurity": 0.04674492128714323,
+      "Data Science": 0.21027471574882037,
+      "DevOps": 0.006121135256978956,
+      "Web Development": 0.7218922243166375
+    },
+    "latency_ms": 3.246900043450296,
+    "id": 21,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2428,
+    "pred_class": "Web Development",
+    "confidence": 0.716496284834891,
+    "probabilities": {
+      "Cloud Computing": 0.008313568942004135,
+      "Cybersecurity": 0.08053335571811457,
+      "Data Science": 0.17479069318199916,
+      "DevOps": 0.019866097322991168,
+      "Web Development": 0.716496284834891
+    },
+    "latency_ms": 4.697199969086796,
+    "id": 22,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2744,
+    "pred_class": "Web Development",
+    "confidence": 0.5534272294644395,
+    "probabilities": {
+      "Cloud Computing": 0.0224124973226551,
+      "Cybersecurity": 0.040065560577661447,
+      "Data Science": 0.3793203373878659,
+      "DevOps": 0.004774375247378097,
+      "Web Development": 0.5534272294644395
+    },
+    "latency_ms": 3.1765999738126993,
+    "id": 23,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2279,
+    "pred_class": "Web Development",
+    "confidence": 0.7995494749807159,
+    "probabilities": {
+      "Cloud Computing": 0.009651859348039749,
+      "Cybersecurity": 0.05843074452063259,
+      "Data Science": 0.11862993509901636,
+      "DevOps": 0.013737986051595461,
+      "Web Development": 0.7995494749807159
+    },
+    "latency_ms": 3.3958000130951405,
+    "id": 24,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2799,
+    "pred_class": "Web Development",
+    "confidence": 0.6395545885938807,
+    "probabilities": {
+      "Cloud Computing": 0.01643233333833917,
+      "Cybersecurity": 0.0978702965815549,
+      "Data Science": 0.2392464398837292,
+      "DevOps": 0.00689634160249598,
+      "Web Development": 0.6395545885938807
+    },
+    "latency_ms": 3.1849999795667827,
+    "id": 25,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3306,
+    "pred_class": "Web Development",
+    "confidence": 0.6750471219388234,
+    "probabilities": {
+      "Cloud Computing": 0.013091734529655872,
+      "Cybersecurity": 0.07333824809323893,
+      "Data Science": 0.22978870591588368,
+      "DevOps": 0.008734189522398109,
+      "Web Development": 0.6750471219388234
+    },
+    "latency_ms": 3.765299974475056,
+    "id": 26,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2870,
+    "pred_class": "Web Development",
+    "confidence": 0.82414475965255,
+    "probabilities": {
+      "Cloud Computing": 0.009986836834201812,
+      "Cybersecurity": 0.04899337257852912,
+      "Data Science": 0.11125212747399091,
+      "DevOps": 0.005622903460728177,
+      "Web Development": 0.82414475965255
+    },
+    "latency_ms": 3.173500008415431,
+    "id": 27,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2296,
+    "pred_class": "Web Development",
+    "confidence": 0.7389759180983779,
+    "probabilities": {
+      "Cloud Computing": 0.010663792114994589,
+      "Cybersecurity": 0.04412415346451002,
+      "Data Science": 0.19461269113132834,
+      "DevOps": 0.011623445190789197,
+      "Web Development": 0.7389759180983779
+    },
+    "latency_ms": 3.3489999477751553,
+    "id": 28,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2195,
+    "pred_class": "Web Development",
+    "confidence": 0.8230053641577273,
+    "probabilities": {
+      "Cloud Computing": 0.00505002798494458,
+      "Cybersecurity": 0.04015074910075657,
+      "Data Science": 0.12007984092003218,
+      "DevOps": 0.011714017836539414,
+      "Web Development": 0.8230053641577273
+    },
+    "latency_ms": 3.2033000024966896,
+    "id": 29,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3189,
+    "pred_class": "Web Development",
+    "confidence": 0.5799751588509742,
+    "probabilities": {
+      "Cloud Computing": 0.017916409006928542,
+      "Cybersecurity": 0.041635660847438936,
+      "Data Science": 0.35678910606520303,
+      "DevOps": 0.003683665229455344,
+      "Web Development": 0.5799751588509742
+    },
+    "latency_ms": 3.74110002303496,
+    "id": 30,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3152,
+    "pred_class": "Web Development",
+    "confidence": 0.7267050437213005,
+    "probabilities": {
+      "Cloud Computing": 0.013062937053595892,
+      "Cybersecurity": 0.030643058138112474,
+      "Data Science": 0.22555030194975761,
+      "DevOps": 0.004038659137233577,
+      "Web Development": 0.7267050437213005
+    },
+    "latency_ms": 3.3708999981172383,
+    "id": 31,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2241,
+    "pred_class": "Web Development",
+    "confidence": 0.8180978418931341,
+    "probabilities": {
+      "Cloud Computing": 0.013478382310268372,
+      "Cybersecurity": 0.05806672378712809,
+      "Data Science": 0.09412371300839306,
+      "DevOps": 0.016233339001076274,
+      "Web Development": 0.8180978418931341
+    },
+    "latency_ms": 3.8096000207588077,
+    "id": 32,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2826,
+    "pred_class": "Web Development",
+    "confidence": 0.7913964175138981,
+    "probabilities": {
+      "Cloud Computing": 0.012257946044425143,
+      "Cybersecurity": 0.037559469348283615,
+      "Data Science": 0.15378967940495952,
+      "DevOps": 0.004996487688433594,
+      "Web Development": 0.7913964175138981
+    },
+    "latency_ms": 3.082500013988465,
+    "id": 33,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2199,
+    "pred_class": "Web Development",
+    "confidence": 0.6699712719138867,
+    "probabilities": {
+      "Cloud Computing": 0.009412037142542896,
+      "Cybersecurity": 0.040328498682215705,
+      "Data Science": 0.27439886889244797,
+      "DevOps": 0.005889323368906726,
+      "Web Development": 0.6699712719138867
+    },
+    "latency_ms": 3.2758000306785107,
+    "id": 34,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2718,
+    "pred_class": "Web Development",
+    "confidence": 0.7507395819639692,
+    "probabilities": {
+      "Cloud Computing": 0.012204239020515458,
+      "Cybersecurity": 0.03718270624053214,
+      "Data Science": 0.19350730662997367,
+      "DevOps": 0.006366166145009631,
+      "Web Development": 0.7507395819639692
+    },
+    "latency_ms": 3.2298999722115695,
+    "id": 35,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2046,
+    "pred_class": "Web Development",
+    "confidence": 0.7738559428632894,
+    "probabilities": {
+      "Cloud Computing": 0.013415303162180254,
+      "Cybersecurity": 0.044935625657008704,
+      "Data Science": 0.1611178389726182,
+      "DevOps": 0.0066752893449034565,
+      "Web Development": 0.7738559428632894
+    },
+    "latency_ms": 3.3798000076785684,
+    "id": 36,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2660,
+    "pred_class": "Web Development",
+    "confidence": 0.7316185331158142,
+    "probabilities": {
+      "Cloud Computing": 0.011477144029894451,
+      "Cybersecurity": 0.03806062079199048,
+      "Data Science": 0.20789478837184686,
+      "DevOps": 0.010948913690454153,
+      "Web Development": 0.7316185331158142
+    },
+    "latency_ms": 3.1556999892927706,
+    "id": 37,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1847,
+    "pred_class": "Web Development",
+    "confidence": 0.6698696088134182,
+    "probabilities": {
+      "Cloud Computing": 0.014434211855055687,
+      "Cybersecurity": 0.05891517072284889,
+      "Data Science": 0.251376466903105,
+      "DevOps": 0.005404541705572219,
+      "Web Development": 0.6698696088134182
+    },
+    "latency_ms": 3.2861000509001315,
+    "id": 38,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3902,
+    "pred_class": "Web Development",
+    "confidence": 0.7761002590297981,
+    "probabilities": {
+      "Cloud Computing": 0.009055734499774726,
+      "Cybersecurity": 0.07219059437032997,
+      "Data Science": 0.13787359901804658,
+      "DevOps": 0.004779813082050665,
+      "Web Development": 0.7761002590297981
+    },
+    "latency_ms": 3.2907999702729285,
+    "id": 39,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2814,
+    "pred_class": "Web Development",
+    "confidence": 0.7537668947522033,
+    "probabilities": {
+      "Cloud Computing": 0.01321425971444955,
+      "Cybersecurity": 0.050079251666122634,
+      "Data Science": 0.1734757178310497,
+      "DevOps": 0.009463876036174913,
+      "Web Development": 0.7537668947522033
+    },
+    "latency_ms": 3.5051999730058014,
+    "id": 40,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3241,
+    "pred_class": "Web Development",
+    "confidence": 0.8134944932097259,
+    "probabilities": {
+      "Cloud Computing": 0.008265208034056384,
+      "Cybersecurity": 0.03859763680274704,
+      "Data Science": 0.1320729511259331,
+      "DevOps": 0.007569710827537583,
+      "Web Development": 0.8134944932097259
+    },
+    "latency_ms": 3.1293000211007893,
+    "id": 41,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2413,
+    "pred_class": "Data Science",
+    "confidence": 0.6358891573211407,
+    "probabilities": {
+      "Cloud Computing": 0.024495136344720676,
+      "Cybersecurity": 0.040786431943688986,
+      "Data Science": 0.6358891573211407,
+      "DevOps": 0.0027432457324207287,
+      "Web Development": 0.29608602865802897
+    },
+    "latency_ms": 3.451299970038235,
+    "id": 42,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2184,
+    "pred_class": "Web Development",
+    "confidence": 0.7401694050492622,
+    "probabilities": {
+      "Cloud Computing": 0.01237607772279585,
+      "Cybersecurity": 0.05886884755943983,
+      "Data Science": 0.18003332265970076,
+      "DevOps": 0.008552347008801262,
+      "Web Development": 0.7401694050492622
+    },
+    "latency_ms": 2.98099999781698,
+    "id": 43,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3521,
+    "pred_class": "Web Development",
+    "confidence": 0.7515741972452857,
+    "probabilities": {
+      "Cloud Computing": 0.01799208073299422,
+      "Cybersecurity": 0.05615228648460321,
+      "Data Science": 0.16796208640558546,
+      "DevOps": 0.006319349131531331,
+      "Web Development": 0.7515741972452857
+    },
+    "latency_ms": 3.918000031262636,
+    "id": 44,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1950,
+    "pred_class": "Web Development",
+    "confidence": 0.700865391122892,
+    "probabilities": {
+      "Cloud Computing": 0.009903974123760751,
+      "Cybersecurity": 0.051469706389239644,
+      "Data Science": 0.22775701900264292,
+      "DevOps": 0.010003909361464813,
+      "Web Development": 0.700865391122892
+    },
+    "latency_ms": 3.3455999800935388,
+    "id": 45,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2814,
+    "pred_class": "Web Development",
+    "confidence": 0.7537668947522033,
+    "probabilities": {
+      "Cloud Computing": 0.01321425971444955,
+      "Cybersecurity": 0.050079251666122634,
+      "Data Science": 0.1734757178310497,
+      "DevOps": 0.009463876036174913,
+      "Web Development": 0.7537668947522033
+    },
+    "latency_ms": 3.438300045672804,
+    "id": 46,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1323,
+    "pred_class": "Web Development",
+    "confidence": 0.6470118187748318,
+    "probabilities": {
+      "Cloud Computing": 0.00686104344120921,
+      "Cybersecurity": 0.08106975420852126,
+      "Data Science": 0.23381181982087695,
+      "DevOps": 0.031245563754560633,
+      "Web Development": 0.6470118187748318
+    },
+    "latency_ms": 2.986299979966134,
+    "id": 47,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2376,
+    "pred_class": "Web Development",
+    "confidence": 0.7807721478118045,
+    "probabilities": {
+      "Cloud Computing": 0.010369488141625523,
+      "Cybersecurity": 0.04796689339797597,
+      "Data Science": 0.14684419688333644,
+      "DevOps": 0.014047273765257587,
+      "Web Development": 0.7807721478118045
+    },
+    "latency_ms": 3.9216000004671514,
+    "id": 48,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2150,
+    "pred_class": "Web Development",
+    "confidence": 0.728392429048582,
+    "probabilities": {
+      "Cloud Computing": 0.015027776911009516,
+      "Cybersecurity": 0.05328561278555701,
+      "Data Science": 0.19605385069393347,
+      "DevOps": 0.007240330560918053,
+      "Web Development": 0.728392429048582
+    },
+    "latency_ms": 3.048500046133995,
+    "id": 49,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1362,
+    "pred_class": "Web Development",
+    "confidence": 0.8649832772498053,
+    "probabilities": {
+      "Cloud Computing": 0.010235494498570025,
+      "Cybersecurity": 0.034473668370319836,
+      "Data Science": 0.08031644944071828,
+      "DevOps": 0.009991110440586603,
+      "Web Development": 0.8649832772498053
+    },
+    "latency_ms": 3.2760000322014093,
+    "id": 50,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2270,
+    "pred_class": "Web Development",
+    "confidence": 0.5703158656384233,
+    "probabilities": {
+      "Cloud Computing": 0.015290960884579218,
+      "Cybersecurity": 0.0522669917689985,
+      "Data Science": 0.35227463527203184,
+      "DevOps": 0.009851546435967008,
+      "Web Development": 0.5703158656384233
+    },
+    "latency_ms": 3.0641999910585582,
+    "id": 51,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2543,
+    "pred_class": "Web Development",
+    "confidence": 0.6987412027233237,
+    "probabilities": {
+      "Cloud Computing": 0.01614947933246363,
+      "Cybersecurity": 0.033871480732104324,
+      "Data Science": 0.24622823512877248,
+      "DevOps": 0.005009602083335818,
+      "Web Development": 0.6987412027233237
+    },
+    "latency_ms": 3.543799975886941,
+    "id": 52,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2003,
+    "pred_class": "Web Development",
+    "confidence": 0.7268960422937227,
+    "probabilities": {
+      "Cloud Computing": 0.009402709914438059,
+      "Cybersecurity": 0.04971633367136692,
+      "Data Science": 0.2001235648621446,
+      "DevOps": 0.01386134925832771,
+      "Web Development": 0.7268960422937227
+    },
+    "latency_ms": 3.105300012975931,
+    "id": 53,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1806,
+    "pred_class": "Web Development",
+    "confidence": 0.7963972724690662,
+    "probabilities": {
+      "Cloud Computing": 0.006886955169557606,
+      "Cybersecurity": 0.05479106860202902,
+      "Data Science": 0.12844139843678912,
+      "DevOps": 0.013483305322557976,
+      "Web Development": 0.7963972724690662
+    },
+    "latency_ms": 3.563000005669892,
+    "id": 54,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1814,
+    "pred_class": "Web Development",
+    "confidence": 0.7499759706755393,
+    "probabilities": {
+      "Cloud Computing": 0.008664838413238726,
+      "Cybersecurity": 0.03795019566506157,
+      "Data Science": 0.19634225696903113,
+      "DevOps": 0.007066738277129325,
+      "Web Development": 0.7499759706755393
+    },
+    "latency_ms": 3.0410000472329557,
+    "id": 55,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2361,
+    "pred_class": "Web Development",
+    "confidence": 0.7284966285391439,
+    "probabilities": {
+      "Cloud Computing": 0.005969126694279068,
+      "Cybersecurity": 0.07371765695728774,
+      "Data Science": 0.1659517442202869,
+      "DevOps": 0.025864843589002495,
+      "Web Development": 0.7284966285391439
+    },
+    "latency_ms": 3.1512000132352114,
+    "id": 56,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2284,
+    "pred_class": "Web Development",
+    "confidence": 0.8420437335397523,
+    "probabilities": {
+      "Cloud Computing": 0.007168502961907686,
+      "Cybersecurity": 0.03647040036367809,
+      "Data Science": 0.1073631679664722,
+      "DevOps": 0.006954195168189824,
+      "Web Development": 0.8420437335397523
+    },
+    "latency_ms": 3.1245999853126705,
+    "id": 57,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1353,
+    "pred_class": "Web Development",
+    "confidence": 0.717609141386264,
+    "probabilities": {
+      "Cloud Computing": 0.008372891446375721,
+      "Cybersecurity": 0.07519626227137632,
+      "Data Science": 0.18596805425815344,
+      "DevOps": 0.012853650637830488,
+      "Web Development": 0.717609141386264
+    },
+    "latency_ms": 3.0380000243894756,
+    "id": 58,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2268,
+    "pred_class": "Web Development",
+    "confidence": 0.8364916158504674,
+    "probabilities": {
+      "Cloud Computing": 0.006381764690075209,
+      "Cybersecurity": 0.03605052802144263,
+      "Data Science": 0.11233576098597782,
+      "DevOps": 0.008740330452037122,
+      "Web Development": 0.8364916158504674
+    },
+    "latency_ms": 3.1767000327818096,
+    "id": 59,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2369,
+    "pred_class": "Data Science",
+    "confidence": 0.47251111645657284,
+    "probabilities": {
+      "Cloud Computing": 0.018210543695911047,
+      "Cybersecurity": 0.057708208570373246,
+      "Data Science": 0.47251111645657284,
+      "DevOps": 0.007739150816217738,
+      "Web Development": 0.4438309804609252
+    },
+    "latency_ms": 2.955299976747483,
+    "id": 60,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1943,
+    "pred_class": "Web Development",
+    "confidence": 0.4959976898797155,
+    "probabilities": {
+      "Cloud Computing": 0.01787025277127957,
+      "Cybersecurity": 0.10230770096776513,
+      "Data Science": 0.37492933194193545,
+      "DevOps": 0.008895024439304362,
+      "Web Development": 0.4959976898797155
+    },
+    "latency_ms": 3.376099979504943,
+    "id": 61,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1431,
+    "pred_class": "Web Development",
+    "confidence": 0.6736575180979025,
+    "probabilities": {
+      "Cloud Computing": 0.009708976432126072,
+      "Cybersecurity": 0.07228104769004304,
+      "Data Science": 0.22727059100016628,
+      "DevOps": 0.017081866779762124,
+      "Web Development": 0.6736575180979025
+    },
+    "latency_ms": 2.9143999563530087,
+    "id": 62,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2147,
+    "pred_class": "Data Science",
+    "confidence": 0.5867354215321656,
+    "probabilities": {
+      "Cloud Computing": 0.009285487704914951,
+      "Cybersecurity": 0.05201468067911998,
+      "Data Science": 0.5867354215321656,
+      "DevOps": 0.008143883842899718,
+      "Web Development": 0.34382052624089976
+    },
+    "latency_ms": 3.7807999760843813,
+    "id": 63,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1949,
+    "pred_class": "Web Development",
+    "confidence": 0.6175374315464386,
+    "probabilities": {
+      "Cloud Computing": 0.008925674205006253,
+      "Cybersecurity": 0.0741067453825606,
+      "Data Science": 0.2764608367754994,
+      "DevOps": 0.022969312090495138,
+      "Web Development": 0.6175374315464386
+    },
+    "latency_ms": 3.108499979134649,
+    "id": 64,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 27,
+    "pred_class": "Web Development",
+    "confidence": 0.6373016582188756,
+    "probabilities": {
+      "Cloud Computing": 0.009438738199420026,
+      "Cybersecurity": 0.08593176084370846,
+      "Data Science": 0.23698646008393545,
+      "DevOps": 0.030341382654060327,
+      "Web Development": 0.6373016582188756
+    },
+    "latency_ms": 3.1593000167049468,
+    "id": 65,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3232,
+    "pred_class": "Web Development",
+    "confidence": 0.6782762589528172,
+    "probabilities": {
+      "Cloud Computing": 0.022554117720166238,
+      "Cybersecurity": 0.07252159041668765,
+      "Data Science": 0.21673561871537964,
+      "DevOps": 0.009912414194949313,
+      "Web Development": 0.6782762589528172
+    },
+    "latency_ms": 3.119700006209314,
+    "id": 66,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2459,
+    "pred_class": "Web Development",
+    "confidence": 0.74298806315936,
+    "probabilities": {
+      "Cloud Computing": 0.011823737134974517,
+      "Cybersecurity": 0.02853239589985939,
+      "Data Science": 0.21156334501408475,
+      "DevOps": 0.005092458791721412,
+      "Web Development": 0.74298806315936
+    },
+    "latency_ms": 3.7335999659262598,
+    "id": 67,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1237,
+    "pred_class": "Web Development",
+    "confidence": 0.5615741515008024,
+    "probabilities": {
+      "Cloud Computing": 0.007113966486474041,
+      "Cybersecurity": 0.04497337896553262,
+      "Data Science": 0.37727916236126735,
+      "DevOps": 0.009059340685923668,
+      "Web Development": 0.5615741515008024
+    },
+    "latency_ms": 2.9458999633789062,
+    "id": 68,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1241,
+    "pred_class": "Web Development",
+    "confidence": 0.732031877259633,
+    "probabilities": {
+      "Cloud Computing": 0.01236983020219223,
+      "Cybersecurity": 0.045565119631889854,
+      "Data Science": 0.20004989350486485,
+      "DevOps": 0.009983279401420039,
+      "Web Development": 0.732031877259633
+    },
+    "latency_ms": 3.1726000015623868,
+    "id": 69,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1735,
+    "pred_class": "Web Development",
+    "confidence": 0.6031802904226794,
+    "probabilities": {
+      "Cloud Computing": 0.008452594458601076,
+      "Cybersecurity": 0.050203964653823194,
+      "Data Science": 0.329213025819539,
+      "DevOps": 0.008950124645357427,
+      "Web Development": 0.6031802904226794
+    },
+    "latency_ms": 2.937000012025237,
+    "id": 70,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1832,
+    "pred_class": "Web Development",
+    "confidence": 0.809214608393118,
+    "probabilities": {
+      "Cloud Computing": 0.008705018679162334,
+      "Cybersecurity": 0.02669508764117235,
+      "Data Science": 0.14614251598126599,
+      "DevOps": 0.009242769305281315,
+      "Web Development": 0.809214608393118
+    },
+    "latency_ms": 3.2651000074110925,
+    "id": 71,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1776,
+    "pred_class": "Data Science",
+    "confidence": 0.5423544352991703,
+    "probabilities": {
+      "Cloud Computing": 0.010729437975173664,
+      "Cybersecurity": 0.028423694748965132,
+      "Data Science": 0.5423544352991703,
+      "DevOps": 0.005994355957970914,
+      "Web Development": 0.4124980760187199
+    },
+    "latency_ms": 2.956799988169223,
+    "id": 72,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1317,
+    "pred_class": "Web Development",
+    "confidence": 0.812495559179716,
+    "probabilities": {
+      "Cloud Computing": 0.005209927182538138,
+      "Cybersecurity": 0.04638829113489431,
+      "Data Science": 0.11332600834836085,
+      "DevOps": 0.02258021415449074,
+      "Web Development": 0.812495559179716
+    },
+    "latency_ms": 3.2105999998748302,
+    "id": 73,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3019,
+    "pred_class": "Web Development",
+    "confidence": 0.6140348871618401,
+    "probabilities": {
+      "Cloud Computing": 0.012799375978346827,
+      "Cybersecurity": 0.038521733607377054,
+      "Data Science": 0.3292883101463858,
+      "DevOps": 0.005355693106050142,
+      "Web Development": 0.6140348871618401
+    },
+    "latency_ms": 3.061800030991435,
+    "id": 74,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5516,
+    "pred_class": "Web Development",
+    "confidence": 0.6963107329783512,
+    "probabilities": {
+      "Cloud Computing": 0.028380480272699606,
+      "Cybersecurity": 0.02963549120050273,
+      "Data Science": 0.24357840083011073,
+      "DevOps": 0.0020948947183356504,
+      "Web Development": 0.6963107329783512
+    },
+    "latency_ms": 3.460700041614473,
+    "id": 75,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5109,
+    "pred_class": "Web Development",
+    "confidence": 0.6807123815241544,
+    "probabilities": {
+      "Cloud Computing": 0.02343526712113352,
+      "Cybersecurity": 0.028251870657021273,
+      "Data Science": 0.2650303401229312,
+      "DevOps": 0.0025701405747597154,
+      "Web Development": 0.6807123815241544
+    },
+    "latency_ms": 3.385899995919317,
+    "id": 76,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5890,
+    "pred_class": "Web Development",
+    "confidence": 0.8295223801464641,
+    "probabilities": {
+      "Cloud Computing": 0.013808393958118193,
+      "Cybersecurity": 0.03418220057006252,
+      "Data Science": 0.1186839043646993,
+      "DevOps": 0.003803120960655819,
+      "Web Development": 0.8295223801464641
+    },
+    "latency_ms": 3.525799955241382,
+    "id": 77,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5688,
+    "pred_class": "Web Development",
+    "confidence": 0.7968385478137918,
+    "probabilities": {
+      "Cloud Computing": 0.01787780751269242,
+      "Cybersecurity": 0.026647849394468365,
+      "Data Science": 0.15591338071315222,
+      "DevOps": 0.0027224145658952996,
+      "Web Development": 0.7968385478137918
+    },
+    "latency_ms": 3.3364000264555216,
+    "id": 78,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5832,
+    "pred_class": "Web Development",
+    "confidence": 0.7488172478252,
+    "probabilities": {
+      "Cloud Computing": 0.02819969151586239,
+      "Cybersecurity": 0.021965651266634703,
+      "Data Science": 0.1980553729700108,
+      "DevOps": 0.002962036422292268,
+      "Web Development": 0.7488172478252
+    },
+    "latency_ms": 3.5286000347696245,
+    "id": 79,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3313,
+    "pred_class": "Web Development",
+    "confidence": 0.7371316074182724,
+    "probabilities": {
+      "Cloud Computing": 0.011201624173457077,
+      "Cybersecurity": 0.04300998179798551,
+      "Data Science": 0.20119225306329186,
+      "DevOps": 0.007464533546993152,
+      "Web Development": 0.7371316074182724
+    },
+    "latency_ms": 3.1307999743148685,
+    "id": 80,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2977,
+    "pred_class": "Web Development",
+    "confidence": 0.5834358769968031,
+    "probabilities": {
+      "Cloud Computing": 0.02430769007360565,
+      "Cybersecurity": 0.04155120948271746,
+      "Data Science": 0.3477430383172628,
+      "DevOps": 0.002962185129611029,
+      "Web Development": 0.5834358769968031
+    },
+    "latency_ms": 3.2142000272870064,
+    "id": 81,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5096,
+    "pred_class": "Web Development",
+    "confidence": 0.666700615942668,
+    "probabilities": {
+      "Cloud Computing": 0.019080308917348177,
+      "Cybersecurity": 0.019291068299411195,
+      "Data Science": 0.2927985542774208,
+      "DevOps": 0.0021294525631517284,
+      "Web Development": 0.666700615942668
+    },
+    "latency_ms": 3.2978999661281705,
+    "id": 82,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5216,
+    "pred_class": "Web Development",
+    "confidence": 0.7704378822828126,
+    "probabilities": {
+      "Cloud Computing": 0.020936265516469453,
+      "Cybersecurity": 0.028909297134886623,
+      "Data Science": 0.17465108354666242,
+      "DevOps": 0.005065471519168916,
+      "Web Development": 0.7704378822828126
+    },
+    "latency_ms": 3.481100022327155,
+    "id": 83,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4831,
+    "pred_class": "Web Development",
+    "confidence": 0.6850828914201309,
+    "probabilities": {
+      "Cloud Computing": 0.016089990138691772,
+      "Cybersecurity": 0.0248880914279709,
+      "Data Science": 0.2692617433060264,
+      "DevOps": 0.004677283707180008,
+      "Web Development": 0.6850828914201309
+    },
+    "latency_ms": 3.3133000251837075,
+    "id": 84,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5581,
+    "pred_class": "Web Development",
+    "confidence": 0.7133099538382073,
+    "probabilities": {
+      "Cloud Computing": 0.014139086214696419,
+      "Cybersecurity": 0.038968652676176566,
+      "Data Science": 0.22714055625129012,
+      "DevOps": 0.006441751019629539,
+      "Web Development": 0.7133099538382073
+    },
+    "latency_ms": 3.6303999950177968,
+    "id": 85,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 7864,
+    "pred_class": "Web Development",
+    "confidence": 0.721599731798022,
+    "probabilities": {
+      "Cloud Computing": 0.015414953243989019,
+      "Cybersecurity": 0.035419734965905496,
+      "Data Science": 0.2233761329695881,
+      "DevOps": 0.004189447022495378,
+      "Web Development": 0.721599731798022
+    },
+    "latency_ms": 3.569900000002235,
+    "id": 86,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2686,
+    "pred_class": "Web Development",
+    "confidence": 0.7625169380860563,
+    "probabilities": {
+      "Cloud Computing": 0.007771949477351869,
+      "Cybersecurity": 0.054939854457664236,
+      "Data Science": 0.16774618194245614,
+      "DevOps": 0.007025076036471597,
+      "Web Development": 0.7625169380860563
+    },
+    "latency_ms": 3.2246000482700765,
+    "id": 87,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4851,
+    "pred_class": "Web Development",
+    "confidence": 0.7877756326879674,
+    "probabilities": {
+      "Cloud Computing": 0.016823037667132692,
+      "Cybersecurity": 0.024705833688784887,
+      "Data Science": 0.16690015217898457,
+      "DevOps": 0.0037953437771304803,
+      "Web Development": 0.7877756326879674
+    },
+    "latency_ms": 3.29799996688962,
+    "id": 88,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5938,
+    "pred_class": "Web Development",
+    "confidence": 0.8576422974724004,
+    "probabilities": {
+      "Cloud Computing": 0.010501891018659736,
+      "Cybersecurity": 0.028512280621094045,
+      "Data Science": 0.09897489858268078,
+      "DevOps": 0.004368632305164924,
+      "Web Development": 0.8576422974724004
+    },
+    "latency_ms": 3.389800025615841,
+    "id": 89,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 10830,
+    "pred_class": "Web Development",
+    "confidence": 0.6146417200488282,
+    "probabilities": {
+      "Cloud Computing": 0.01935527563375939,
+      "Cybersecurity": 0.058841130993974144,
+      "Data Science": 0.30289966446415706,
+      "DevOps": 0.0042622088592811445,
+      "Web Development": 0.6146417200488282
+    },
+    "latency_ms": 3.8280999870039523,
+    "id": 90,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6911,
+    "pred_class": "Web Development",
+    "confidence": 0.6557026487540052,
+    "probabilities": {
+      "Cloud Computing": 0.025876429482213758,
+      "Cybersecurity": 0.03494992011198411,
+      "Data Science": 0.2797318816313544,
+      "DevOps": 0.0037391200204426496,
+      "Web Development": 0.6557026487540052
+    },
+    "latency_ms": 3.714699996635318,
+    "id": 91,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8231,
+    "pred_class": "Web Development",
+    "confidence": 0.6288265292320216,
+    "probabilities": {
+      "Cloud Computing": 0.021889610403920845,
+      "Cybersecurity": 0.028563317168950147,
+      "Data Science": 0.3154835820615435,
+      "DevOps": 0.0052369611335639134,
+      "Web Development": 0.6288265292320216
+    },
+    "latency_ms": 3.5974999773316085,
+    "id": 92,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5036,
+    "pred_class": "Web Development",
+    "confidence": 0.7824614164084338,
+    "probabilities": {
+      "Cloud Computing": 0.01874436557234279,
+      "Cybersecurity": 0.040972787665555795,
+      "Data Science": 0.15389352733407696,
+      "DevOps": 0.003927903019590727,
+      "Web Development": 0.7824614164084338
+    },
+    "latency_ms": 3.664699965156615,
+    "id": 93,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5253,
+    "pred_class": "Web Development",
+    "confidence": 0.7318633176042438,
+    "probabilities": {
+      "Cloud Computing": 0.014212276071557558,
+      "Cybersecurity": 0.040055652106686684,
+      "Data Science": 0.21163252597156004,
+      "DevOps": 0.0022362282459518976,
+      "Web Development": 0.7318633176042438
+    },
+    "latency_ms": 3.511600021738559,
+    "id": 94,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2141,
+    "pred_class": "Web Development",
+    "confidence": 0.6793281750262865,
+    "probabilities": {
+      "Cloud Computing": 0.015116763595029253,
+      "Cybersecurity": 0.0328605476711899,
+      "Data Science": 0.26780911324747253,
+      "DevOps": 0.004885400460021865,
+      "Web Development": 0.6793281750262865
+    },
+    "latency_ms": 4.28340001963079,
+    "id": 95,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1842,
+    "pred_class": "Web Development",
+    "confidence": 0.6916982553113223,
+    "probabilities": {
+      "Cloud Computing": 0.011550733812154757,
+      "Cybersecurity": 0.07464186196503816,
+      "Data Science": 0.20611108836371486,
+      "DevOps": 0.015998060547769755,
+      "Web Development": 0.6916982553113223
+    },
+    "latency_ms": 3.235099953599274,
+    "id": 96,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5945,
+    "pred_class": "Web Development",
+    "confidence": 0.6567823923614506,
+    "probabilities": {
+      "Cloud Computing": 0.03093127081446879,
+      "Cybersecurity": 0.03568193216259764,
+      "Data Science": 0.27394832380482004,
+      "DevOps": 0.0026560808566628187,
+      "Web Development": 0.6567823923614506
+    },
+    "latency_ms": 3.687600023113191,
+    "id": 97,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5312,
+    "pred_class": "Web Development",
+    "confidence": 0.7738616454575327,
+    "probabilities": {
+      "Cloud Computing": 0.012191401521620685,
+      "Cybersecurity": 0.044032394854441256,
+      "Data Science": 0.16478515426257742,
+      "DevOps": 0.005129403903827915,
+      "Web Development": 0.7738616454575327
+    },
+    "latency_ms": 3.5504999686963856,
+    "id": 98,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5879,
+    "pred_class": "Web Development",
+    "confidence": 0.7506311896696974,
+    "probabilities": {
+      "Cloud Computing": 0.020935263487984457,
+      "Cybersecurity": 0.03345341772907614,
+      "Data Science": 0.19225299006765867,
+      "DevOps": 0.0027271390455833313,
+      "Web Development": 0.7506311896696974
+    },
+    "latency_ms": 3.576099989004433,
+    "id": 99,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8101,
+    "pred_class": "Web Development",
+    "confidence": 0.8433579135491869,
+    "probabilities": {
+      "Cloud Computing": 0.0130733125728522,
+      "Cybersecurity": 0.03203362016297871,
+      "Data Science": 0.10791299122390421,
+      "DevOps": 0.003622162491077944,
+      "Web Development": 0.8433579135491869
+    },
+    "latency_ms": 3.989799995906651,
+    "id": 100,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3305,
+    "pred_class": "Web Development",
+    "confidence": 0.6686413456516883,
+    "probabilities": {
+      "Cloud Computing": 0.015259676490243679,
+      "Cybersecurity": 0.025959496643987234,
+      "Data Science": 0.2866271801558642,
+      "DevOps": 0.00351230105821662,
+      "Web Development": 0.6686413456516883
+    },
+    "latency_ms": 3.19580000359565,
+    "id": 101,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6325,
+    "pred_class": "Web Development",
+    "confidence": 0.7732186318195448,
+    "probabilities": {
+      "Cloud Computing": 0.01285538205395163,
+      "Cybersecurity": 0.03705560719533123,
+      "Data Science": 0.17249852270965077,
+      "DevOps": 0.0043718562215216685,
+      "Web Development": 0.7732186318195448
+    },
+    "latency_ms": 4.088699992280453,
+    "id": 102,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6817,
+    "pred_class": "Web Development",
+    "confidence": 0.8089214227866549,
+    "probabilities": {
+      "Cloud Computing": 0.014276118604095661,
+      "Cybersecurity": 0.04688748625823086,
+      "Data Science": 0.12727137970516514,
+      "DevOps": 0.0026435926458534013,
+      "Web Development": 0.8089214227866549
+    },
+    "latency_ms": 3.361399983987212,
+    "id": 103,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4301,
+    "pred_class": "Web Development",
+    "confidence": 0.8089696197320206,
+    "probabilities": {
+      "Cloud Computing": 0.00856416783260516,
+      "Cybersecurity": 0.0401572684644953,
+      "Data Science": 0.1351158482569686,
+      "DevOps": 0.007193095713910363,
+      "Web Development": 0.8089696197320206
+    },
+    "latency_ms": 3.9052999927662313,
+    "id": 104,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2007,
+    "pred_class": "Web Development",
+    "confidence": 0.526538090232002,
+    "probabilities": {
+      "Cloud Computing": 0.010967809547184616,
+      "Cybersecurity": 0.037181000064991455,
+      "Data Science": 0.4203305442272173,
+      "DevOps": 0.004982555928604455,
+      "Web Development": 0.526538090232002
+    },
+    "latency_ms": 2.935500000603497,
+    "id": 105,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4701,
+    "pred_class": "Web Development",
+    "confidence": 0.6481443063572583,
+    "probabilities": {
+      "Cloud Computing": 0.02148331398796021,
+      "Cybersecurity": 0.026764439691802356,
+      "Data Science": 0.2999421255335896,
+      "DevOps": 0.0036658144293896444,
+      "Web Development": 0.6481443063572583
+    },
+    "latency_ms": 3.8893999881111085,
+    "id": 106,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8254,
+    "pred_class": "Data Science",
+    "confidence": 0.611132273821827,
+    "probabilities": {
+      "Cloud Computing": 0.021358955561153657,
+      "Cybersecurity": 0.02435080131186083,
+      "Data Science": 0.611132273821827,
+      "DevOps": 0.002120739364322389,
+      "Web Development": 0.34103722994083624
+    },
+    "latency_ms": 3.6082000005990267,
+    "id": 107,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5539,
+    "pred_class": "Web Development",
+    "confidence": 0.6253573280648884,
+    "probabilities": {
+      "Cloud Computing": 0.03375893753865559,
+      "Cybersecurity": 0.02762021625691018,
+      "Data Science": 0.3105649883791707,
+      "DevOps": 0.002698529760375111,
+      "Web Development": 0.6253573280648884
+    },
+    "latency_ms": 3.6786000127904117,
+    "id": 108,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1712,
+    "pred_class": "Web Development",
+    "confidence": 0.719850298604066,
+    "probabilities": {
+      "Cloud Computing": 0.019518860238363127,
+      "Cybersecurity": 0.05062812320883292,
+      "Data Science": 0.20307857678706456,
+      "DevOps": 0.006924141161673382,
+      "Web Development": 0.719850298604066
+    },
+    "latency_ms": 2.9977000085636973,
+    "id": 109,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5082,
+    "pred_class": "Web Development",
+    "confidence": 0.8246786064668756,
+    "probabilities": {
+      "Cloud Computing": 0.016539711974987704,
+      "Cybersecurity": 0.030567203238077413,
+      "Data Science": 0.125184567251573,
+      "DevOps": 0.0030299110684862277,
+      "Web Development": 0.8246786064668756
+    },
+    "latency_ms": 3.702300018630922,
+    "id": 110,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5608,
+    "pred_class": "Web Development",
+    "confidence": 0.6350711789752956,
+    "probabilities": {
+      "Cloud Computing": 0.025340359839364456,
+      "Cybersecurity": 0.036467582583442494,
+      "Data Science": 0.30018965729449815,
+      "DevOps": 0.002931221307399184,
+      "Web Development": 0.6350711789752956
+    },
+    "latency_ms": 3.4839999862015247,
+    "id": 111,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5306,
+    "pred_class": "Web Development",
+    "confidence": 0.7634931632872637,
+    "probabilities": {
+      "Cloud Computing": 0.011501349270879532,
+      "Cybersecurity": 0.02432673154610581,
+      "Data Science": 0.1982695489665873,
+      "DevOps": 0.0024092069291636797,
+      "Web Development": 0.7634931632872637
+    },
+    "latency_ms": 3.4619999933056533,
+    "id": 112,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1844,
+    "pred_class": "Web Development",
+    "confidence": 0.6233646510701096,
+    "probabilities": {
+      "Cloud Computing": 0.011106556690342034,
+      "Cybersecurity": 0.0740844018521918,
+      "Data Science": 0.2833637872692575,
+      "DevOps": 0.008080603118099059,
+      "Web Development": 0.6233646510701096
+    },
+    "latency_ms": 2.9575999942608178,
+    "id": 113,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5373,
+    "pred_class": "Web Development",
+    "confidence": 0.6665137867284361,
+    "probabilities": {
+      "Cloud Computing": 0.02319752162974943,
+      "Cybersecurity": 0.02809094234288726,
+      "Data Science": 0.2797820177096892,
+      "DevOps": 0.0024157315892379366,
+      "Web Development": 0.6665137867284361
+    },
+    "latency_ms": 3.499999991618097,
+    "id": 114,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4950,
+    "pred_class": "Web Development",
+    "confidence": 0.7284351564032193,
+    "probabilities": {
+      "Cloud Computing": 0.02153938764630468,
+      "Cybersecurity": 0.05220605644284791,
+      "Data Science": 0.19338279168088462,
+      "DevOps": 0.004436607826743499,
+      "Web Development": 0.7284351564032193
+    },
+    "latency_ms": 3.407199983485043,
+    "id": 115,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5917,
+    "pred_class": "Web Development",
+    "confidence": 0.7505841112756851,
+    "probabilities": {
+      "Cloud Computing": 0.0162409662230625,
+      "Cybersecurity": 0.0276542992878094,
+      "Data Science": 0.20179343252095974,
+      "DevOps": 0.0037271906924832383,
+      "Web Development": 0.7505841112756851
+    },
+    "latency_ms": 3.5146999871358275,
+    "id": 116,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5744,
+    "pred_class": "Web Development",
+    "confidence": 0.7780303990272988,
+    "probabilities": {
+      "Cloud Computing": 0.017214005690009738,
+      "Cybersecurity": 0.03797591413148508,
+      "Data Science": 0.16237556673443967,
+      "DevOps": 0.004404114416766745,
+      "Web Development": 0.7780303990272988
+    },
+    "latency_ms": 3.4676999785006046,
+    "id": 117,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5401,
+    "pred_class": "Web Development",
+    "confidence": 0.7149524928489939,
+    "probabilities": {
+      "Cloud Computing": 0.01736698058733934,
+      "Cybersecurity": 0.03139205141507932,
+      "Data Science": 0.2334283722651683,
+      "DevOps": 0.0028601028834190057,
+      "Web Development": 0.7149524928489939
+    },
+    "latency_ms": 3.3303999807685614,
+    "id": 118,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4490,
+    "pred_class": "Web Development",
+    "confidence": 0.8187454138095285,
+    "probabilities": {
+      "Cloud Computing": 0.01679828571124745,
+      "Cybersecurity": 0.02951879850709669,
+      "Data Science": 0.12950115062071604,
+      "DevOps": 0.005436351351411354,
+      "Web Development": 0.8187454138095285
+    },
+    "latency_ms": 3.542100021149963,
+    "id": 119,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2869,
+    "pred_class": "Web Development",
+    "confidence": 0.545176590734127,
+    "probabilities": {
+      "Cloud Computing": 0.016413055722045523,
+      "Cybersecurity": 0.04234230540728714,
+      "Data Science": 0.3914142604340152,
+      "DevOps": 0.004653787702525029,
+      "Web Development": 0.545176590734127
+    },
+    "latency_ms": 3.238599980250001,
+    "id": 120,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5899,
+    "pred_class": "Web Development",
+    "confidence": 0.7880711404620147,
+    "probabilities": {
+      "Cloud Computing": 0.009892007024743844,
+      "Cybersecurity": 0.025215849338877393,
+      "Data Science": 0.17416982142647686,
+      "DevOps": 0.0026511817478872255,
+      "Web Development": 0.7880711404620147
+    },
+    "latency_ms": 3.6665000370703638,
+    "id": 121,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5916,
+    "pred_class": "Web Development",
+    "confidence": 0.8312104746668199,
+    "probabilities": {
+      "Cloud Computing": 0.01044395074855135,
+      "Cybersecurity": 0.024034259068389158,
+      "Data Science": 0.1300582807902512,
+      "DevOps": 0.0042530347259884405,
+      "Web Development": 0.8312104746668199
+    },
+    "latency_ms": 3.414599981624633,
+    "id": 122,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4411,
+    "pred_class": "Web Development",
+    "confidence": 0.5672279696864015,
+    "probabilities": {
+      "Cloud Computing": 0.011169181318754306,
+      "Cybersecurity": 0.043159615291731845,
+      "Data Science": 0.37305894227043057,
+      "DevOps": 0.00538429143268177,
+      "Web Development": 0.5672279696864015
+    },
+    "latency_ms": 3.424399998039007,
+    "id": 123,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3488,
+    "pred_class": "Web Development",
+    "confidence": 0.6725583381364977,
+    "probabilities": {
+      "Cloud Computing": 0.021607119450908978,
+      "Cybersecurity": 0.029016668656432855,
+      "Data Science": 0.2713261245963729,
+      "DevOps": 0.00549174915978756,
+      "Web Development": 0.6725583381364977
+    },
+    "latency_ms": 3.1313999788835645,
+    "id": 124,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5920,
+    "pred_class": "Web Development",
+    "confidence": 0.6234227841665587,
+    "probabilities": {
+      "Cloud Computing": 0.026931815526700174,
+      "Cybersecurity": 0.03785328795582788,
+      "Data Science": 0.30812714781894457,
+      "DevOps": 0.0036649645319686065,
+      "Web Development": 0.6234227841665587
+    },
+    "latency_ms": 3.6110999644733965,
+    "id": 125,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6741,
+    "pred_class": "Web Development",
+    "confidence": 0.6289904036625039,
+    "probabilities": {
+      "Cloud Computing": 0.02770793482038837,
+      "Cybersecurity": 0.0766482034719922,
+      "Data Science": 0.2618882579083592,
+      "DevOps": 0.004765200136756326,
+      "Web Development": 0.6289904036625039
+    },
+    "latency_ms": 3.573699970729649,
+    "id": 126,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5274,
+    "pred_class": "Web Development",
+    "confidence": 0.6385013575530424,
+    "probabilities": {
+      "Cloud Computing": 0.0259430477958786,
+      "Cybersecurity": 0.02124408971234513,
+      "Data Science": 0.3119344224200275,
+      "DevOps": 0.002377082518706337,
+      "Web Development": 0.6385013575530424
+    },
+    "latency_ms": 3.597399976570159,
+    "id": 127,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4895,
+    "pred_class": "Data Science",
+    "confidence": 0.47251857983550777,
+    "probabilities": {
+      "Cloud Computing": 0.028109130864428723,
+      "Cybersecurity": 0.05653590613389099,
+      "Data Science": 0.47251857983550777,
+      "DevOps": 0.006083422647804995,
+      "Web Development": 0.43675296051836743
+    },
+    "latency_ms": 3.2302000327035785,
+    "id": 128,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4854,
+    "pred_class": "Web Development",
+    "confidence": 0.7812151351526113,
+    "probabilities": {
+      "Cloud Computing": 0.01850640769972159,
+      "Cybersecurity": 0.04121190702362104,
+      "Data Science": 0.1567484233659194,
+      "DevOps": 0.0023181267581268198,
+      "Web Development": 0.7812151351526113
+    },
+    "latency_ms": 3.4513999707996845,
+    "id": 129,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6640,
+    "pred_class": "Web Development",
+    "confidence": 0.7629681609728401,
+    "probabilities": {
+      "Cloud Computing": 0.025033884656307646,
+      "Cybersecurity": 0.02450795940465989,
+      "Data Science": 0.1850407508552571,
+      "DevOps": 0.0024492441109350916,
+      "Web Development": 0.7629681609728401
+    },
+    "latency_ms": 3.3928000484593213,
+    "id": 130,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4968,
+    "pred_class": "Web Development",
+    "confidence": 0.7943019632639208,
+    "probabilities": {
+      "Cloud Computing": 0.012634915153535329,
+      "Cybersecurity": 0.029328975158452886,
+      "Data Science": 0.160505357255491,
+      "DevOps": 0.0032287891686000143,
+      "Web Development": 0.7943019632639208
+    },
+    "latency_ms": 3.747600014321506,
+    "id": 131,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4140,
+    "pred_class": "Web Development",
+    "confidence": 0.7857333367872013,
+    "probabilities": {
+      "Cloud Computing": 0.011725761190554582,
+      "Cybersecurity": 0.041603042442661976,
+      "Data Science": 0.15535237235835692,
+      "DevOps": 0.0055854872212253385,
+      "Web Development": 0.7857333367872013
+    },
+    "latency_ms": 3.4509000252000988,
+    "id": 132,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5492,
+    "pred_class": "Web Development",
+    "confidence": 0.7030460734514827,
+    "probabilities": {
+      "Cloud Computing": 0.028033220641775693,
+      "Cybersecurity": 0.05235667466050793,
+      "Data Science": 0.21365385207857499,
+      "DevOps": 0.0029101791676587043,
+      "Web Development": 0.7030460734514827
+    },
+    "latency_ms": 3.8414999726228416,
+    "id": 133,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2316,
+    "pred_class": "Web Development",
+    "confidence": 0.5276310146143206,
+    "probabilities": {
+      "Cloud Computing": 0.012139462967163554,
+      "Cybersecurity": 0.02432764051078835,
+      "Data Science": 0.43032084872106074,
+      "DevOps": 0.005581033186666791,
+      "Web Development": 0.5276310146143206
+    },
+    "latency_ms": 3.0812000040896237,
+    "id": 134,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6220,
+    "pred_class": "Web Development",
+    "confidence": 0.6102265088060341,
+    "probabilities": {
+      "Cloud Computing": 0.011769860794751041,
+      "Cybersecurity": 0.03358472643601691,
+      "Data Science": 0.3389910301972463,
+      "DevOps": 0.005427873765951753,
+      "Web Development": 0.6102265088060341
+    },
+    "latency_ms": 3.737199993338436,
+    "id": 135,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 9505,
+    "pred_class": "Web Development",
+    "confidence": 0.7052378180090033,
+    "probabilities": {
+      "Cloud Computing": 0.025499886222819134,
+      "Cybersecurity": 0.03073517777509809,
+      "Data Science": 0.23573557948487567,
+      "DevOps": 0.0027915385082037674,
+      "Web Development": 0.7052378180090033
+    },
+    "latency_ms": 3.5235999966971576,
+    "id": 136,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5805,
+    "pred_class": "Web Development",
+    "confidence": 0.6817696839914562,
+    "probabilities": {
+      "Cloud Computing": 0.03320350832238759,
+      "Cybersecurity": 0.0284182996856626,
+      "Data Science": 0.253550749665659,
+      "DevOps": 0.003057758334834537,
+      "Web Development": 0.6817696839914562
+    },
+    "latency_ms": 3.8937999634072185,
+    "id": 137,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5930,
+    "pred_class": "Web Development",
+    "confidence": 0.6942977126121809,
+    "probabilities": {
+      "Cloud Computing": 0.015961526411707817,
+      "Cybersecurity": 0.034841405725797484,
+      "Data Science": 0.25233204404762444,
+      "DevOps": 0.0025673112026893775,
+      "Web Development": 0.6942977126121809
+    },
+    "latency_ms": 3.4127000253647566,
+    "id": 138,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5595,
+    "pred_class": "Web Development",
+    "confidence": 0.7418081567735212,
+    "probabilities": {
+      "Cloud Computing": 0.0283711680480778,
+      "Cybersecurity": 0.02633652666955435,
+      "Data Science": 0.20136733511422827,
+      "DevOps": 0.002116813394618345,
+      "Web Development": 0.7418081567735212
+    },
+    "latency_ms": 3.8908999995328486,
+    "id": 139,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5645,
+    "pred_class": "Web Development",
+    "confidence": 0.7189637678599446,
+    "probabilities": {
+      "Cloud Computing": 0.02291890703374167,
+      "Cybersecurity": 0.023448909743772374,
+      "Data Science": 0.23266972014868492,
+      "DevOps": 0.0019986952138563753,
+      "Web Development": 0.7189637678599446
+    },
+    "latency_ms": 3.7693000049330294,
+    "id": 140,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4524,
+    "pred_class": "Web Development",
+    "confidence": 0.6645668674004258,
+    "probabilities": {
+      "Cloud Computing": 0.028035748448601582,
+      "Cybersecurity": 0.02978629352109221,
+      "Data Science": 0.2757359537523032,
+      "DevOps": 0.0018751368775771662,
+      "Web Development": 0.6645668674004258
+    },
+    "latency_ms": 3.5724000190384686,
+    "id": 141,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4178,
+    "pred_class": "Web Development",
+    "confidence": 0.7992547767851821,
+    "probabilities": {
+      "Cloud Computing": 0.013470590513504643,
+      "Cybersecurity": 0.034632298900943256,
+      "Data Science": 0.14940711194267334,
+      "DevOps": 0.0032352218576966393,
+      "Web Development": 0.7992547767851821
+    },
+    "latency_ms": 3.4410000080242753,
+    "id": 142,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5433,
+    "pred_class": "Web Development",
+    "confidence": 0.7273359377519835,
+    "probabilities": {
+      "Cloud Computing": 0.027397510298265187,
+      "Cybersecurity": 0.02140601487562268,
+      "Data Science": 0.22165871534305434,
+      "DevOps": 0.002201821731074308,
+      "Web Development": 0.7273359377519835
+    },
+    "latency_ms": 3.376100037712604,
+    "id": 143,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1974,
+    "pred_class": "Web Development",
+    "confidence": 0.7438240231117953,
+    "probabilities": {
+      "Cloud Computing": 0.011124088717859235,
+      "Cybersecurity": 0.087712614824439,
+      "Data Science": 0.15104531247036795,
+      "DevOps": 0.006293960875538543,
+      "Web Development": 0.7438240231117953
+    },
+    "latency_ms": 3.1106999958865345,
+    "id": 144,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4747,
+    "pred_class": "Web Development",
+    "confidence": 0.6336766900505509,
+    "probabilities": {
+      "Cloud Computing": 0.026309862004595296,
+      "Cybersecurity": 0.022434160208591427,
+      "Data Science": 0.3153949341851737,
+      "DevOps": 0.0021843535510884865,
+      "Web Development": 0.6336766900505509
+    },
+    "latency_ms": 3.4164999960921705,
+    "id": 145,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6086,
+    "pred_class": "Web Development",
+    "confidence": 0.7003425296753942,
+    "probabilities": {
+      "Cloud Computing": 0.02378560420007137,
+      "Cybersecurity": 0.015041190006176769,
+      "Data Science": 0.2584085012508367,
+      "DevOps": 0.0024221748675209284,
+      "Web Development": 0.7003425296753942
+    },
+    "latency_ms": 3.5168000031262636,
+    "id": 146,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5324,
+    "pred_class": "Web Development",
+    "confidence": 0.8025234293295765,
+    "probabilities": {
+      "Cloud Computing": 0.013349121553898311,
+      "Cybersecurity": 0.0579609311757753,
+      "Data Science": 0.11654783653017826,
+      "DevOps": 0.009618681410571655,
+      "Web Development": 0.8025234293295765
+    },
+    "latency_ms": 3.2467000419273973,
+    "id": 147,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4949,
+    "pred_class": "Web Development",
+    "confidence": 0.6174512366207502,
+    "probabilities": {
+      "Cloud Computing": 0.020390967971324888,
+      "Cybersecurity": 0.025992889636835798,
+      "Data Science": 0.33362467690130615,
+      "DevOps": 0.0025402288697831663,
+      "Web Development": 0.6174512366207502
+    },
+    "latency_ms": 3.3702999935485423,
+    "id": 148,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 13441,
+    "pred_class": "Web Development",
+    "confidence": 0.7542484793875938,
+    "probabilities": {
+      "Cloud Computing": 0.021587685676944957,
+      "Cybersecurity": 0.03980793291462266,
+      "Data Science": 0.18106660179799455,
+      "DevOps": 0.0032893002228440325,
+      "Web Development": 0.7542484793875938
+    },
+    "latency_ms": 4.005800001323223,
+    "id": 149,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5033,
+    "pred_class": "Web Development",
+    "confidence": 0.6837303487377985,
+    "probabilities": {
+      "Cloud Computing": 0.022976980991715693,
+      "Cybersecurity": 0.030500349414142085,
+      "Data Science": 0.2600869307056935,
+      "DevOps": 0.0027053901506502646,
+      "Web Development": 0.6837303487377985
+    },
+    "latency_ms": 4.061500017996877,
+    "id": 150,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6469,
+    "pred_class": "Web Development",
+    "confidence": 0.8675724587101261,
+    "probabilities": {
+      "Cloud Computing": 0.004368423218171212,
+      "Cybersecurity": 0.034964368802650705,
+      "Data Science": 0.08375405143548564,
+      "DevOps": 0.009340697833566326,
+      "Web Development": 0.8675724587101261
+    },
+    "latency_ms": 3.319400013424456,
+    "id": 151,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5016,
+    "pred_class": "Web Development",
+    "confidence": 0.7865767968030793,
+    "probabilities": {
+      "Cloud Computing": 0.02239907462157524,
+      "Cybersecurity": 0.024957860441573117,
+      "Data Science": 0.16405788886442219,
+      "DevOps": 0.0020083792693501882,
+      "Web Development": 0.7865767968030793
+    },
+    "latency_ms": 3.7953000282868743,
+    "id": 152,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5046,
+    "pred_class": "Web Development",
+    "confidence": 0.6292354262939936,
+    "probabilities": {
+      "Cloud Computing": 0.017573785146927732,
+      "Cybersecurity": 0.022525520957593574,
+      "Data Science": 0.3285044323268698,
+      "DevOps": 0.0021608352746152683,
+      "Web Development": 0.6292354262939936
+    },
+    "latency_ms": 3.227400011382997,
+    "id": 153,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 7065,
+    "pred_class": "Web Development",
+    "confidence": 0.5773058560696216,
+    "probabilities": {
+      "Cloud Computing": 0.019872956526701097,
+      "Cybersecurity": 0.023395507470623043,
+      "Data Science": 0.37661181598535376,
+      "DevOps": 0.0028138639477005073,
+      "Web Development": 0.5773058560696216
+    },
+    "latency_ms": 3.936499997507781,
+    "id": 154,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6012,
+    "pred_class": "Web Development",
+    "confidence": 0.8424785867182635,
+    "probabilities": {
+      "Cloud Computing": 0.013205202719581251,
+      "Cybersecurity": 0.027629850558720758,
+      "Data Science": 0.11320457447057256,
+      "DevOps": 0.0034817855328619905,
+      "Web Development": 0.8424785867182635
+    },
+    "latency_ms": 3.3272000146098435,
+    "id": 155,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1908,
+    "pred_class": "Web Development",
+    "confidence": 0.7627327255945708,
+    "probabilities": {
+      "Cloud Computing": 0.013942380939497793,
+      "Cybersecurity": 0.03430031987456754,
+      "Data Science": 0.18208405239241257,
+      "DevOps": 0.006940521198951254,
+      "Web Development": 0.7627327255945708
+    },
+    "latency_ms": 3.368499979842454,
+    "id": 156,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4956,
+    "pred_class": "Web Development",
+    "confidence": 0.7420039254061271,
+    "probabilities": {
+      "Cloud Computing": 0.023574330481500438,
+      "Cybersecurity": 0.046663969684510434,
+      "Data Science": 0.1849582152118538,
+      "DevOps": 0.0027995592160080926,
+      "Web Development": 0.7420039254061271
+    },
+    "latency_ms": 3.248699998948723,
+    "id": 157,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5080,
+    "pred_class": "Web Development",
+    "confidence": 0.6683174198163272,
+    "probabilities": {
+      "Cloud Computing": 0.017575435227726328,
+      "Cybersecurity": 0.02828589187853986,
+      "Data Science": 0.2824298850735998,
+      "DevOps": 0.0033913680038069626,
+      "Web Development": 0.6683174198163272
+    },
+    "latency_ms": 3.9366999990306795,
+    "id": 158,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5953,
+    "pred_class": "Web Development",
+    "confidence": 0.7856680233759671,
+    "probabilities": {
+      "Cloud Computing": 0.028754594043370503,
+      "Cybersecurity": 0.021565877996914413,
+      "Data Science": 0.16201734293843542,
+      "DevOps": 0.001994161645312632,
+      "Web Development": 0.7856680233759671
+    },
+    "latency_ms": 3.4459999878890812,
+    "id": 159,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5037,
+    "pred_class": "Web Development",
+    "confidence": 0.6999712375774026,
+    "probabilities": {
+      "Cloud Computing": 0.02592753175731367,
+      "Cybersecurity": 0.02704820875803794,
+      "Data Science": 0.24404495348119543,
+      "DevOps": 0.00300806842605031,
+      "Web Development": 0.6999712375774026
+    },
+    "latency_ms": 3.451300028245896,
+    "id": 160,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5041,
+    "pred_class": "Web Development",
+    "confidence": 0.7592173074827558,
+    "probabilities": {
+      "Cloud Computing": 0.008681453457591335,
+      "Cybersecurity": 0.044092255469655686,
+      "Data Science": 0.18304304946273614,
+      "DevOps": 0.004965934127260924,
+      "Web Development": 0.7592173074827558
+    },
+    "latency_ms": 3.6151999956928194,
+    "id": 161,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5221,
+    "pred_class": "Web Development",
+    "confidence": 0.7923402931728847,
+    "probabilities": {
+      "Cloud Computing": 0.01619057059352348,
+      "Cybersecurity": 0.02662061644345663,
+      "Data Science": 0.1619029887255329,
+      "DevOps": 0.0029455310646022297,
+      "Web Development": 0.7923402931728847
+    },
+    "latency_ms": 3.7349999765865505,
+    "id": 162,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6390,
+    "pred_class": "Web Development",
+    "confidence": 0.7422350662979894,
+    "probabilities": {
+      "Cloud Computing": 0.022063158106018964,
+      "Cybersecurity": 0.035643329822636086,
+      "Data Science": 0.19766734971194158,
+      "DevOps": 0.002391096061413993,
+      "Web Development": 0.7422350662979894
+    },
+    "latency_ms": 4.0283999987877905,
+    "id": 163,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8850,
+    "pred_class": "Web Development",
+    "confidence": 0.7580840764742617,
+    "probabilities": {
+      "Cloud Computing": 0.021756344423794496,
+      "Cybersecurity": 0.03429077979354715,
+      "Data Science": 0.1835140343499914,
+      "DevOps": 0.002354764958405304,
+      "Web Development": 0.7580840764742617
+    },
+    "latency_ms": 3.8125000428408384,
+    "id": 164,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4984,
+    "pred_class": "Web Development",
+    "confidence": 0.8486590806648134,
+    "probabilities": {
+      "Cloud Computing": 0.009792015537489018,
+      "Cybersecurity": 0.02481910012870717,
+      "Data Science": 0.11158824303224554,
+      "DevOps": 0.00514156063674491,
+      "Web Development": 0.8486590806648134
+    },
+    "latency_ms": 3.966699994634837,
+    "id": 165,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6099,
+    "pred_class": "Web Development",
+    "confidence": 0.7674689461561417,
+    "probabilities": {
+      "Cloud Computing": 0.020618470548279737,
+      "Cybersecurity": 0.025595349914868216,
+      "Data Science": 0.1836808193764631,
+      "DevOps": 0.002636414004247353,
+      "Web Development": 0.7674689461561417
+    },
+    "latency_ms": 3.596199967432767,
+    "id": 166,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5251,
+    "pred_class": "Web Development",
+    "confidence": 0.8438010344824424,
+    "probabilities": {
+      "Cloud Computing": 0.010193263813828951,
+      "Cybersecurity": 0.037854421409997625,
+      "Data Science": 0.10486445793490722,
+      "DevOps": 0.003286822358823873,
+      "Web Development": 0.8438010344824424
+    },
+    "latency_ms": 3.4666999708861113,
+    "id": 167,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6355,
+    "pred_class": "Web Development",
+    "confidence": 0.7758561959556493,
+    "probabilities": {
+      "Cloud Computing": 0.012042958316463074,
+      "Cybersecurity": 0.025307509383470882,
+      "Data Science": 0.18145924220528462,
+      "DevOps": 0.005334094139132046,
+      "Web Development": 0.7758561959556493
+    },
+    "latency_ms": 3.8395000156015158,
+    "id": 168,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6009,
+    "pred_class": "Web Development",
+    "confidence": 0.6569190694286109,
+    "probabilities": {
+      "Cloud Computing": 0.027350133902413132,
+      "Cybersecurity": 0.03702484312059227,
+      "Data Science": 0.2753036574437684,
+      "DevOps": 0.0034022961046153376,
+      "Web Development": 0.6569190694286109
+    },
+    "latency_ms": 4.139799973927438,
+    "id": 169,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6492,
+    "pred_class": "Web Development",
+    "confidence": 0.8405158567949507,
+    "probabilities": {
+      "Cloud Computing": 0.009274997540540833,
+      "Cybersecurity": 0.021295861803681322,
+      "Data Science": 0.12373903216997699,
+      "DevOps": 0.005174251690850211,
+      "Web Development": 0.8405158567949507
+    },
+    "latency_ms": 6.164300022646785,
+    "id": 170,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2523,
+    "pred_class": "Web Development",
+    "confidence": 0.7496140297862343,
+    "probabilities": {
+      "Cloud Computing": 0.011635288996135418,
+      "Cybersecurity": 0.03949122439024231,
+      "Data Science": 0.19443538829994722,
+      "DevOps": 0.004824068527440821,
+      "Web Development": 0.7496140297862343
+    },
+    "latency_ms": 3.4501999616622925,
+    "id": 171,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5666,
+    "pred_class": "Web Development",
+    "confidence": 0.6832846350229861,
+    "probabilities": {
+      "Cloud Computing": 0.023801961643446053,
+      "Cybersecurity": 0.03173072796862318,
+      "Data Science": 0.2588825679309729,
+      "DevOps": 0.0023001074339716607,
+      "Web Development": 0.6832846350229861
+    },
+    "latency_ms": 4.035300051327795,
+    "id": 172,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5293,
+    "pred_class": "Web Development",
+    "confidence": 0.6939699450687667,
+    "probabilities": {
+      "Cloud Computing": 0.024390093044469294,
+      "Cybersecurity": 0.03259562678424369,
+      "Data Science": 0.24514142250325904,
+      "DevOps": 0.0039029125992611205,
+      "Web Development": 0.6939699450687667
+    },
+    "latency_ms": 6.368300004396588,
+    "id": 173,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2535,
+    "pred_class": "Web Development",
+    "confidence": 0.5922511727236055,
+    "probabilities": {
+      "Cloud Computing": 0.01532563670003093,
+      "Cybersecurity": 0.05488713294724233,
+      "Data Science": 0.3251609372039366,
+      "DevOps": 0.012375120425184717,
+      "Web Development": 0.5922511727236055
+    },
+    "latency_ms": 3.7213999894447625,
+    "id": 174,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3156,
+    "pred_class": "Web Development",
+    "confidence": 0.8136343657300691,
+    "probabilities": {
+      "Cloud Computing": 0.008618293442014282,
+      "Cybersecurity": 0.03250347878952759,
+      "Data Science": 0.1388356624931841,
+      "DevOps": 0.006408199545204945,
+      "Web Development": 0.8136343657300691
+    },
+    "latency_ms": 3.2932000467553735,
+    "id": 175,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5261,
+    "pred_class": "Web Development",
+    "confidence": 0.7142028823631016,
+    "probabilities": {
+      "Cloud Computing": 0.03060776357959475,
+      "Cybersecurity": 0.036388176050785946,
+      "Data Science": 0.21572179854547016,
+      "DevOps": 0.003079379461047513,
+      "Web Development": 0.7142028823631016
+    },
+    "latency_ms": 4.731199995148927,
+    "id": 176,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6717,
+    "pred_class": "Web Development",
+    "confidence": 0.7742747161609437,
+    "probabilities": {
+      "Cloud Computing": 0.025410912963704783,
+      "Cybersecurity": 0.02131337980224819,
+      "Data Science": 0.17689776984738434,
+      "DevOps": 0.0021032212257190755,
+      "Web Development": 0.7742747161609437
+    },
+    "latency_ms": 3.8979999953880906,
+    "id": 177,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5302,
+    "pred_class": "Web Development",
+    "confidence": 0.6327867965949012,
+    "probabilities": {
+      "Cloud Computing": 0.02653919667489484,
+      "Cybersecurity": 0.02156488574237644,
+      "Data Science": 0.31674043605581004,
+      "DevOps": 0.002368684932017423,
+      "Web Development": 0.6327867965949012
+    },
+    "latency_ms": 4.132700036279857,
+    "id": 178,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3967,
+    "pred_class": "Web Development",
+    "confidence": 0.7495472918854029,
+    "probabilities": {
+      "Cloud Computing": 0.010414444599757308,
+      "Cybersecurity": 0.03309155331375314,
+      "Data Science": 0.20334283412209242,
+      "DevOps": 0.003603876078994113,
+      "Web Development": 0.7495472918854029
+    },
+    "latency_ms": 3.7742999847978354,
+    "id": 179,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4946,
+    "pred_class": "Web Development",
+    "confidence": 0.7042171645525135,
+    "probabilities": {
+      "Cloud Computing": 0.016839576318671994,
+      "Cybersecurity": 0.035652222778637804,
+      "Data Science": 0.2374744456507271,
+      "DevOps": 0.00581659069944968,
+      "Web Development": 0.7042171645525135
+    },
+    "latency_ms": 3.6213999846950173,
+    "id": 180,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8968,
+    "pred_class": "Web Development",
+    "confidence": 0.7829922718771287,
+    "probabilities": {
+      "Cloud Computing": 0.01975179427062117,
+      "Cybersecurity": 0.03337392563762813,
+      "Data Science": 0.16156424614081255,
+      "DevOps": 0.0023177620738092618,
+      "Web Development": 0.7829922718771287
+    },
+    "latency_ms": 5.893199995625764,
+    "id": 181,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4848,
+    "pred_class": "Web Development",
+    "confidence": 0.6494135237137232,
+    "probabilities": {
+      "Cloud Computing": 0.023711597980257258,
+      "Cybersecurity": 0.03317985497721299,
+      "Data Science": 0.2918292611018859,
+      "DevOps": 0.0018657622269207177,
+      "Web Development": 0.6494135237137232
+    },
+    "latency_ms": 4.019399988465011,
+    "id": 182,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4988,
+    "pred_class": "Web Development",
+    "confidence": 0.824808161400318,
+    "probabilities": {
+      "Cloud Computing": 0.022234555320359138,
+      "Cybersecurity": 0.014605562693656027,
+      "Data Science": 0.1372270628785809,
+      "DevOps": 0.0011246577070858617,
+      "Web Development": 0.824808161400318
+    },
+    "latency_ms": 3.6097000120207667,
+    "id": 183,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1673,
+    "pred_class": "Web Development",
+    "confidence": 0.8017937417925569,
+    "probabilities": {
+      "Cloud Computing": 0.014680530637917091,
+      "Cybersecurity": 0.03285563602051865,
+      "Data Science": 0.14378986970942303,
+      "DevOps": 0.006880221839584212,
+      "Web Development": 0.8017937417925569
+    },
+    "latency_ms": 4.1933999746106565,
+    "id": 184,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4957,
+    "pred_class": "Web Development",
+    "confidence": 0.642979933409294,
+    "probabilities": {
+      "Cloud Computing": 0.012327175327100417,
+      "Cybersecurity": 0.027190011686695693,
+      "Data Science": 0.31431699950968073,
+      "DevOps": 0.0031858800672291713,
+      "Web Development": 0.642979933409294
+    },
+    "latency_ms": 3.505400032736361,
+    "id": 185,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5174,
+    "pred_class": "Web Development",
+    "confidence": 0.8241387504594565,
+    "probabilities": {
+      "Cloud Computing": 0.013777740633029315,
+      "Cybersecurity": 0.029676519910039674,
+      "Data Science": 0.13000650115417406,
+      "DevOps": 0.002400487843300334,
+      "Web Development": 0.8241387504594565
+    },
+    "latency_ms": 4.4610999757424,
+    "id": 186,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5483,
+    "pred_class": "Web Development",
+    "confidence": 0.7631980387802623,
+    "probabilities": {
+      "Cloud Computing": 0.027576914660872986,
+      "Cybersecurity": 0.027404285389433798,
+      "Data Science": 0.17919730455319977,
+      "DevOps": 0.0026234566162311296,
+      "Web Development": 0.7631980387802623
+    },
+    "latency_ms": 5.127400043420494,
+    "id": 187,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5499,
+    "pred_class": "Web Development",
+    "confidence": 0.7712994736268957,
+    "probabilities": {
+      "Cloud Computing": 0.028067540172399114,
+      "Cybersecurity": 0.024840574814021892,
+      "Data Science": 0.17364042057046433,
+      "DevOps": 0.0021519908162188697,
+      "Web Development": 0.7712994736268957
+    },
+    "latency_ms": 4.18699998408556,
+    "id": 188,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6145,
+    "pred_class": "Web Development",
+    "confidence": 0.7749937047543399,
+    "probabilities": {
+      "Cloud Computing": 0.022729925780085442,
+      "Cybersecurity": 0.03142843664802071,
+      "Data Science": 0.16805217067398467,
+      "DevOps": 0.0027957621435693186,
+      "Web Development": 0.7749937047543399
+    },
+    "latency_ms": 4.160200012847781,
+    "id": 189,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5606,
+    "pred_class": "Web Development",
+    "confidence": 0.7469708422618424,
+    "probabilities": {
+      "Cloud Computing": 0.012221907110434952,
+      "Cybersecurity": 0.02919975176038605,
+      "Data Science": 0.20767480166275726,
+      "DevOps": 0.003932697204579385,
+      "Web Development": 0.7469708422618424
+    },
+    "latency_ms": 5.204999994020909,
+    "id": 190,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1631,
+    "pred_class": "Web Development",
+    "confidence": 0.6618678159011981,
+    "probabilities": {
+      "Cloud Computing": 0.006159384772889552,
+      "Cybersecurity": 0.05329026045190678,
+      "Data Science": 0.26624953515250044,
+      "DevOps": 0.012433003721505175,
+      "Web Development": 0.6618678159011981
+    },
+    "latency_ms": 3.2137000234797597,
+    "id": 191,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2150,
+    "pred_class": "Web Development",
+    "confidence": 0.6895554491909527,
+    "probabilities": {
+      "Cloud Computing": 0.015846646730801446,
+      "Cybersecurity": 0.06907350754005212,
+      "Data Science": 0.2197364490270007,
+      "DevOps": 0.005787947511192976,
+      "Web Development": 0.6895554491909527
+    },
+    "latency_ms": 3.79139999859035,
+    "id": 192,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2938,
+    "pred_class": "Data Science",
+    "confidence": 0.5004458820054885,
+    "probabilities": {
+      "Cloud Computing": 0.018946415858170827,
+      "Cybersecurity": 0.03483975467761898,
+      "Data Science": 0.5004458820054885,
+      "DevOps": 0.003769156275238646,
+      "Web Development": 0.44199879118348306
+    },
+    "latency_ms": 3.8619000115431845,
+    "id": 193,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5188,
+    "pred_class": "Web Development",
+    "confidence": 0.7004041715635774,
+    "probabilities": {
+      "Cloud Computing": 0.01895727432482024,
+      "Cybersecurity": 0.02477094195328646,
+      "Data Science": 0.25295426105697344,
+      "DevOps": 0.0029133511013424125,
+      "Web Development": 0.7004041715635774
+    },
+    "latency_ms": 3.631099942140281,
+    "id": 194,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5878,
+    "pred_class": "Web Development",
+    "confidence": 0.760235004990173,
+    "probabilities": {
+      "Cloud Computing": 0.02035687119954987,
+      "Cybersecurity": 0.02642324735303887,
+      "Data Science": 0.19001642076605346,
+      "DevOps": 0.002968455691184792,
+      "Web Development": 0.760235004990173
+    },
+    "latency_ms": 5.500400031451136,
+    "id": 195,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5106,
+    "pred_class": "Web Development",
+    "confidence": 0.7722168308820259,
+    "probabilities": {
+      "Cloud Computing": 0.01943062766345647,
+      "Cybersecurity": 0.020389425395303754,
+      "Data Science": 0.18404651762225283,
+      "DevOps": 0.003916598436961133,
+      "Web Development": 0.7722168308820259
+    },
+    "latency_ms": 3.7681999965570867,
+    "id": 196,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5751,
+    "pred_class": "Web Development",
+    "confidence": 0.8669668466584899,
+    "probabilities": {
+      "Cloud Computing": 0.011954036037885167,
+      "Cybersecurity": 0.019692881518272733,
+      "Data Science": 0.09725603580266871,
+      "DevOps": 0.004130199982683634,
+      "Web Development": 0.8669668466584899
+    },
+    "latency_ms": 3.5250000073574483,
+    "id": 197,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 7490,
+    "pred_class": "Web Development",
+    "confidence": 0.7175621791290993,
+    "probabilities": {
+      "Cloud Computing": 0.029729664845466564,
+      "Cybersecurity": 0.025837729820710538,
+      "Data Science": 0.22516947187114472,
+      "DevOps": 0.0017009543335789249,
+      "Web Development": 0.7175621791290993
+    },
+    "latency_ms": 4.608700051903725,
+    "id": 198,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3236,
+    "pred_class": "Web Development",
+    "confidence": 0.8322929312040028,
+    "probabilities": {
+      "Cloud Computing": 0.014919654118425569,
+      "Cybersecurity": 0.024759129549619258,
+      "Data Science": 0.12453563923286895,
+      "DevOps": 0.003492645895083498,
+      "Web Development": 0.8322929312040028
+    },
+    "latency_ms": 3.1781999859958887,
+    "id": 199,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8276,
+    "pred_class": "Web Development",
+    "confidence": 0.6597944025659149,
+    "probabilities": {
+      "Cloud Computing": 0.029668979437794885,
+      "Cybersecurity": 0.024611987532307842,
+      "Data Science": 0.2838328184205782,
+      "DevOps": 0.0020918120434040475,
+      "Web Development": 0.6597944025659149
+    },
+    "latency_ms": 4.0006000199355185,
+    "id": 200,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2552,
+    "pred_class": "Web Development",
+    "confidence": 0.5942148015364863,
+    "probabilities": {
+      "Cloud Computing": 0.01858857965404967,
+      "Cybersecurity": 0.04501411607296986,
+      "Data Science": 0.33477354103867496,
+      "DevOps": 0.007408961697819299,
+      "Web Development": 0.5942148015364863
+    },
+    "latency_ms": 3.1328999903053045,
+    "id": 201,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5012,
+    "pred_class": "Web Development",
+    "confidence": 0.6832021601631819,
+    "probabilities": {
+      "Cloud Computing": 0.018382413369466364,
+      "Cybersecurity": 0.028571215871853333,
+      "Data Science": 0.26645763107819087,
+      "DevOps": 0.0033865795173074207,
+      "Web Development": 0.6832021601631819
+    },
+    "latency_ms": 3.5958000225946307,
+    "id": 202,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3350,
+    "pred_class": "Web Development",
+    "confidence": 0.7605268330604102,
+    "probabilities": {
+      "Cloud Computing": 0.011649247552505964,
+      "Cybersecurity": 0.037144221811644944,
+      "Data Science": 0.18585894245811124,
+      "DevOps": 0.004820755117327518,
+      "Web Development": 0.7605268330604102
+    },
+    "latency_ms": 3.1994000310078263,
+    "id": 203,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2188,
+    "pred_class": "Web Development",
+    "confidence": 0.68498229530316,
+    "probabilities": {
+      "Cloud Computing": 0.016326318417305884,
+      "Cybersecurity": 0.029156882481143953,
+      "Data Science": 0.2659195180748613,
+      "DevOps": 0.0036149857235288074,
+      "Web Development": 0.68498229530316
+    },
+    "latency_ms": 3.125299990642816,
+    "id": 204,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2171,
+    "pred_class": "Web Development",
+    "confidence": 0.5814207535015228,
+    "probabilities": {
+      "Cloud Computing": 0.008731053387199133,
+      "Cybersecurity": 0.027366188944049297,
+      "Data Science": 0.37680131112385207,
+      "DevOps": 0.005680693043376777,
+      "Web Development": 0.5814207535015228
+    },
+    "latency_ms": 2.9966000001877546,
+    "id": 205,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4888,
+    "pred_class": "Data Science",
+    "confidence": 0.5096231602559413,
+    "probabilities": {
+      "Cloud Computing": 0.02964079080605231,
+      "Cybersecurity": 0.050047992834745224,
+      "Data Science": 0.5096231602559413,
+      "DevOps": 0.006010992183331304,
+      "Web Development": 0.40467706391992986
+    },
+    "latency_ms": 3.617700014729053,
+    "id": 206,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1185,
+    "pred_class": "Web Development",
+    "confidence": 0.7080749401858804,
+    "probabilities": {
+      "Cloud Computing": 0.008849293644723106,
+      "Cybersecurity": 0.05546270059853261,
+      "Data Science": 0.2175174493034357,
+      "DevOps": 0.010095616267428175,
+      "Web Development": 0.7080749401858804
+    },
+    "latency_ms": 2.898200007621199,
+    "id": 207,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5645,
+    "pred_class": "Web Development",
+    "confidence": 0.7189637678599446,
+    "probabilities": {
+      "Cloud Computing": 0.02291890703374167,
+      "Cybersecurity": 0.023448909743772374,
+      "Data Science": 0.23266972014868492,
+      "DevOps": 0.0019986952138563753,
+      "Web Development": 0.7189637678599446
+    },
+    "latency_ms": 3.849100030492991,
+    "id": 208,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5516,
+    "pred_class": "Web Development",
+    "confidence": 0.6963107329783512,
+    "probabilities": {
+      "Cloud Computing": 0.028380480272699606,
+      "Cybersecurity": 0.02963549120050273,
+      "Data Science": 0.24357840083011073,
+      "DevOps": 0.0020948947183356504,
+      "Web Development": 0.6963107329783512
+    },
+    "latency_ms": 3.4309999900870025,
+    "id": 209,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2080,
+    "pred_class": "Web Development",
+    "confidence": 0.5636767880386729,
+    "probabilities": {
+      "Cloud Computing": 0.015313599863410276,
+      "Cybersecurity": 0.10408649178649591,
+      "Data Science": 0.2935927603917087,
+      "DevOps": 0.023330359919712176,
+      "Web Development": 0.5636767880386729
+    },
+    "latency_ms": 3.1731000053696334,
+    "id": 210,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5019,
+    "pred_class": "Web Development",
+    "confidence": 0.7915620809606445,
+    "probabilities": {
+      "Cloud Computing": 0.01293234336655794,
+      "Cybersecurity": 0.036356451591814054,
+      "Data Science": 0.15557052873184332,
+      "DevOps": 0.0035785953491401282,
+      "Web Development": 0.7915620809606445
+    },
+    "latency_ms": 3.154599980916828,
+    "id": 211,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5493,
+    "pred_class": "Web Development",
+    "confidence": 0.8291350553749387,
+    "probabilities": {
+      "Cloud Computing": 0.02153164476685704,
+      "Cybersecurity": 0.013088960293831397,
+      "Data Science": 0.13461869834914225,
+      "DevOps": 0.0016256412152306052,
+      "Web Development": 0.8291350553749387
+    },
+    "latency_ms": 3.7629000144079328,
+    "id": 212,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 775,
+    "pred_class": "Web Development",
+    "confidence": 0.6677123051999112,
+    "probabilities": {
+      "Cloud Computing": 0.012621803602612369,
+      "Cybersecurity": 0.04117636038306805,
+      "Data Science": 0.26584109477613627,
+      "DevOps": 0.01264843603827207,
+      "Web Development": 0.6677123051999112
+    },
+    "latency_ms": 2.792300016153604,
+    "id": 213,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5181,
+    "pred_class": "Web Development",
+    "confidence": 0.8024661768211445,
+    "probabilities": {
+      "Cloud Computing": 0.015415465269481423,
+      "Cybersecurity": 0.02019145137168074,
+      "Data Science": 0.15903014929894213,
+      "DevOps": 0.002896757238751358,
+      "Web Development": 0.8024661768211445
+    },
+    "latency_ms": 3.810000023804605,
+    "id": 214,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 10231,
+    "pred_class": "Web Development",
+    "confidence": 0.6277096084770056,
+    "probabilities": {
+      "Cloud Computing": 0.019127900940806776,
+      "Cybersecurity": 0.022395159601922142,
+      "Data Science": 0.32836122852836486,
+      "DevOps": 0.0024061024519006543,
+      "Web Development": 0.6277096084770056
+    },
+    "latency_ms": 3.7584000383503735,
+    "id": 215,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2977,
+    "pred_class": "Web Development",
+    "confidence": 0.7257926152894798,
+    "probabilities": {
+      "Cloud Computing": 0.013277608076166241,
+      "Cybersecurity": 0.0366196958720695,
+      "Data Science": 0.2190230593638514,
+      "DevOps": 0.005287021398433114,
+      "Web Development": 0.7257926152894798
+    },
+    "latency_ms": 3.499500046018511,
+    "id": 216,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5632,
+    "pred_class": "Web Development",
+    "confidence": 0.8007780615711766,
+    "probabilities": {
+      "Cloud Computing": 0.015988940678228848,
+      "Cybersecurity": 0.028395018567754105,
+      "Data Science": 0.15105946163842227,
+      "DevOps": 0.0037785175444180765,
+      "Web Development": 0.8007780615711766
+    },
+    "latency_ms": 3.632499952800572,
+    "id": 217,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6343,
+    "pred_class": "Web Development",
+    "confidence": 0.6157745853995092,
+    "probabilities": {
+      "Cloud Computing": 0.024119116293274935,
+      "Cybersecurity": 0.023144898653077867,
+      "Data Science": 0.3342736205148128,
+      "DevOps": 0.0026877791393251633,
+      "Web Development": 0.6157745853995092
+    },
+    "latency_ms": 3.489400027319789,
+    "id": 218,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6690,
+    "pred_class": "Web Development",
+    "confidence": 0.6180269729357197,
+    "probabilities": {
+      "Cloud Computing": 0.01632511293050633,
+      "Cybersecurity": 0.031484266984477184,
+      "Data Science": 0.33168878123384565,
+      "DevOps": 0.0024748659154511443,
+      "Web Development": 0.6180269729357197
+    },
+    "latency_ms": 3.574300033506006,
+    "id": 219,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5279,
+    "pred_class": "Web Development",
+    "confidence": 0.6211256853515301,
+    "probabilities": {
+      "Cloud Computing": 0.028910487023562602,
+      "Cybersecurity": 0.035148740387565526,
+      "Data Science": 0.30873870660121383,
+      "DevOps": 0.006076380636127962,
+      "Web Development": 0.6211256853515301
+    },
+    "latency_ms": 3.4912999835796654,
+    "id": 220,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2459,
+    "pred_class": "Web Development",
+    "confidence": 0.74298806315936,
+    "probabilities": {
+      "Cloud Computing": 0.011823737134974517,
+      "Cybersecurity": 0.02853239589985939,
+      "Data Science": 0.21156334501408475,
+      "DevOps": 0.005092458791721412,
+      "Web Development": 0.74298806315936
+    },
+    "latency_ms": 3.253699978813529,
+    "id": 221,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1913,
+    "pred_class": "Web Development",
+    "confidence": 0.7803335638395422,
+    "probabilities": {
+      "Cloud Computing": 0.010928296303045317,
+      "Cybersecurity": 0.054065841569898423,
+      "Data Science": 0.1413784971321638,
+      "DevOps": 0.013293801155350227,
+      "Web Development": 0.7803335638395422
+    },
+    "latency_ms": 2.9860000358894467,
+    "id": 222,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5918,
+    "pred_class": "Web Development",
+    "confidence": 0.7733508781027927,
+    "probabilities": {
+      "Cloud Computing": 0.019497227725772344,
+      "Cybersecurity": 0.03445357119754957,
+      "Data Science": 0.1698593142437961,
+      "DevOps": 0.0028390087300892834,
+      "Web Development": 0.7733508781027927
+    },
+    "latency_ms": 3.3965999609790742,
+    "id": 223,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2250,
+    "pred_class": "Web Development",
+    "confidence": 0.7775018191085957,
+    "probabilities": {
+      "Cloud Computing": 0.010495034960640717,
+      "Cybersecurity": 0.029658117227900804,
+      "Data Science": 0.1769247614233718,
+      "DevOps": 0.0054202672794910756,
+      "Web Development": 0.7775018191085957
+    },
+    "latency_ms": 3.0521000153385103,
+    "id": 224,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6163,
+    "pred_class": "Web Development",
+    "confidence": 0.903472047417878,
+    "probabilities": {
+      "Cloud Computing": 0.009993589043340044,
+      "Cybersecurity": 0.024401428983377577,
+      "Data Science": 0.057983452716417375,
+      "DevOps": 0.004149481838986963,
+      "Web Development": 0.903472047417878
+    },
+    "latency_ms": 3.520800033584237,
+    "id": 225,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4824,
+    "pred_class": "Web Development",
+    "confidence": 0.7339123936107875,
+    "probabilities": {
+      "Cloud Computing": 0.020571004301853265,
+      "Cybersecurity": 0.043430765905562926,
+      "Data Science": 0.19749663581954754,
+      "DevOps": 0.004589200362248679,
+      "Web Development": 0.7339123936107875
+    },
+    "latency_ms": 3.4697999944910407,
+    "id": 226,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2142,
+    "pred_class": "Web Development",
+    "confidence": 0.7402216746818109,
+    "probabilities": {
+      "Cloud Computing": 0.014898674808284568,
+      "Cybersecurity": 0.047334554636032665,
+      "Data Science": 0.19048598871206454,
+      "DevOps": 0.007059107161807373,
+      "Web Development": 0.7402216746818109
+    },
+    "latency_ms": 3.16469999961555,
+    "id": 227,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2122,
+    "pred_class": "Web Development",
+    "confidence": 0.6488791995838014,
+    "probabilities": {
+      "Cloud Computing": 0.016320483573914288,
+      "Cybersecurity": 0.0871139936637631,
+      "Data Science": 0.24215653462161674,
+      "DevOps": 0.00552978855690457,
+      "Web Development": 0.6488791995838014
+    },
+    "latency_ms": 3.1701000407338142,
+    "id": 228,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4968,
+    "pred_class": "Web Development",
+    "confidence": 0.7606758528478468,
+    "probabilities": {
+      "Cloud Computing": 0.018455761589265714,
+      "Cybersecurity": 0.024373396297505588,
+      "Data Science": 0.19447828100253578,
+      "DevOps": 0.002016708262846189,
+      "Web Development": 0.7606758528478468
+    },
+    "latency_ms": 3.4688999876379967,
+    "id": 229,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5771,
+    "pred_class": "Web Development",
+    "confidence": 0.8086859190947872,
+    "probabilities": {
+      "Cloud Computing": 0.010552269590346604,
+      "Cybersecurity": 0.04064558510285242,
+      "Data Science": 0.13461621902733395,
+      "DevOps": 0.00550000718467982,
+      "Web Development": 0.8086859190947872
+    },
+    "latency_ms": 3.3220999757759273,
+    "id": 230,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4610,
+    "pred_class": "Web Development",
+    "confidence": 0.7333689833446088,
+    "probabilities": {
+      "Cloud Computing": 0.013248653729141954,
+      "Cybersecurity": 0.035050755640077536,
+      "Data Science": 0.2115542835384713,
+      "DevOps": 0.006777323747700434,
+      "Web Development": 0.7333689833446088
+    },
+    "latency_ms": 3.3662000205367804,
+    "id": 231,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5113,
+    "pred_class": "Web Development",
+    "confidence": 0.7523908200678523,
+    "probabilities": {
+      "Cloud Computing": 0.021938449625150513,
+      "Cybersecurity": 0.03204244698025218,
+      "Data Science": 0.19167777749997444,
+      "DevOps": 0.0019505058267706168,
+      "Web Development": 0.7523908200678523
+    },
+    "latency_ms": 3.3873000065796077,
+    "id": 232,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5918,
+    "pred_class": "Web Development",
+    "confidence": 0.7733508781027927,
+    "probabilities": {
+      "Cloud Computing": 0.019497227725772344,
+      "Cybersecurity": 0.03445357119754957,
+      "Data Science": 0.1698593142437961,
+      "DevOps": 0.0028390087300892834,
+      "Web Development": 0.7733508781027927
+    },
+    "latency_ms": 3.47579998197034,
+    "id": 233,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5831,
+    "pred_class": "Web Development",
+    "confidence": 0.8020811467453829,
+    "probabilities": {
+      "Cloud Computing": 0.013443177742614868,
+      "Cybersecurity": 0.03819850549111269,
+      "Data Science": 0.14216406088603376,
+      "DevOps": 0.004113109134855823,
+      "Web Development": 0.8020811467453829
+    },
+    "latency_ms": 3.464600013103336,
+    "id": 234,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2800,
+    "pred_class": "Web Development",
+    "confidence": 0.7666851417561306,
+    "probabilities": {
+      "Cloud Computing": 0.011120874836085539,
+      "Cybersecurity": 0.026244124615127568,
+      "Data Science": 0.19228281497549732,
+      "DevOps": 0.003667043817158928,
+      "Web Development": 0.7666851417561306
+    },
+    "latency_ms": 3.278499993029982,
+    "id": 235,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1274,
+    "pred_class": "Web Development",
+    "confidence": 0.507096991634589,
+    "probabilities": {
+      "Cloud Computing": 0.010535277030215036,
+      "Cybersecurity": 0.08735685267076078,
+      "Data Science": 0.383266045353164,
+      "DevOps": 0.011744833311271142,
+      "Web Development": 0.507096991634589
+    },
+    "latency_ms": 2.9394999728538096,
+    "id": 236,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5831,
+    "pred_class": "Web Development",
+    "confidence": 0.8020811467453829,
+    "probabilities": {
+      "Cloud Computing": 0.013443177742614868,
+      "Cybersecurity": 0.03819850549111269,
+      "Data Science": 0.14216406088603376,
+      "DevOps": 0.004113109134855823,
+      "Web Development": 0.8020811467453829
+    },
+    "latency_ms": 3.5115000209771097,
+    "id": 237,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5188,
+    "pred_class": "Web Development",
+    "confidence": 0.7004041715635774,
+    "probabilities": {
+      "Cloud Computing": 0.01895727432482024,
+      "Cybersecurity": 0.02477094195328646,
+      "Data Science": 0.25295426105697344,
+      "DevOps": 0.0029133511013424125,
+      "Web Development": 0.7004041715635774
+    },
+    "latency_ms": 3.542400023434311,
+    "id": 238,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6243,
+    "pred_class": "Web Development",
+    "confidence": 0.8554802575485738,
+    "probabilities": {
+      "Cloud Computing": 0.013448061323376947,
+      "Cybersecurity": 0.022993875347944868,
+      "Data Science": 0.1040213365024782,
+      "DevOps": 0.004056469277626313,
+      "Web Development": 0.8554802575485738
+    },
+    "latency_ms": 3.4695000504143536,
+    "id": 239,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1999,
+    "pred_class": "Web Development",
+    "confidence": 0.720880825059189,
+    "probabilities": {
+      "Cloud Computing": 0.009705418077002915,
+      "Cybersecurity": 0.04339217015527601,
+      "Data Science": 0.21689953048898292,
+      "DevOps": 0.009122056219549004,
+      "Web Development": 0.720880825059189
+    },
+    "latency_ms": 3.0246000387705863,
+    "id": 240,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4772,
+    "pred_class": "Web Development",
+    "confidence": 0.6937917772376577,
+    "probabilities": {
+      "Cloud Computing": 0.02062702991634809,
+      "Cybersecurity": 0.029250475347557175,
+      "Data Science": 0.2531921930039764,
+      "DevOps": 0.0031385244944606245,
+      "Web Development": 0.6937917772376577
+    },
+    "latency_ms": 3.2801000052131712,
+    "id": 241,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 7270,
+    "pred_class": "Web Development",
+    "confidence": 0.7552928385831507,
+    "probabilities": {
+      "Cloud Computing": 0.020239117647194684,
+      "Cybersecurity": 0.035226139466930324,
+      "Data Science": 0.18663313523541492,
+      "DevOps": 0.0026087690673094253,
+      "Web Development": 0.7552928385831507
+    },
+    "latency_ms": 3.538500051945448,
+    "id": 242,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1330,
+    "pred_class": "Web Development",
+    "confidence": 0.6970069023295749,
+    "probabilities": {
+      "Cloud Computing": 0.007377790812586523,
+      "Cybersecurity": 0.1357248069176787,
+      "Data Science": 0.1249744207120135,
+      "DevOps": 0.03491607922814655,
+      "Web Development": 0.6970069023295749
+    },
+    "latency_ms": 2.9634999809786677,
+    "id": 243,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3162,
+    "pred_class": "Web Development",
+    "confidence": 0.7279387309196258,
+    "probabilities": {
+      "Cloud Computing": 0.009513078137305817,
+      "Cybersecurity": 0.05205529727171706,
+      "Data Science": 0.20089651334460065,
+      "DevOps": 0.009596380326750604,
+      "Web Development": 0.7279387309196258
+    },
+    "latency_ms": 3.4918999881483614,
+    "id": 244,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2741,
+    "pred_class": "Web Development",
+    "confidence": 0.7363954237984143,
+    "probabilities": {
+      "Cloud Computing": 0.01766227200415106,
+      "Cybersecurity": 0.035296886889930816,
+      "Data Science": 0.20659785635759756,
+      "DevOps": 0.004047560949906272,
+      "Web Development": 0.7363954237984143
+    },
+    "latency_ms": 3.103199996985495,
+    "id": 245,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5801,
+    "pred_class": "Web Development",
+    "confidence": 0.6507861138905571,
+    "probabilities": {
+      "Cloud Computing": 0.021073732060434,
+      "Cybersecurity": 0.021612359156547623,
+      "Data Science": 0.30484792739657707,
+      "DevOps": 0.0016798674958843321,
+      "Web Development": 0.6507861138905571
+    },
+    "latency_ms": 3.6137999850325286,
+    "id": 246,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1084,
+    "pred_class": "Web Development",
+    "confidence": 0.565680155854751,
+    "probabilities": {
+      "Cloud Computing": 0.010193372060549794,
+      "Cybersecurity": 0.05330944384467575,
+      "Data Science": 0.35849662314700625,
+      "DevOps": 0.012320405093017298,
+      "Web Development": 0.565680155854751
+    },
+    "latency_ms": 3.143700014334172,
+    "id": 247,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4939,
+    "pred_class": "Web Development",
+    "confidence": 0.842259603056991,
+    "probabilities": {
+      "Cloud Computing": 0.011682268199886495,
+      "Cybersecurity": 0.02607048756039181,
+      "Data Science": 0.11359021757112638,
+      "DevOps": 0.006397423611604386,
+      "Web Development": 0.842259603056991
+    },
+    "latency_ms": 3.520500031299889,
+    "id": 248,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 7697,
+    "pred_class": "Web Development",
+    "confidence": 0.6568205552283672,
+    "probabilities": {
+      "Cloud Computing": 0.026817574752569063,
+      "Cybersecurity": 0.025984440410536887,
+      "Data Science": 0.28777375611316314,
+      "DevOps": 0.0026036734953636433,
+      "Web Development": 0.6568205552283672
+    },
+    "latency_ms": 3.6601999890990555,
+    "id": 249,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8114,
+    "pred_class": "Web Development",
+    "confidence": 0.6420094491161418,
+    "probabilities": {
+      "Cloud Computing": 0.025034818092657597,
+      "Cybersecurity": 0.024703066027846884,
+      "Data Science": 0.3061353918252542,
+      "DevOps": 0.0021172749380994997,
+      "Web Development": 0.6420094491161418
+    },
+    "latency_ms": 3.584399993997067,
+    "id": 250,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2372,
+    "pred_class": "Web Development",
+    "confidence": 0.7976561565688793,
+    "probabilities": {
+      "Cloud Computing": 0.009615767252253715,
+      "Cybersecurity": 0.046469374141250255,
+      "Data Science": 0.1322694508464733,
+      "DevOps": 0.0139892511911433,
+      "Web Development": 0.7976561565688793
+    },
+    "latency_ms": 3.291499975603074,
+    "id": 251,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1838,
+    "pred_class": "Web Development",
+    "confidence": 0.5667610512882321,
+    "probabilities": {
+      "Cloud Computing": 0.012611927492840583,
+      "Cybersecurity": 0.078901278133172,
+      "Data Science": 0.3308623059065839,
+      "DevOps": 0.010863437179171341,
+      "Web Development": 0.5667610512882321
+    },
+    "latency_ms": 3.0664000078104436,
+    "id": 252,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8231,
+    "pred_class": "Web Development",
+    "confidence": 0.6288265292320216,
+    "probabilities": {
+      "Cloud Computing": 0.021889610403920845,
+      "Cybersecurity": 0.028563317168950147,
+      "Data Science": 0.3154835820615435,
+      "DevOps": 0.0052369611335639134,
+      "Web Development": 0.6288265292320216
+    },
+    "latency_ms": 4.122000013012439,
+    "id": 253,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5297,
+    "pred_class": "Web Development",
+    "confidence": 0.6137963488858793,
+    "probabilities": {
+      "Cloud Computing": 0.027057295124679758,
+      "Cybersecurity": 0.02164674063980621,
+      "Data Science": 0.3351097289098757,
+      "DevOps": 0.0023898864397590555,
+      "Web Development": 0.6137963488858793
+    },
+    "latency_ms": 3.3999999868683517,
+    "id": 254,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2735,
+    "pred_class": "Web Development",
+    "confidence": 0.7658076473953435,
+    "probabilities": {
+      "Cloud Computing": 0.01225135466670408,
+      "Cybersecurity": 0.041505505204356266,
+      "Data Science": 0.174530567858524,
+      "DevOps": 0.005904924875072149,
+      "Web Development": 0.7658076473953435
+    },
+    "latency_ms": 3.441200009547174,
+    "id": 255,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4872,
+    "pred_class": "Web Development",
+    "confidence": 0.7448169751466223,
+    "probabilities": {
+      "Cloud Computing": 0.01892405600527052,
+      "Cybersecurity": 0.029235580664085915,
+      "Data Science": 0.20403399544931095,
+      "DevOps": 0.0029893927347104084,
+      "Web Development": 0.7448169751466223
+    },
+    "latency_ms": 3.3937999978661537,
+    "id": 256,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 36,
+    "pred_class": "Web Development",
+    "confidence": 0.6090387420988586,
+    "probabilities": {
+      "Cloud Computing": 0.006639185388315767,
+      "Cybersecurity": 0.08268005438506125,
+      "Data Science": 0.26516919411728623,
+      "DevOps": 0.036472824010478314,
+      "Web Development": 0.6090387420988586
+    },
+    "latency_ms": 2.8555000317282975,
+    "id": 257,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4534,
+    "pred_class": "Data Science",
+    "confidence": 0.6064944275239815,
+    "probabilities": {
+      "Cloud Computing": 0.02204205838981049,
+      "Cybersecurity": 0.025551992453604365,
+      "Data Science": 0.6064944275239815,
+      "DevOps": 0.0021302767374548216,
+      "Web Development": 0.3437812448951488
+    },
+    "latency_ms": 3.2787000527605414,
+    "id": 258,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 7908,
+    "pred_class": "Web Development",
+    "confidence": 0.772398416178062,
+    "probabilities": {
+      "Cloud Computing": 0.020612712199875545,
+      "Cybersecurity": 0.021365000124153283,
+      "Data Science": 0.18387315259677434,
+      "DevOps": 0.0017507189011347977,
+      "Web Development": 0.772398416178062
+    },
+    "latency_ms": 3.8395000156015158,
+    "id": 259,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 8244,
+    "pred_class": "Data Science",
+    "confidence": 0.6170867566125718,
+    "probabilities": {
+      "Cloud Computing": 0.021495890171024414,
+      "Cybersecurity": 0.024077357871620034,
+      "Data Science": 0.6170867566125718,
+      "DevOps": 0.002153112267226148,
+      "Web Development": 0.3351868830775576
+    },
+    "latency_ms": 3.685999952722341,
+    "id": 260,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1624,
+    "pred_class": "Web Development",
+    "confidence": 0.7969220731179326,
+    "probabilities": {
+      "Cloud Computing": 0.01197808562999015,
+      "Cybersecurity": 0.044052303038103494,
+      "Data Science": 0.14143748403914813,
+      "DevOps": 0.005610054174825564,
+      "Web Development": 0.7969220731179326
+    },
+    "latency_ms": 3.055199980735779,
+    "id": 261,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 13082,
+    "pred_class": "Web Development",
+    "confidence": 0.8105859539873357,
+    "probabilities": {
+      "Cloud Computing": 0.01691574124879409,
+      "Cybersecurity": 0.02052978574603565,
+      "Data Science": 0.14949299818915235,
+      "DevOps": 0.002475520828682293,
+      "Web Development": 0.8105859539873357
+    },
+    "latency_ms": 3.8975999923422933,
+    "id": 262,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6660,
+    "pred_class": "Web Development",
+    "confidence": 0.7441994784713655,
+    "probabilities": {
+      "Cloud Computing": 0.015577575459292854,
+      "Cybersecurity": 0.03487624021522324,
+      "Data Science": 0.2015937224375007,
+      "DevOps": 0.003752983416617669,
+      "Web Development": 0.7441994784713655
+    },
+    "latency_ms": 3.5869000130333006,
+    "id": 263,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1814,
+    "pred_class": "Web Development",
+    "confidence": 0.7267245500749424,
+    "probabilities": {
+      "Cloud Computing": 0.008622061955279389,
+      "Cybersecurity": 0.062112368651397874,
+      "Data Science": 0.18512089776264504,
+      "DevOps": 0.01742012155573531,
+      "Web Development": 0.7267245500749424
+    },
+    "latency_ms": 2.9072000179439783,
+    "id": 264,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5140,
+    "pred_class": "Web Development",
+    "confidence": 0.7456900615529678,
+    "probabilities": {
+      "Cloud Computing": 0.020365879768470742,
+      "Cybersecurity": 0.033214340782451994,
+      "Data Science": 0.19776388364900388,
+      "DevOps": 0.0029658342471056446,
+      "Web Development": 0.7456900615529678
+    },
+    "latency_ms": 4.057399986777455,
+    "id": 265,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5949,
+    "pred_class": "Web Development",
+    "confidence": 0.7881820842945633,
+    "probabilities": {
+      "Cloud Computing": 0.02437799038786225,
+      "Cybersecurity": 0.03371110810679141,
+      "Data Science": 0.1509396983313033,
+      "DevOps": 0.00278911887947993,
+      "Web Development": 0.7881820842945633
+    },
+    "latency_ms": 3.339199989568442,
+    "id": 266,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5569,
+    "pred_class": "Web Development",
+    "confidence": 0.8408235913257733,
+    "probabilities": {
+      "Cloud Computing": 0.02221011568691922,
+      "Cybersecurity": 0.014906865100586439,
+      "Data Science": 0.12078359232618589,
+      "DevOps": 0.0012758355605350497,
+      "Web Development": 0.8408235913257733
+    },
+    "latency_ms": 3.5219999845139682,
+    "id": 267,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 3473,
+    "pred_class": "Web Development",
+    "confidence": 0.65303085528431,
+    "probabilities": {
+      "Cloud Computing": 0.02478310250055587,
+      "Cybersecurity": 0.04560864366932457,
+      "Data Science": 0.2708394485545334,
+      "DevOps": 0.005737949991276198,
+      "Web Development": 0.65303085528431
+    },
+    "latency_ms": 3.0872999923303723,
+    "id": 268,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2113,
+    "pred_class": "Web Development",
+    "confidence": 0.8548257449609074,
+    "probabilities": {
+      "Cloud Computing": 0.009397766661882542,
+      "Cybersecurity": 0.04079759130302122,
+      "Data Science": 0.08786147744786435,
+      "DevOps": 0.0071174196263244826,
+      "Web Development": 0.8548257449609074
+    },
+    "latency_ms": 3.273500013165176,
+    "id": 269,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1936,
+    "pred_class": "Web Development",
+    "confidence": 0.5073894565709878,
+    "probabilities": {
+      "Cloud Computing": 0.018063989918517622,
+      "Cybersecurity": 0.10081011444187848,
+      "Data Science": 0.36529758167612064,
+      "DevOps": 0.008438857392495341,
+      "Web Development": 0.5073894565709878
+    },
+    "latency_ms": 3.059100010432303,
+    "id": 270,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2028,
+    "pred_class": "Web Development",
+    "confidence": 0.7550960143323231,
+    "probabilities": {
+      "Cloud Computing": 0.013629617303954197,
+      "Cybersecurity": 0.04516597917563893,
+      "Data Science": 0.177902675800117,
+      "DevOps": 0.008205713387966876,
+      "Web Development": 0.7550960143323231
+    },
+    "latency_ms": 3.1649000011384487,
+    "id": 271,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5012,
+    "pred_class": "Web Development",
+    "confidence": 0.6832021601631819,
+    "probabilities": {
+      "Cloud Computing": 0.018382413369466364,
+      "Cybersecurity": 0.028571215871853333,
+      "Data Science": 0.26645763107819087,
+      "DevOps": 0.0033865795173074207,
+      "Web Development": 0.6832021601631819
+    },
+    "latency_ms": 3.436800034251064,
+    "id": 272,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 4816,
+    "pred_class": "Web Development",
+    "confidence": 0.8254809462677588,
+    "probabilities": {
+      "Cloud Computing": 0.014922024077081288,
+      "Cybersecurity": 0.038639656587146375,
+      "Data Science": 0.11791846328910734,
+      "DevOps": 0.003038909778906146,
+      "Web Development": 0.8254809462677588
+    },
+    "latency_ms": 3.4032000112347305,
+    "id": 273,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2296,
+    "pred_class": "Web Development",
+    "confidence": 0.7389759180983779,
+    "probabilities": {
+      "Cloud Computing": 0.010663792114994589,
+      "Cybersecurity": 0.04412415346451002,
+      "Data Science": 0.19461269113132834,
+      "DevOps": 0.011623445190789197,
+      "Web Development": 0.7389759180983779
+    },
+    "latency_ms": 3.2142000272870064,
+    "id": 274,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 1841,
+    "pred_class": "Web Development",
+    "confidence": 0.6384441847018423,
+    "probabilities": {
+      "Cloud Computing": 0.012344051189735637,
+      "Cybersecurity": 0.06465374552329933,
+      "Data Science": 0.2765489100114998,
+      "DevOps": 0.008009108573622853,
+      "Web Development": 0.6384441847018423
+    },
+    "latency_ms": 3.11290001263842,
+    "id": 275,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2969,
+    "pred_class": "Web Development",
+    "confidence": 0.7205445335061241,
+    "probabilities": {
+      "Cloud Computing": 0.016226893932562665,
+      "Cybersecurity": 0.039579223698223996,
+      "Data Science": 0.22027960026960458,
+      "DevOps": 0.0033697485934846873,
+      "Web Development": 0.7205445335061241
+    },
+    "latency_ms": 3.132999991066754,
+    "id": 276,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 2139,
+    "pred_class": "Web Development",
+    "confidence": 0.4659882611653831,
+    "probabilities": {
+      "Cloud Computing": 0.017724753555236845,
+      "Cybersecurity": 0.052310181466311,
+      "Data Science": 0.4546317174695199,
+      "DevOps": 0.00934508634354914,
+      "Web Development": 0.4659882611653831
+    },
+    "latency_ms": 3.1729000038467348,
+    "id": 277,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 9314,
+    "pred_class": "Web Development",
+    "confidence": 0.6542654056107422,
+    "probabilities": {
+      "Cloud Computing": 0.02477585639079089,
+      "Cybersecurity": 0.02637171599024215,
+      "Data Science": 0.29226757427711775,
+      "DevOps": 0.002319447731106949,
+      "Web Development": 0.6542654056107422
+    },
+    "latency_ms": 3.7973999860696495,
+    "id": 278,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 5430,
+    "pred_class": "Web Development",
+    "confidence": 0.6242230354357201,
+    "probabilities": {
+      "Cloud Computing": 0.021397000430376505,
+      "Cybersecurity": 0.04083607782219283,
+      "Data Science": 0.30978868223305306,
+      "DevOps": 0.0037552040786574792,
+      "Web Development": 0.6242230354357201
+    },
+    "latency_ms": 3.9012000197544694,
+    "id": 279,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6556,
+    "pred_class": "Data Science",
+    "confidence": 0.7153233868122401,
+    "probabilities": {
+      "Cloud Computing": 0.020424512034382954,
+      "Cybersecurity": 0.012830285745258041,
+      "Data Science": 0.7153233868122401,
+      "DevOps": 0.0010585878571680505,
+      "Web Development": 0.2503632275509509
+    },
+    "latency_ms": 3.5658000269904733,
+    "id": 280,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 7062,
+    "pred_class": "Web Development",
+    "confidence": 0.549867591335518,
+    "probabilities": {
+      "Cloud Computing": 0.029072057755373675,
+      "Cybersecurity": 0.0314663511614421,
+      "Data Science": 0.3876241999440826,
+      "DevOps": 0.0019697998035836705,
+      "Web Development": 0.549867591335518
+    },
+    "latency_ms": 3.847300016786903,
+    "id": 281,
+    "source_category": "Accountant"
+  },
+  {
+    "status": "success",
+    "text_len": 6271,
+    "pred_class": "Web Development",
+    "confidence": 0.7010477964179842,
+    "probabilities": {
+      "Cloud Computing": 0.021985036427821653,
+      "Cybersecurity": 0.03523341414397024,
+      "Data Science": 0.2383874828669276,
+      "DevOps": 0.003346270143296393,
+      "Web Development": 0.7010477964179842
+    },
+    "latency_ms": 3.411700017750263,
+    "id": 282,
+    "source_category": "Accountant"
+  }
+]

@@ -184,3 +184,10 @@ def get_review_status_summary(
         "counts": {status: count for status, count in rows},
         "total": sum(count for _, count in rows),
     }
+
+
+@router.get("/token-usage")
+def get_token_usage_telemetry(current_user: AnyAuthUser):
+    """Returns LLM token usage telemetry, cost breakdown by model, and budget status."""
+    from app.services.cost_tracking_service import cost_tracker
+    return cost_tracker.get_summary()

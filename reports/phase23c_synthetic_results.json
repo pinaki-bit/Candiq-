@@ -1,0 +1,87 @@
+[
+  {
+    "status": "success",
+    "text_len": 655,
+    "pred_class": "Cloud Computing",
+    "confidence": 0.8460969937938124,
+    "probabilities": {
+      "Cloud Computing": 0.8460969937938124,
+      "Cybersecurity": 0.13495407138532794,
+      "Data Science": 0.0011053358882514963,
+      "DevOps": 0.015661635372137637,
+      "Web Development": 0.002181963560470466
+    },
+    "latency_ms": 16.696800012141466,
+    "file": "resume_cloud_elena.pdf",
+    "expected_class": "Cloud Computing",
+    "is_correct": true
+  },
+  {
+    "status": "success",
+    "text_len": 780,
+    "pred_class": "DevOps",
+    "confidence": 0.9691770974574171,
+    "probabilities": {
+      "Cloud Computing": 0.0013601437099814025,
+      "Cybersecurity": 0.0033165689332875998,
+      "Data Science": 0.022152333386329527,
+      "DevOps": 0.9691770974574171,
+      "Web Development": 0.003993856512984455
+    },
+    "latency_ms": 3.4572999575175345,
+    "file": "resume_devops_marcus.pdf",
+    "expected_class": "DevOps",
+    "is_correct": true
+  },
+  {
+    "status": "success",
+    "text_len": 1036,
+    "pred_class": "Data Science",
+    "confidence": 0.9910829580016205,
+    "probabilities": {
+      "Cloud Computing": 0.0012007411478169889,
+      "Cybersecurity": 0.004125462028200636,
+      "Data Science": 0.9910829580016205,
+      "DevOps": 0.001719582949966911,
+      "Web Development": 0.0018712558723948246
+    },
+    "latency_ms": 4.97380003798753,
+    "file": "resume_ds_alex.pdf",
+    "expected_class": "Data Science",
+    "is_correct": true
+  },
+  {
+    "status": "success",
+    "text_len": 667,
+    "pred_class": "Cybersecurity",
+    "confidence": 0.969520282645864,
+    "probabilities": {
+      "Cloud Computing": 0.0023686004015255058,
+      "Cybersecurity": 0.969520282645864,
+      "Data Science": 0.013266238935877379,
+      "DevOps": 0.005965632605518663,
+      "Web Development": 0.008879245411214511
+    },
+    "latency_ms": 3.451600030530244,
+    "file": "resume_sec_david.pdf",
+    "expected_class": "Cybersecurity",
+    "is_correct": true
+  },
+  {
+    "status": "success",
+    "text_len": 885,
+    "pred_class": "Web Development",
+    "confidence": 0.990474401905322,
+    "probabilities": {
+      "Cloud Computing": 0.0024041693351692746,
+      "Cybersecurity": 0.0026748691943869678,
+      "Data Science": 0.002330356951989866,
+      "DevOps": 0.002116202613131842,
+      "Web Development": 0.990474401905322
+    },
+    "latency_ms": 3.2980000250972807,
+    "file": "resume_web_sarah.pdf",
+    "expected_class": "Web Development",
+    "is_correct": true
+  }
+]

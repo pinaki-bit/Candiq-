@@ -39,6 +39,11 @@ class User(Base):
         String(32), nullable=False, default="hr", index=True
     )
 
+    # Multi-tenant isolation scope
+    tenant_id: Mapped[str] = mapped_column(
+        String(64), nullable=False, default="default_tenant", server_default="default_tenant", index=True
+    )
+
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
 
     # Kept for backward compat — role=="admin" is the authoritative check

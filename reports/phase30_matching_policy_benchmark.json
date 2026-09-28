@@ -1,0 +1,222 @@
+{
+  "job": {
+    "title": "Senior Python Backend Engineer",
+    "domain": "Web Development",
+    "description": "Seeking a Senior Python Backend Engineer to build scalable web APIs using FastAPI, PostgreSQL, Docker, and AWS.",
+    "required_skills": [
+      [
+        "Python",
+        1.0
+      ],
+      [
+        "FastAPI",
+        1.0
+      ],
+      [
+        "PostgreSQL",
+        1.0
+      ]
+    ],
+    "preferred_skills": [
+      [
+        "Docker",
+        1.0
+      ],
+      [
+        "AWS",
+        1.0
+      ]
+    ]
+  },
+  "results": [
+    {
+      "id": "SCENARIO_A",
+      "label": "ALL REQUIRED SKILLS PRESENT",
+      "expected_rank": 1,
+      "required_coverage": 100.0,
+      "preferred_coverage": 100.0,
+      "semantic_similarity": 94.22,
+      "lexical_similarity": 26.67,
+      "policy_1_base_score": 100.0,
+      "policy_1_hybrid_score": 85.53,
+      "policy_2_gated_base_score": 100.0,
+      "policy_2_gated_hybrid_score": 85.53,
+      "missing_required": []
+    },
+    {
+      "id": "SCENARIO_B",
+      "label": "ONE REQUIRED SKILL MISSING",
+      "expected_rank": 2,
+      "required_coverage": 66.67,
+      "preferred_coverage": 100.0,
+      "semantic_similarity": 82.07,
+      "lexical_similarity": 21.74,
+      "policy_1_base_score": 76.67,
+      "policy_1_hybrid_score": 69.39,
+      "policy_2_gated_base_score": 51.12,
+      "policy_2_gated_hybrid_score": 46.26,
+      "missing_required": [
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "SCENARIO_C",
+      "label": "MULTIPLE REQUIRED SKILLS MISSING",
+      "expected_rank": 4,
+      "required_coverage": 33.33,
+      "preferred_coverage": 50.0,
+      "semantic_similarity": 57.4,
+      "lexical_similarity": 9.09,
+      "policy_1_base_score": 38.33,
+      "policy_1_hybrid_score": 41.14,
+      "policy_2_gated_base_score": 12.78,
+      "policy_2_gated_hybrid_score": 13.71,
+      "missing_required": [
+        "FastAPI",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "SCENARIO_D",
+      "label": "ZERO REQUIRED SKILLS PRESENT BUT PREFERRED SKILLS PRESENT",
+      "expected_rank": 5,
+      "required_coverage": 0.0,
+      "preferred_coverage": 100.0,
+      "semantic_similarity": 46.52,
+      "lexical_similarity": 8.0,
+      "policy_1_base_score": 30.0,
+      "policy_1_hybrid_score": 29.21,
+      "policy_2_gated_base_score": 0.0,
+      "policy_2_gated_hybrid_score": 0.0,
+      "missing_required": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "SCENARIO_E",
+      "label": "ZERO REQUIRED AND ZERO PREFERRED SKILLS PRESENT",
+      "expected_rank": 6,
+      "required_coverage": 0.0,
+      "preferred_coverage": 0.0,
+      "semantic_similarity": 30.13,
+      "lexical_similarity": 3.57,
+      "policy_1_base_score": 0.0,
+      "policy_1_hybrid_score": 13.06,
+      "policy_2_gated_base_score": 0.0,
+      "policy_2_gated_hybrid_score": 0.0,
+      "missing_required": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "SCENARIO_F",
+      "label": "REQUIRED SKILLS PRESENT BUT LOW SEMANTIC SIMILARITY",
+      "expected_rank": 3,
+      "required_coverage": 66.67,
+      "preferred_coverage": 0.0,
+      "semantic_similarity": 41.59,
+      "lexical_similarity": 5.56,
+      "policy_1_base_score": 46.67,
+      "policy_1_hybrid_score": 36.18,
+      "policy_2_gated_base_score": 31.11,
+      "policy_2_gated_hybrid_score": 24.12,
+      "missing_required": [
+        "FastAPI"
+      ]
+    },
+    {
+      "id": "SCENARIO_G",
+      "label": "HIGH SEMANTIC SIMILARITY BUT REQUIRED SKILLS MISSING",
+      "expected_rank": 5,
+      "required_coverage": 0.0,
+      "preferred_coverage": 0.0,
+      "semantic_similarity": 44.09,
+      "lexical_similarity": 9.68,
+      "policy_1_base_score": 0.0,
+      "policy_1_hybrid_score": 17.31,
+      "policy_2_gated_base_score": 0.0,
+      "policy_2_gated_hybrid_score": 0.0,
+      "missing_required": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "SCENARIO_H",
+      "label": "STRONG KEYWORD OVERLAP BUT WRONG DOMAIN",
+      "expected_rank": 6,
+      "required_coverage": 100.0,
+      "preferred_coverage": 0.0,
+      "semantic_similarity": 54.24,
+      "lexical_similarity": 6.67,
+      "policy_1_base_score": 70.0,
+      "policy_1_hybrid_score": 51.85,
+      "policy_2_gated_base_score": 70.0,
+      "policy_2_gated_hybrid_score": 51.85,
+      "missing_required": []
+    },
+    {
+      "id": "SCENARIO_I",
+      "label": "PARAPHRASED SKILLS WITH LOW EXACT-WORD OVERLAP",
+      "expected_rank": 2,
+      "required_coverage": 100.0,
+      "preferred_coverage": 50.0,
+      "semantic_similarity": 61.02,
+      "lexical_similarity": 10.71,
+      "policy_1_base_score": 85.0,
+      "policy_1_hybrid_score": 67.27,
+      "policy_2_gated_base_score": 85.0,
+      "policy_2_gated_hybrid_score": 67.27,
+      "missing_required": []
+    },
+    {
+      "id": "SCENARIO_J",
+      "label": "STRONG TECHNICAL MATCH WITH DIFFERENT WORDING",
+      "expected_rank": 1,
+      "required_coverage": 100.0,
+      "preferred_coverage": 100.0,
+      "semantic_similarity": 81.82,
+      "lexical_similarity": 25.93,
+      "policy_1_base_score": 100.0,
+      "policy_1_hybrid_score": 82.35,
+      "policy_2_gated_base_score": 100.0,
+      "policy_2_gated_hybrid_score": 82.35,
+      "missing_required": []
+    }
+  ],
+  "p1_ranking": [
+    "SCENARIO_A",
+    "SCENARIO_J",
+    "SCENARIO_B",
+    "SCENARIO_I",
+    "SCENARIO_H",
+    "SCENARIO_C",
+    "SCENARIO_F",
+    "SCENARIO_D",
+    "SCENARIO_G",
+    "SCENARIO_E"
+  ],
+  "p2_ranking": [
+    "SCENARIO_A",
+    "SCENARIO_J",
+    "SCENARIO_I",
+    "SCENARIO_H",
+    "SCENARIO_B",
+    "SCENARIO_F",
+    "SCENARIO_C",
+    "SCENARIO_D",
+    "SCENARIO_E",
+    "SCENARIO_G"
+  ],
+  "metrics": {
+    "p1_precision_at_1": 1.0,
+    "p1_precision_at_3": 1.0,
+    "p2_precision_at_1": 1.0,
+    "p2_precision_at_3": 1.0
+  }
+}

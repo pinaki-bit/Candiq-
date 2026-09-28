@@ -1,0 +1,182 @@
+{
+  "samples_tested": 25,
+  "correct_count": 23,
+  "accuracy_pct": 92.0,
+  "results": [
+    {
+      "sample_id": "TEST_RESUME_01",
+      "actual_label": "Cloud Computing",
+      "predicted_label": "Cloud Computing",
+      "calibrated_confidence_pct": 97.5,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_02",
+      "actual_label": "Cloud Computing",
+      "predicted_label": "Cloud Computing",
+      "calibrated_confidence_pct": 97.34,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_03",
+      "actual_label": "Cloud Computing",
+      "predicted_label": "Cloud Computing",
+      "calibrated_confidence_pct": 97.84,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_04",
+      "actual_label": "Cloud Computing",
+      "predicted_label": "Cloud Computing",
+      "calibrated_confidence_pct": 97.25,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_05",
+      "actual_label": "Cloud Computing",
+      "predicted_label": "Cloud Computing",
+      "calibrated_confidence_pct": 97.49,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_06",
+      "actual_label": "Cybersecurity",
+      "predicted_label": "Cybersecurity",
+      "calibrated_confidence_pct": 95.75,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_07",
+      "actual_label": "Cybersecurity",
+      "predicted_label": "Cybersecurity",
+      "calibrated_confidence_pct": 97.78,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_08",
+      "actual_label": "Cybersecurity",
+      "predicted_label": "Cybersecurity",
+      "calibrated_confidence_pct": 98.3,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_09",
+      "actual_label": "Cybersecurity",
+      "predicted_label": "Cybersecurity",
+      "calibrated_confidence_pct": 99.13,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_10",
+      "actual_label": "Cybersecurity",
+      "predicted_label": "Cybersecurity",
+      "calibrated_confidence_pct": 96.33,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_11",
+      "actual_label": "Data Science",
+      "predicted_label": "Data Science",
+      "calibrated_confidence_pct": 98.38,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_12",
+      "actual_label": "Data Science",
+      "predicted_label": "Data Science",
+      "calibrated_confidence_pct": 97.51,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_13",
+      "actual_label": "Data Science",
+      "predicted_label": "Data Science",
+      "calibrated_confidence_pct": 94.58,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_14",
+      "actual_label": "Data Science",
+      "predicted_label": "Data Science",
+      "calibrated_confidence_pct": 92.8,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_15",
+      "actual_label": "Data Science",
+      "predicted_label": "Data Science",
+      "calibrated_confidence_pct": 97.11,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_16",
+      "actual_label": "DevOps",
+      "predicted_label": "Cybersecurity",
+      "calibrated_confidence_pct": 57.51,
+      "status": "INCORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_17",
+      "actual_label": "DevOps",
+      "predicted_label": "DevOps",
+      "calibrated_confidence_pct": 96.56,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_18",
+      "actual_label": "DevOps",
+      "predicted_label": "DevOps",
+      "calibrated_confidence_pct": 98.78,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_19",
+      "actual_label": "DevOps",
+      "predicted_label": "Web Development",
+      "calibrated_confidence_pct": 60.84,
+      "status": "INCORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_20",
+      "actual_label": "DevOps",
+      "predicted_label": "DevOps",
+      "calibrated_confidence_pct": 97.85,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_21",
+      "actual_label": "Web Development",
+      "predicted_label": "Web Development",
+      "calibrated_confidence_pct": 97.68,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_22",
+      "actual_label": "Web Development",
+      "predicted_label": "Web Development",
+      "calibrated_confidence_pct": 98.21,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_23",
+      "actual_label": "Web Development",
+      "predicted_label": "Web Development",
+      "calibrated_confidence_pct": 98.24,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_24",
+      "actual_label": "Web Development",
+      "predicted_label": "Web Development",
+      "calibrated_confidence_pct": 97.85,
+      "status": "CORRECT"
+    },
+    {
+      "sample_id": "TEST_RESUME_25",
+      "actual_label": "Web Development",
+      "predicted_label": "Web Development",
+      "calibrated_confidence_pct": 98.31,
+      "status": "CORRECT"
+    }
+  ]
+}

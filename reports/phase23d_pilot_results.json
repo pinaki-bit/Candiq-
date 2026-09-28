@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "file": "Accountant\\0.pdf",
+    "source_category": "Accountant",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2444,
+    "ocr_latency_ms": 10058.811599970795,
+    "predicted_class": "Web Development",
+    "confidence": 0.7643890954981383,
+    "probabilities": {
+      "Cloud Computing": 0.01061853153519458,
+      "Cybersecurity": 0.027796515384742548,
+      "Data Science": 0.19221603461231623,
+      "DevOps": 0.004979822969608363,
+      "Web Development": 0.7643890954981383
+    },
+    "inference_latency_ms": 19.798099994659424,
+    "total_latency_ms": 10078.609699965455,
+    "text_snippet": "JESSICA CLAIRE Montgomery Street, San Francisco, CA 94105 (555) 432-1000 resumesample @ examp com SUMMARY Detail-oriented Accountant who effectively manages strict deadClairenes schedules and tasks wi"
+  },
+  {
+    "id": 2,
+    "file": "Accountant\\0287439839da10d2.pdf",
+    "source_category": "Accountant",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1220,
+    "ocr_latency_ms": 4187.224599998444,
+    "predicted_class": "Web Development",
+    "confidence": 0.537195856384137,
+    "probabilities": {
+      "Cloud Computing": 0.0064628488978366455,
+      "Cybersecurity": 0.04330189583262315,
+      "Data Science": 0.40440590078684213,
+      "DevOps": 0.008633498098561055,
+      "Web Development": 0.537195856384137
+    },
+    "inference_latency_ms": 4.045300011057407,
+    "total_latency_ms": 4191.269900009502,
+    "text_snippet": "Federal Resume Sample (Entry-level Accounting)_ Julie A. McFederal HLI Shaw Avenue; Fresno.CA 93740 (559) 333-4555 (homie): (559) 423-4567 (mobile) iulie mcfederaldiobsnecom SSN: 222-22-2222 Citizensh"
+  },
+  {
+    "id": 3,
+    "file": "Accountant resumes\\Image_10.pdf",
+    "source_category": "Accountant resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1490,
+    "ocr_latency_ms": 30089.705900056288,
+    "predicted_class": "Data Science",
+    "confidence": 0.5195699251522855,
+    "probabilities": {
+      "Cloud Computing": 0.007756044130908049,
+      "Cybersecurity": 0.03878466494831778,
+      "Data Science": 0.5195699251522855,
+      "DevOps": 0.006267968328553736,
+      "Web Development": 0.427621397439935
+    },
+    "inference_latency_ms": 37.44459996232763,
+    "total_latency_ms": 30127.150500018615,
+    "text_snippet": "EDUCA TION MBA Executive Leadership Bachelor of Science in Accounting University of Texas Richland College 2016 2018 2005 2008 TRAINING & CERTIFICATIONS Certified Management Accountant (CMA) Certified"
+  },
+  {
+    "id": 4,
+    "file": "Accountant resumes\\Image_11.pdf",
+    "source_category": "Accountant resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1725,
+    "ocr_latency_ms": 13587.645000021439,
+    "predicted_class": "Web Development",
+    "confidence": 0.6663483044561975,
+    "probabilities": {
+      "Cloud Computing": 0.005930194732562883,
+      "Cybersecurity": 0.06920848713447914,
+      "Data Science": 0.22481732142463925,
+      "DevOps": 0.03369569225212107,
+      "Web Development": 0.6663483044561975
+    },
+    "inference_latency_ms": 9.055800037458539,
+    "total_latency_ms": 13596.700800058898,
+    "text_snippet": "HOWARD GERRARD Accountant WORK EXPERIENCE 21p1com , Bicrgem CoTp-ny Prrerrt Aetbec CCcouTEn Locin Eeenoreibl aniliC cmndath acrpuntidcna Adwting -nd mrolearic)m Ladit Direcbor ezulandes concansabo ino"
+  },
+  {
+    "id": 5,
+    "file": "Advocate\\0.pdf",
+    "source_category": "Advocate",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 4569,
+    "ocr_latency_ms": 17260.974199976772,
+    "predicted_class": "Data Science",
+    "confidence": 0.6313084249561565,
+    "probabilities": {
+      "Cloud Computing": 0.022536377190942695,
+      "Cybersecurity": 0.01665214637134042,
+      "Data Science": 0.6313084249561565,
+      "DevOps": 0.0020783510038184243,
+      "Web Development": 0.327424700477742
+    },
+    "inference_latency_ms": 7.8384000225923955,
+    "total_latency_ms": 17268.812599999364,
+    "text_snippet": "JESSICA CLAIRE 100 Montgomery St. IOth Floor (555) 432-1000 resumesample @ examplecom PROFESSIONAL SumMARY Dedicated professional with demonstrated strengths in childcare; time management, and quickly"
+  },
+  {
+    "id": 6,
+    "file": "Advocate\\0d8820b479266502.pdf",
+    "source_category": "Advocate",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1696,
+    "ocr_latency_ms": 16663.469800027087,
+    "predicted_class": "Web Development",
+    "confidence": 0.6670041665786208,
+    "probabilities": {
+      "Cloud Computing": 0.014942435816325362,
+      "Cybersecurity": 0.042362973745413826,
+      "Data Science": 0.2707862219290595,
+      "DevOps": 0.004904201930580507,
+      "Web Development": 0.6670041665786208
+    },
+    "inference_latency_ms": 6.942400010302663,
+    "total_latency_ms": 16670.41220003739,
+    "text_snippet": "Jack Walton LAWYER wal VVV ton@gmail com 15 Yardley Road, San Francisco, CA 94131, United States (415) 646-1277 Profile Experienced and innovative Lawyer with a passion and dedication to justice: High"
+  },
+  {
+    "id": 7,
+    "file": "Advocate resumes\\Image_1.pdf",
+    "source_category": "Advocate resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2369,
+    "ocr_latency_ms": 15446.892099978868,
+    "predicted_class": "Web Development",
+    "confidence": 0.6747389401381785,
+    "probabilities": {
+      "Cloud Computing": 0.011857037214710976,
+      "Cybersecurity": 0.04056631706426338,
+      "Data Science": 0.26458932545170555,
+      "DevOps": 0.008248380131141576,
+      "Web Development": 0.6747389401381785
+    },
+    "inference_latency_ms": 6.659000006038696,
+    "total_latency_ms": 15453.551099984907,
+    "text_snippet": "SHIVANI 66 highly accomplished capable of analyzing complex research; data and SINGH documentation to prepare and represent individuals in sensitive cases Proficient in onducting research and analyzin"
+  },
+  {
+    "id": 8,
+    "file": "Advocate resumes\\Image_100.pdf",
+    "source_category": "Advocate resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 3239,
+    "ocr_latency_ms": 11806.490399991162,
+    "predicted_class": "Web Development",
+    "confidence": 0.561209323138762,
+    "probabilities": {
+      "Cloud Computing": 0.020537194857399625,
+      "Cybersecurity": 0.05898650679261693,
+      "Data Science": 0.35337896059425533,
+      "DevOps": 0.005888014616965924,
+      "Web Development": 0.561209323138762
+    },
+    "inference_latency_ms": 7.0936999982222915,
+    "total_latency_ms": 11813.584099989384,
+    "text_snippet": "Toni Aufderhar 4008 Weissnat VillagesPhoenix, AZ +1 (555) 981 6589 EXPERIENCE PROVIDER SERVICE ADVOCACY MANAGER New York, NY 08/2015 present Influence or provide input to forecasting and planning acti"
+  },
+  {
+    "id": 9,
+    "file": "Agricultural\\1.pdf",
+    "source_category": "Agricultural",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 7135,
+    "ocr_latency_ms": 27431.42679997254,
+    "predicted_class": "Web Development",
+    "confidence": 0.5332413191971977,
+    "probabilities": {
+      "Cloud Computing": 0.032523144422934774,
+      "Cybersecurity": 0.045424812859860234,
+      "Data Science": 0.38505138145936096,
+      "DevOps": 0.00375934206064628,
+      "Web Development": 0.5332413191971977
+    },
+    "inference_latency_ms": 9.349600004497916,
+    "total_latency_ms": 27440.77639997704,
+    "text_snippet": "JESSICA CLAIRE 100 Montgomery St  IOth Floor (555) 432-1000 resumesample @ examplecom PROFESSIONAL SumMARY Experienced agricultural worker with over 40+ years of experience in the farming and ranching"
+  },
+  {
+    "id": 10,
+    "file": "Agricultural\\10.pdf",
+    "source_category": "Agricultural",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 4425,
+    "ocr_latency_ms": 16842.323500022758,
+    "predicted_class": "Data Science",
+    "confidence": 0.5632806418992766,
+    "probabilities": {
+      "Cloud Computing": 0.017285556727186475,
+      "Cybersecurity": 0.026968227973040253,
+      "Data Science": 0.5632806418992766,
+      "DevOps": 0.0023447801632489017,
+      "Web Development": 0.3901207932372478
+    },
+    "inference_latency_ms": 7.112700026482344,
+    "total_latency_ms": 16849.43620004924,
+    "text_snippet": "JESSICA CLAIRE Montgomery Street, San Francisco, CA 94105 (555) 432-1000 resumesample@ examp com PROFESSIONAL PROFILE Professional who is passionate about agriculture; is highly motivated, ambitious, "
+  },
+  {
+    "id": 11,
+    "file": "Agricultural resumes\\Image_1.pdf",
+    "source_category": "Agricultural resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1913,
+    "ocr_latency_ms": 7943.492099992,
+    "predicted_class": "Web Development",
+    "confidence": 0.5568556676269263,
+    "probabilities": {
+      "Cloud Computing": 0.02000172175430478,
+      "Cybersecurity": 0.05645047919727466,
+      "Data Science": 0.3622140249050661,
+      "DevOps": 0.0044781065164282,
+      "Web Development": 0.5568556676269263
+    },
+    "inference_latency_ms": 5.306200007908046,
+    "total_latency_ms": 7948.798299999908,
+    "text_snippet": "Gianna Daniels Main Street New City land . CA %010 Cell: (555) 322-7337 evample-emaila example com Summary Motivated Crop Applicator experienced in peak and off-peak operations Safely handle all chemi"
+  },
+  {
+    "id": 12,
+    "file": "Agricultural resumes\\Image_10.pdf",
+    "source_category": "Agricultural resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2553,
+    "ocr_latency_ms": 15602.94630000135,
+    "predicted_class": "Web Development",
+    "confidence": 0.616224810475846,
+    "probabilities": {
+      "Cloud Computing": 0.010274161994277586,
+      "Cybersecurity": 0.07680559964283548,
+      "Data Science": 0.2721054117633722,
+      "DevOps": 0.024590016123668706,
+      "Web Development": 0.616224810475846
+    },
+    "inference_latency_ms": 4.168400017078966,
+    "total_latency_ms": 15607.114700018428,
+    "text_snippet": "Aizaz Ul BSC AgriculturalEngineer Moblle 49120 Lmall Adamaan va stalus LmaymenL Teatr Ohbnhr DL hunhibauato cmhark onastratosic Iicl poutlon thchndccpinglAcuculturalfiellwhere eccllant proferclonil, J"
+  },
+  {
+    "id": 13,
+    "file": "Agriculture\\02a5a1f9ff80817d.pdf",
+    "source_category": "Agriculture",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1178,
+    "ocr_latency_ms": 5052.479900012258,
+    "predicted_class": "Web Development",
+    "confidence": 0.4821637006841771,
+    "probabilities": {
+      "Cloud Computing": 0.01756737403652888,
+      "Cybersecurity": 0.048008109485356006,
+      "Data Science": 0.4442402396984842,
+      "DevOps": 0.008020576095453855,
+      "Web Development": 0.4821637006841771
+    },
+    "inference_latency_ms": 4.469300038181245,
+    "total_latency_ms": 5056.94920005044,
+    "text_snippet": "Agriculturist Resume Template Maurice James F. Englebent Margaret SL, Key West Florida Phone- 305-334-0912 englebert_mji@ycmall com Objective To be a Agriculturist in a federal or state controlled far"
+  },
+  {
+    "id": 14,
+    "file": "Agriculture\\035a6c9b5ae923b0.pdf",
+    "source_category": "Agriculture",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2791,
+    "ocr_latency_ms": 14706.960100040305,
+    "predicted_class": "Web Development",
+    "confidence": 0.626200455379243,
+    "probabilities": {
+      "Cloud Computing": 0.01975530764860892,
+      "Cybersecurity": 0.03629447755644612,
+      "Data Science": 0.31261782973727437,
+      "DevOps": 0.005131929678427682,
+      "Web Development": 0.626200455379243
+    },
+    "inference_latency_ms": 4.346200032159686,
+    "total_latency_ms": 14711.306300072465,
+    "text_snippet": "Aurora Cisneros Aller Peasant; born in Quintana del Castillo, Spain on the 18th of February; 1952 Personal Profile Multi-skilled agricultural professional, with standing history of local leadership th"
+  },
+  {
+    "id": 15,
+    "file": "Apparel\\0ca5c2be0dba2bdc.pdf",
+    "source_category": "Apparel",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2468,
+    "ocr_latency_ms": 16511.94239995675,
+    "predicted_class": "Web Development",
+    "confidence": 0.8800313639008015,
+    "probabilities": {
+      "Cloud Computing": 0.011076602024109778,
+      "Cybersecurity": 0.01717291909325631,
+      "Data Science": 0.0867499820894664,
+      "DevOps": 0.00496913289236596,
+      "Web Development": 0.8800313639008015
+    },
+    "inference_latency_ms": 6.048100010957569,
+    "total_latency_ms": 16517.99049996771,
+    "text_snippet": "Carla Jensen Apparel Designer (323) carla jensen@yahoo.com trifling-sick org Palm Coast, Luxembourg SUMMARY MY LIFE PHILOSOPHY Passionate and experienced Apparel Designer with 7+ years of Creativity i"
+  },
+  {
+    "id": 16,
+    "file": "Apparel\\131bb10b4e9b172c.pdf",
+    "source_category": "Apparel",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1583,
+    "ocr_latency_ms": 9343.210899969563,
+    "predicted_class": "Web Development",
+    "confidence": 0.8749579875157038,
+    "probabilities": {
+      "Cloud Computing": 0.0064282014098554245,
+      "Cybersecurity": 0.02685960408176937,
+      "Data Science": 0.08800412460380724,
+      "DevOps": 0.003750082388864237,
+      "Web Development": 0.8749579875157038
+    },
+    "inference_latency_ms": 4.245000018272549,
+    "total_latency_ms": 9347.455899987835,
+    "text_snippet": "Mary Madison Senior Fashion Designer with an eye for the latest fashion trends Over 10 years of experience working as a creative Fashion Designer for both high street fashion Thaute couture. Experienc"
+  },
+  {
+    "id": 17,
+    "file": "Apparel resumes\\Image_1.pdf",
+    "source_category": "Apparel resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1010,
+    "ocr_latency_ms": 4978.460000013001,
+    "predicted_class": "Web Development",
+    "confidence": 0.815820952260545,
+    "probabilities": {
+      "Cloud Computing": 0.00771698247711766,
+      "Cybersecurity": 0.028219426981760286,
+      "Data Science": 0.14164248160052342,
+      "DevOps": 0.006600156680053798,
+      "Web Development": 0.815820952260545
+    },
+    "inference_latency_ms": 5.452600016724318,
+    "total_latency_ms": 4983.912600029726,
+    "text_snippet": "LIZA ADAMS FASHION DESIGNER 012-945-67763 023 Myers NYC lieademscemail com izadams com OBJECTIVE Lam seeking t0 secure fun; exciting and challenging fashion designer pasition that - allova me best uti"
+  },
+  {
+    "id": 18,
+    "file": "Apparel resumes\\Image_14.pdf",
+    "source_category": "Apparel resumes",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1486,
+    "ocr_latency_ms": 19600.373400026,
+    "predicted_class": "Web Development",
+    "confidence": 0.8900783438279053,
+    "probabilities": {
+      "Cloud Computing": 0.006902578973792204,
+      "Cybersecurity": 0.02636725739637625,
+      "Data Science": 0.0720535556138671,
+      "DevOps": 0.004598264188059125,
+      "Web Development": 0.8900783438279053
+    },
+    "inference_latency_ms": 7.560500002000481,
+    "total_latency_ms": 19607.933900028,
+    "text_snippet": "CAREER HIGHLIGHTS Over 13 years of experience working as a creative Fashion Designer Highly skilled in designing both apparel and textiles Hands on experience in providing clothing guidance and suppor"
+  },
+  {
+    "id": 19,
+    "file": "Architect\\02657761cacdda99.pdf",
+    "source_category": "Architect",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 2319,
+    "ocr_latency_ms": 17839.482399984263,
+    "predicted_class": "Web Development",
+    "confidence": 0.83510515579368,
+    "probabilities": {
+      "Cloud Computing": 0.02359647942319206,
+      "Cybersecurity": 0.05208125782462246,
+      "Data Science": 0.0864231203829752,
+      "DevOps": 0.002793986575530094,
+      "Web Development": 0.83510515579368
+    },
+    "inference_latency_ms": 8.521000039763749,
+    "total_latency_ms": 17848.003400024027,
+    "text_snippet": "Mikaela Davies Architect Wall St, New York, 10005,USA 890-555-0401 example@emaiLcom Linkedin; Profile Make_this Resume $2.95, Resume Guide \"A professional, creative and innovative Architect with 10 ye"
+  },
+  {
+    "id": 20,
+    "file": "Architect\\07f563f4cb2b5dd3.pdf",
+    "source_category": "Architect",
+    "page_count": 1,
+    "ocr_status": "SUCCESS",
+    "extracted_char_count": 1451,
+    "ocr_latency_ms": 8322.317800018936,
+    "predicted_class": "Web Development",
+    "confidence": 0.4918317445028455,
+    "probabilities": {
+      "Cloud Computing": 0.020272331944821448,
+      "Cybersecurity": 0.04594557594671733,
+      "Data Science": 0.42513441396139473,
+      "DevOps": 0.016815933644220904,
+      "Web Development": 0.4918317445028455
+    },
+    "inference_latency_ms": 7.19319999916479,
+    "total_latency_ms": 8329.511000018101,
+    "text_snippet": "ANGELINA SnOW ARGHITECT PROFESSIONAL History Architect Stanley Consultants / 2017 2019 Conducted (sedrch und data cellection pItprted plesentotons ond repons constucted mod2ls and muade Doolds ncng It"
+  }
+]

@@ -17,11 +17,14 @@ from app.database import Base, get_db
 from app.main import create_app
 from app.models.user import User
 
+from sqlalchemy.pool import StaticPool
+
 TEST_DATABASE_URL = "sqlite:///:memory:"
 
 test_engine = create_engine(
     TEST_DATABASE_URL,
     connect_args={"check_same_thread": False},
+    poolclass=StaticPool,
 )
 TestSessionLocal = sessionmaker(
     bind=test_engine, autocommit=False, autoflush=False
@@ -36,21 +39,20 @@ def create_test_tables():
 
 
 @pytest.fixture()
-def db_session(create_test_tables) -> Session:
-    connection = test_engine.connect()
-    transaction = connection.begin()
-    session = TestSessionLocal(bind=connection)
+def db_session() -> Session:
+    session = TestSessionLocal()
     try:
         yield session
     finally:
+        session.rollback()
         session.close()
-        transaction.rollback()
-        connection.close()
 
 
 @pytest.fixture()
 def client(db_session: Session) -> TestClient:
     app = create_app()
+    if hasattr(app.state, "limiter"):
+        app.state.limiter.enabled = False
 
     # Seed test users (must_change_password=False for test stability)
     if not db_session.query(User).filter_by(email="test@example.com").first():

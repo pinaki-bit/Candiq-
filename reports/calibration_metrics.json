@@ -1,0 +1,29 @@
+{
+  "brier_score": 0.029,
+  "expected_calibration_error_ece": 0.0441,
+  "avg_confidence_correct": 0.9506,
+  "avg_confidence_incorrect": 0.5768,
+  "confidence_bin_breakdown": [
+    {
+      "bin_range": "0.4 - 0.6",
+      "count": 6,
+      "accuracy": 0.3333,
+      "avg_confidence": 0.5239,
+      "abs_calibration_gap": 0.1906
+    },
+    {
+      "bin_range": "0.6 - 0.8",
+      "count": 12,
+      "accuracy": 0.8333,
+      "avg_confidence": 0.6936,
+      "abs_calibration_gap": 0.1397
+    },
+    {
+      "bin_range": "0.8 - 1.0",
+      "count": 260,
+      "accuracy": 1.0,
+      "avg_confidence": 0.9637,
+      "abs_calibration_gap": 0.0363
+    }
+  ]
+}

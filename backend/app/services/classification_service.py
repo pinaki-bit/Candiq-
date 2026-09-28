@@ -30,6 +30,8 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
+from app.services.ood_policy import evaluate_ood_policy, get_active_ood_policy, OODDecision
+
 logger = logging.getLogger(__name__)
 
 TARGET_CATEGORIES = {
@@ -53,6 +55,11 @@ class ClassificationResult:
     model_version: str | None
     is_uncertain: bool
     warning: str | None
+    status: str = "accepted"       # "accepted" | "review"
+    ood_status: str = "in_domain_like"  # "in_domain_like" | "possible_out_of_domain"
+    review_required: bool = False
+    policy_version: str = "v1.0-phase24-op4"
+    reason: str = "confidence_above_configured_threshold"
 
 
 @lru_cache(maxsize=1)
@@ -164,6 +171,7 @@ def predict(text: str) -> ClassificationResult:
         ClassificationResult with prediction, confidence, and explanation.
     """
     if not text or not text.strip():
+        ood_dec = evaluate_ood_policy(None, None)
         return ClassificationResult(
             predicted_domain=None,
             confidence_label="low",
@@ -172,10 +180,16 @@ def predict(text: str) -> ClassificationResult:
             model_version=None,
             is_uncertain=True,
             warning="Input text is empty or too short for reliable classification.",
+            status=ood_dec.status,
+            ood_status=ood_dec.ood_status,
+            review_required=ood_dec.review_required,
+            policy_version=ood_dec.policy_version,
+            reason=ood_dec.reason,
         )
 
     model_result = _load_model()
     if model_result is None:
+        ood_dec = evaluate_ood_policy(None, None)
         return ClassificationResult(
             predicted_domain=None,
             confidence_label="unavailable",
@@ -187,6 +201,11 @@ def predict(text: str) -> ClassificationResult:
                 "Classification model is not available. "
                 "Train a model using ml/scripts/train_model.py and restart the server."
             ),
+            status=ood_dec.status,
+            ood_status=ood_dec.ood_status,
+            review_required=ood_dec.review_required,
+            policy_version=ood_dec.policy_version,
+            reason="model_unavailable",
         )
 
     pipeline, version, artifact = model_result
@@ -255,13 +274,30 @@ def predict(text: str) -> ClassificationResult:
             else:
                 confidence_label = "low"
 
-        is_uncertain = confidence_label == "low"
+        # Evaluate OOD Abstention Policy
+        ood_decision = evaluate_ood_policy(
+            predicted_class=str(predicted_label),
+            confidence=top_prob,
+            all_probabilities=all_probs,
+        )
+
+        is_uncertain = ood_decision.review_required or (confidence_label == "low")
         warning = None
-        if is_uncertain:
+        if ood_decision.review_required:
             warning = (
-                "Classification confidence is low. This resume does not clearly fit "
-                "any single domain. Human review is strongly recommended."
+                "Classification confidence is below the configured automatic-classification threshold. "
+                "Manual Review Required."
             )
+
+        logger.info(
+            "Classification inference: domain=%s prob=%.4f status=%s review_req=%s policy_v=%s reason=%s",
+            str(predicted_label),
+            top_prob if top_prob is not None else 0.0,
+            ood_decision.status,
+            ood_decision.review_required,
+            ood_decision.policy_version,
+            ood_decision.reason,
+        )
 
         return ClassificationResult(
             predicted_domain=str(predicted_label),
@@ -271,10 +307,16 @@ def predict(text: str) -> ClassificationResult:
             model_version=str(version),
             is_uncertain=is_uncertain,
             warning=warning,
+            status=ood_decision.status,
+            ood_status=ood_decision.ood_status,
+            review_required=ood_decision.review_required,
+            policy_version=ood_decision.policy_version,
+            reason=ood_decision.reason,
         )
 
     except Exception as exc:
         logger.error("Inference error (details suppressed): %s", type(exc).__name__)
+        ood_dec = evaluate_ood_policy(None, None)
         return ClassificationResult(
             predicted_domain=None,
             confidence_label="unavailable",
@@ -283,6 +325,11 @@ def predict(text: str) -> ClassificationResult:
             model_version=str(version),
             is_uncertain=True,
             warning="An error occurred during classification. Please try again.",
+            status=ood_dec.status,
+            ood_status=ood_dec.ood_status,
+            review_required=ood_dec.review_required,
+            policy_version=ood_dec.policy_version,
+            reason="inference_exception",
         )
 
 

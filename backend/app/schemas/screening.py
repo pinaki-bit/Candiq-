@@ -10,7 +10,7 @@ import datetime
 import json
 from typing import Any
 
-from pydantic import BaseModel, model_validator
+from pydantic import BaseModel, Field, model_validator
 
 
 class ScreeningResultRead(BaseModel):
@@ -72,3 +72,55 @@ class ScreeningResultRead(BaseModel):
 class ReviewUpdate(BaseModel):
     review_status: str
     review_notes: str | None = None
+
+
+class InterviewQuestionSchema(BaseModel):
+    question_id: int
+    category: str
+    question: str
+    why_this_question: str
+    expected_key_points: list[str]
+    difficulty: str
+
+
+class InterviewKitRequest(BaseModel):
+    job_title: str | None = "Software Engineer"
+    candidate_skills: list[str] | None = None
+    missing_skills: list[str] | None = None
+    resume_text: str | None = None
+    job_description: str | None = None
+
+
+class InterviewKitResponse(BaseModel):
+    job_title: str
+    questions: list[InterviewQuestionSchema]
+    tokens_used: int
+    estimated_cost_usd: float
+    guardrail_warnings: list[str] = []
+
+
+class TalentSearchRequest(BaseModel):
+    query: str = Field(..., min_length=2, description="Natural language search query")
+    domain_filter: str | None = Field(default=None, description="Optional domain filter")
+    min_confidence: str | None = Field(default=None, description="Optional min confidence: low|medium|high")
+    required_skills: list[str] | None = Field(default=None, description="Optional list of required skills")
+    limit: int = Field(default=10, ge=1, le=50, description="Max results to return")
+
+
+class TalentCandidateResultSchema(BaseModel):
+    resume_id: int
+    public_id: str
+    original_filename: str
+    predicted_domain: str | None
+    prediction_confidence: str | None
+    hybrid_score: float
+    semantic_similarity: float
+    matched_skills: list[str]
+    snippet: str
+
+
+class TalentSearchResponse(BaseModel):
+    query: str
+    total_candidates_searched: int
+    results_count: int
+    results: list[TalentCandidateResultSchema]

@@ -1,0 +1,7 @@
+Experiment_ID,Model_Name,Feature_Configuration,Hyperparameters,Training_Time_ms,Val_Accuracy,Val_Macro_Precision,Val_Macro_Recall,Val_Macro_F1,Val_Weighted_F1,Cloud_Computing_Recall,Cloud_Computing_F1
+Model_A,TF-IDF (Word 1-2) + Logistic Regression (Unweighted),"Word TF-IDF (1,2), max_features=50k, min_df=2","C=1.0, max_iter=1000, solver=lbfgs",2761.42,0.9747,0.9843,0.9763,0.9801,0.9748,1.0,1.0
+Model_B,TF-IDF (Word 1-2) + LinearSVC (Unweighted),"Word TF-IDF (1,2), max_features=50k, min_df=2","C=1.0, max_iter=2000",2051.93,0.9783,0.9861,0.9795,0.9827,0.9784,1.0,1.0
+Model_C,"TF-IDF (Word 1-2, Sublinear) + LinearSVC (Balanced)","Word TF-IDF (1,2), sublinear_tf=True, max_features=50k","C=1.0, class_weight=balanced, max_iter=2000",2217.88,0.9819,0.9867,0.9861,0.9864,0.982,1.0,1.0
+Model_D,Word+Char FeatureUnion + LinearSVC (Balanced),"Word (1,2) [35k] + Char (3,5) [15k] TF-IDF","C=1.0, class_weight=balanced, max_iter=2000",11677.16,0.9783,0.9831,0.9811,0.982,0.9783,1.0,1.0
+Model_E,"TF-IDF (Word 1-2, Sublinear) + Logistic Regression (Balanced)","Word TF-IDF (1,2), sublinear_tf=True, max_features=50k","C=1.0, class_weight=balanced, max_iter=1000",2713.07,0.9783,0.981,0.9838,0.9822,0.9784,1.0,1.0
+Model_F,"TF-IDF (Word 1-2, Sublinear) + Multinomial Naive Bayes","Word TF-IDF (1,2), sublinear_tf=True, max_features=50k",alpha=0.1,1498.74,0.9097,0.9503,0.9,0.9194,0.9088,1.0,1.0

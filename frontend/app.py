@@ -71,6 +71,10 @@ elif page == "results":
     from views.results import render_results
     render_results()
 
+elif page == "visualizer_3d":
+    from views.visualizer_3d import render_visualizer_3d_page
+    render_visualizer_3d_page()
+
 elif page == "candidate":
     from views.candidate_profile import render_candidate_profile
     render_candidate_profile()

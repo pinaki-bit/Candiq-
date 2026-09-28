@@ -1,0 +1,23 @@
+Resume Intel True Baseline Model Evaluation on Test Set (v20260922_235001)
+============================================================
+
+Test Dataset: ml/data/processed/test.csv (278 records)
+
+                 precision    recall  f1-score   support
+
+Cloud Computing     0.0000    0.0000    0.0000        14
+  Cybersecurity     1.0000    0.9107    0.9533        56
+   Data Science     0.9464    0.8548    0.8983        62
+         DevOps     0.6508    1.0000    0.7885        41
+Web Development     0.9533    0.9714    0.9623       105
+
+       accuracy                         0.8885       278
+      macro avg     0.7101    0.7474    0.7205       278
+   weighted avg     0.8685    0.8885    0.8721       278
+
+Confusion Matrix (Labels: [np.str_('Cloud Computing'), np.str_('Cybersecurity'), np.str_('Data Science'), np.str_('DevOps'), np.str_('Web Development')]):
+[[  0   0   0  13   1]
+ [  1  51   0   4   0]
+ [  0   0  53   5   4]
+ [  0   0   0  41   0]
+ [  0   0   3   0 102]]

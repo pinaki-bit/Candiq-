@@ -166,6 +166,11 @@ require_hr_or_admin = _require_role("admin", "hr")
 require_any_role = _require_role("admin", "hr", "readonly")
 
 
+def get_current_tenant_id(current_user: User = Depends(get_current_user)) -> str:
+    """Return the authenticated user's tenant_id for multi-tenant data isolation."""
+    return getattr(current_user, "tenant_id", "default_tenant")
+
+
 # ---------------------------------------------------------------------------
 # Annotated shorthands for cleaner route signatures
 # ---------------------------------------------------------------------------

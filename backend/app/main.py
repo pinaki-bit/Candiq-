@@ -17,7 +17,7 @@ import logging
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from slowapi import _rate_limit_exceeded_handler
@@ -36,6 +36,8 @@ from app.api.v1 import resumes as resumes_v1
 from app.api.v1 import screening as screening_v1
 from app.api.v1 import admin as admin_v1
 from app.api.v1 import analytics as analytics_v1
+from app.api.v1 import ats as ats_v1
+from app.api.v1 import extension as extension_v1
 
 # Legacy routers (kept for backward compat during migration)
 from app.routers import health
@@ -103,6 +105,7 @@ def create_app() -> FastAPI:
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["X-XSS-Protection"] = "1; mode=block"
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Content-Security-Policy"] = "default-src 'self'"
         if settings.is_production:
             response.headers["Strict-Transport-Security"] = (
                 "max-age=63072000; includeSubDomains; preload"
@@ -116,6 +119,25 @@ def create_app() -> FastAPI:
     application.include_router(screening_v1.router)
     application.include_router(admin_v1.router)
     application.include_router(analytics_v1.router)
+    application.include_router(ats_v1.router)
+    application.include_router(extension_v1.router)
+
+    # ── Real-Time WebSocket Pipeline Event Endpoint ─────────────────────────
+    from app.services.websocket_manager import ws_manager
+
+    @application.websocket("/ws/pipeline")
+    @application.websocket("/api/v1/ws/pipeline")
+    async def websocket_pipeline_endpoint(websocket: WebSocket):
+        await ws_manager.connect(websocket)
+        try:
+            while True:
+                data = await websocket.receive_text()
+                if data == "ping":
+                    await websocket.send_text("pong")
+        except WebSocketDisconnect:
+            ws_manager.disconnect(websocket)
+        except Exception:
+            ws_manager.disconnect(websocket)
 
     # ── Legacy routers (deprecated — will be removed in v0.3.0) ────────────
     application.include_router(health.router)
