@@ -42,34 +42,63 @@ class ScreeningResultRead(BaseModel):
     @model_validator(mode="before")
     @classmethod
     def parse_json_fields(cls, data: Any) -> Any:
-        """Parse JSON string fields into Python objects."""
+        """Parse JSON string fields into Python objects without mutating live ORM state."""
         if hasattr(data, "__dict__"):
-            # ORM object
-            obj = data
+            # Create a shallow dict copy so we don't mutate live SQLAlchemy ORM model state
+            d = {
+                "id": getattr(data, "id", None),
+                "public_id": getattr(data, "public_id", None),
+                "resume_id": getattr(data, "resume_id", None),
+                "job_id": getattr(data, "job_id", None),
+                "candidate_id": getattr(data, "candidate_id", None),
+                "required_skill_coverage": getattr(data, "required_skill_coverage", None),
+                "preferred_skill_coverage": getattr(data, "preferred_skill_coverage", None),
+                "combined_skill_match": getattr(data, "combined_skill_match", None),
+                "predicted_domain": getattr(data, "predicted_domain", None),
+                "prediction_confidence": getattr(data, "prediction_confidence", None),
+                "relevance_score": getattr(data, "relevance_score", None),
+                "review_status": getattr(data, "review_status", None),
+                "review_notes": getattr(data, "review_notes", None),
+                "screened_at": getattr(data, "screened_at", None),
+            }
             for field in (
                 "matched_required_skills",
                 "missing_required_skills",
                 "matched_preferred_skills",
             ):
-                val = getattr(obj, field, None)
+                val = getattr(data, field, None)
                 if isinstance(val, str):
                     try:
-                        setattr(obj, field, json.loads(val))
+                        d[field] = json.loads(val)
                     except (json.JSONDecodeError, ValueError):
-                        setattr(obj, field, [])
-                elif val is None:
-                    setattr(obj, field, [])
+                        d[field] = []
+                elif isinstance(val, list):
+                    d[field] = val
+                else:
+                    d[field] = []
 
-            breakdown = getattr(obj, "score_breakdown", None)
+            breakdown = getattr(data, "score_breakdown", None)
             if isinstance(breakdown, str):
                 try:
-                    obj.score_breakdown = json.loads(breakdown)
+                    d["score_breakdown"] = json.loads(breakdown)
                 except Exception:
-                    obj.score_breakdown = None
+                    d["score_breakdown"] = None
+            elif isinstance(breakdown, dict):
+                d["score_breakdown"] = breakdown
+            else:
+                d["score_breakdown"] = None
+
+            return d
         return data
 
 
 class ReviewUpdate(BaseModel):
+    review_status: str
+    review_notes: str | None = None
+
+
+class BulkReviewUpdate(BaseModel):
+    result_ids: list[str]
     review_status: str
     review_notes: str | None = None
 
