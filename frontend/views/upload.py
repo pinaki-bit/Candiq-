@@ -7,7 +7,7 @@ Secure resume upload page.
 from __future__ import annotations
 
 import streamlit as st
-from services.api_client import APIError, upload_resume
+from services.api_client import APIError, upload_resume, upload_batch_resumes, list_jobs
 from components.resume_advisor import render_resume_advisor
 
 
@@ -28,10 +28,10 @@ _STATUS_LABEL = {
 
 
 def render_upload():
-    st.title("📤 Upload Resume")
+    st.title("📤 Upload Resumes")
     st.caption(
-        "Upload a text-based PDF resume. "
-        "The system will extract skills and classify the candidate's domain automatically."
+        "Upload one or multiple text-based PDF resumes. "
+        "The system extracts skills, classifies domain, evaluates OOD status, and links candidate records."
     )
 
     user = st.session_state.get("user") or {}
@@ -40,39 +40,69 @@ def render_upload():
         st.warning("Read-only users cannot upload resumes.")
         return
 
+    # Job selection for auto-screening
+    try:
+        active_jobs = list_jobs(active_only=True)
+    except Exception:
+        active_jobs = []
+
+    job_options = {"(None — Upload without auto-matching)": None}
+    for j in active_jobs:
+        job_options[f"💼 {j['title']} ({j.get('domain', 'General')})"] = j["public_id"]
+
     with st.form("upload_form", clear_on_submit=True):
-        uploaded_file = st.file_uploader(
-            "Select PDF resume",
+        uploaded_files = st.file_uploader(
+            "Select PDF Resumes (single or multiple)",
             type=["pdf"],
-            help="Maximum file size: 10 MB. Text-based PDFs only (no image-only scans).",
+            accept_multiple_files=True,
+            help="Maximum file size: 10 MB per file. Text-based PDFs only.",
+        )
+        selected_job_label = st.selectbox(
+            "Auto-match uploaded resumes to job (optional)",
+            options=list(job_options.keys()),
         )
         candidate_ref = st.text_input(
-            "Candidate Reference Code (optional)",
+            "Candidate Reference Code (optional for single uploads)",
             placeholder="e.g. CAND-2024-001",
-            help="Link this resume to an existing or new candidate record.",
+            help="Link single resume upload to an existing or new candidate reference code.",
         )
-        submitted = st.form_submit_button("Upload & Process", type="primary", use_container_width=True)
+        submitted = st.form_submit_button("Upload & Process Batch", type="primary", use_container_width=True)
 
     if submitted:
-        if not uploaded_file:
-            st.error("Please select a PDF file to upload.")
+        if not uploaded_files:
+            st.error("Please select at least one PDF file to upload.")
             return
 
-        with st.spinner("Uploading and processing resume… This may take 10–30 seconds."):
-            try:
-                result = upload_resume(
-                    file_bytes=uploaded_file.read(),
-                    filename=uploaded_file.name,
-                    candidate_ref=candidate_ref.strip() or None,
-                )
-                _display_result(result)
-            except APIError as e:
-                if e.status_code == 422:
-                    st.error(f"File validation failed: {e.detail}")
-                elif e.status_code == 409:
-                    st.warning(f"Cannot process resume: {e.detail}")
-                else:
+        target_job_id = job_options[selected_job_label]
+
+        if len(uploaded_files) == 1:
+            f = uploaded_files[0]
+            with st.spinner(f"Processing '{f.name}'…"):
+                try:
+                    result = upload_resume(
+                        file_bytes=f.read(),
+                        filename=f.name,
+                        candidate_ref=candidate_ref.strip() or None,
+                    )
+                    st.success(f"Processed single resume '{f.name}'")
+                    _display_result(result)
+                except APIError as e:
                     st.error(f"Upload failed: {e.detail}")
+        else:
+            file_tuples = [(f.name, f.read()) for f in uploaded_files]
+            with st.spinner(f"Processing batch of {len(file_tuples)} resumes…"):
+                try:
+                    results = upload_batch_resumes(file_tuples, job_id=target_job_id)
+                    st.success(f"✅ Batch processing complete: {len(results)} resumes processed.")
+                    for res in results:
+                        st.markdown(
+                            f"- **{res.get('original_filename')}**: Domain = `{res.get('predicted_domain') or 'Unknown'}`, "
+                            f"Status = `{res.get('status')}`"
+                        )
+                    if target_job_id:
+                        st.info("Resumes auto-matched against selected job. View complete rankings in 'Screening Results'.")
+                except APIError as e:
+                    st.error(f"Batch upload failed: {e.detail}")
 
 
 def _display_result(result: dict):

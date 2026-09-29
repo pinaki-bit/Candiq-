@@ -314,6 +314,132 @@ async def upload_resume(
     return resume
 
 
+@router.post(
+    "/upload-batch",
+    response_model=List[ResumeDetailRead],
+    status_code=status.HTTP_201_CREATED,
+    summary="Batch upload and process multiple resume PDFs",
+)
+@limiter.limit(get_settings().rate_limit_upload)
+async def upload_batch_resumes(
+    request: Request,
+    current_user: HRUser,
+    files: List[UploadFile] = File(...),
+    job_id: str | None = Form(default=None),
+    db: Session = Depends(get_db),
+) -> list[Resume]:
+    """
+    Upload and process multiple PDF resumes in a single batch.
+    Optionally matches processed resumes immediately against a target job if job_id is provided.
+    """
+    if not files:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="No files provided for batch upload.",
+        )
+
+    processed_resumes: list[Resume] = []
+    job = None
+    if job_id:
+        job = db.query(Job).filter(Job.public_id == job_id).first()
+
+    for file in files:
+        content = await file.read()
+        original_filename = file.filename or "unnamed.pdf"
+
+        try:
+            pdf_service.validate_upload(
+                filename=original_filename,
+                content=content,
+                content_type=file.content_type,
+            )
+        except PDFValidationError as exc:
+            logger.warning(f"Batch upload file validation skipped: {exc}")
+            continue
+
+        stored_filename = pdf_service.generate_stored_filename(original_filename)
+        try:
+            file_path = pdf_service.save_upload(content, stored_filename)
+        except OSError:
+            logger.error("Failed to store batch upload file.")
+            continue
+
+        resume = Resume(
+            candidate_id=None,
+            original_filename=original_filename,
+            stored_filename=stored_filename,
+            file_size_bytes=len(content),
+            mime_type=file.content_type or "application/pdf",
+            status=ProcessingStatus.UPLOADED,
+            uploaded_by=current_user.id,
+        )
+        db.add(resume)
+        db.flush()
+
+        _run_processing_pipeline(resume, file_path, db)
+
+        # Auto-match against job if provided
+        if job and resume.status in (ProcessingStatus.COMPLETED, ProcessingStatus.NEEDS_REVIEW):
+            try:
+                candidate_skills = resume.extracted_skills
+                req_skills, pref_skills = matching_service.extract_job_skills(job.requirements)
+                match = matching_service.compute_match(req_skills, pref_skills, candidate_skills)
+                
+                domain_bonus = 0.0
+                if (
+                    resume.predicted_domain
+                    and job.domain
+                    and resume.predicted_domain.lower() == job.domain.lower()
+                    and resume.prediction_confidence in ("high", "medium")
+                ):
+                    domain_bonus = 10.0 if resume.prediction_confidence == "high" else 5.0
+
+                relevance_score = min(100.0, round(match.combined_match + domain_bonus, 2))
+
+                score_breakdown = {
+                    **match.score_breakdown,
+                    "domain_bonus": domain_bonus,
+                    "final_relevance_score": relevance_score,
+                    "missing_required_skills": match.missing_required,
+                    "matched_evidence_snippets": match.matched_evidence,
+                }
+
+                existing_scr = db.query(ScreeningResult).filter(
+                    ScreeningResult.resume_id == resume.id,
+                    ScreeningResult.job_id == job.id,
+                ).first()
+
+                if not existing_scr:
+                    scr = ScreeningResult(
+                        resume_id=resume.id,
+                        job_id=job.id,
+                        candidate_id=resume.candidate_id,
+                        required_skill_coverage=match.required_coverage,
+                        preferred_skill_coverage=match.preferred_coverage,
+                        combined_skill_match=match.combined_match,
+                        matched_required_skills=json.dumps(match.matched_required),
+                        missing_required_skills=json.dumps(match.missing_required),
+                        matched_preferred_skills=json.dumps(match.matched_preferred),
+                        predicted_domain=resume.predicted_domain,
+                        prediction_confidence=resume.prediction_confidence,
+                        relevance_score=relevance_score,
+                        score_breakdown=json.dumps(score_breakdown),
+                        review_status=ReviewStatus.PENDING,
+                        screened_at=datetime.datetime.now(datetime.timezone.utc),
+                    )
+                    db.add(scr)
+            except Exception as exc:
+                logger.error(f"Auto-match in batch upload failed for {resume.public_id}: {exc}")
+
+        processed_resumes.append(resume)
+
+    db.commit()
+    for r in processed_resumes:
+        db.refresh(r)
+
+    return processed_resumes
+
+
 @router.get("", response_model=List[ResumeRead], summary="List resumes")
 def list_resumes(
     current_user: AnyAuthUser,

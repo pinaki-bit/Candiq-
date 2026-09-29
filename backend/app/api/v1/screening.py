@@ -33,6 +33,7 @@ from app.models.job import Job
 from app.models.resume import Resume, ProcessingStatus
 from app.models.screening import ScreeningResult, ReviewStatus
 from app.schemas.screening import (
+    BulkReviewUpdate,
     InterviewKitRequest,
     InterviewKitResponse,
     InterviewQuestionSchema,
@@ -328,6 +329,143 @@ def update_review(
     )
 
     return result
+
+
+@router.patch(
+    "/results/bulk-review",
+    response_model=List[ScreeningResultRead],
+    summary="Bulk update human review status for multiple candidates",
+)
+def bulk_update_reviews(
+    payload: BulkReviewUpdate,
+    request: Request,
+    current_user: HRUser,
+    db: Session = Depends(get_db),
+) -> list[ScreeningResult]:
+    """
+    Bulk update review status for multiple candidates.
+    Recruiter explicit action: Shortlist, Reject, Mark for Review.
+    """
+    if payload.review_status not in ReviewStatus.ALL:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=f"Invalid review status '{payload.review_status}'.",
+        )
+
+    results = db.query(ScreeningResult).filter(
+        ScreeningResult.public_id.in_(payload.result_ids)
+    ).all()
+
+    now = datetime.datetime.now(datetime.timezone.utc)
+    for res in results:
+        res.review_status = payload.review_status
+        if payload.review_notes:
+            res.review_notes = payload.review_notes
+        res.reviewed_by = current_user.id
+        res.reviewed_at = now
+
+    db.commit()
+    for res in results:
+        db.refresh(res)
+
+    audit_service.log_event(
+        db,
+        event_type="screening.bulk_review_update",
+        summary=f"Bulk review status set to '{payload.review_status}' for {len(results)} candidates",
+        actor_id=current_user.id,
+        actor_email=current_user.email,
+        resource_type="screening_result",
+        resource_id="bulk",
+        ip_address=request.client.host if request.client else None,
+    )
+
+    return results
+
+
+@router.post(
+    "/{job_id}/match-all",
+    response_model=List[ScreeningResultRead],
+    status_code=status.HTTP_201_CREATED,
+    summary="Match all available completed resumes to a job",
+)
+def match_all_resumes_to_job(
+    job_id: str,
+    request: Request,
+    current_user: HRUser,
+    db: Session = Depends(get_db),
+) -> list[ScreeningResult]:
+    """
+    Run skill-matching pipeline between a job and all completed/needs_review resumes.
+    """
+    job = _get_job_or_404(db, job_id)
+    resumes = db.query(Resume).filter(
+        Resume.status.in_([ProcessingStatus.COMPLETED, ProcessingStatus.NEEDS_REVIEW])
+    ).all()
+
+    req_skills, pref_skills = matching_service.extract_job_skills(job.requirements)
+    results: list[ScreeningResult] = []
+
+    for resume in resumes:
+        candidate_skills = resume.extracted_skills
+        match = matching_service.compute_match(req_skills, pref_skills, candidate_skills)
+
+        domain_bonus = 0.0
+        if (
+            resume.predicted_domain
+            and job.domain
+            and resume.predicted_domain.lower() == job.domain.lower()
+            and resume.prediction_confidence in ("high", "medium")
+        ):
+            domain_bonus = 10.0 if resume.prediction_confidence == "high" else 5.0
+
+        relevance_score = min(100.0, round(match.combined_match + domain_bonus, 2))
+
+        score_breakdown = {
+            **match.score_breakdown,
+            "domain_bonus": domain_bonus,
+            "final_relevance_score": relevance_score,
+            "missing_required_skills": match.missing_required,
+            "matched_evidence_snippets": match.matched_evidence,
+        }
+
+        existing = db.query(ScreeningResult).filter(
+            ScreeningResult.resume_id == resume.id,
+            ScreeningResult.job_id == job.id,
+        ).first()
+
+        if existing:
+            result = existing
+        else:
+            result = ScreeningResult(
+                resume_id=resume.id,
+                job_id=job.id,
+                candidate_id=resume.candidate_id,
+            )
+            db.add(result)
+            db.flush()
+
+        result.required_skill_coverage = match.required_coverage
+        result.preferred_skill_coverage = match.preferred_coverage
+        result.combined_skill_match = match.combined_match
+        result.matched_required_skills = json.dumps(match.matched_required)
+        result.missing_required_skills = json.dumps(match.missing_required)
+        result.matched_preferred_skills = json.dumps(match.matched_preferred)
+        result.predicted_domain = resume.predicted_domain
+        result.prediction_confidence = resume.prediction_confidence
+        result.relevance_score = relevance_score
+        result.score_breakdown = json.dumps(score_breakdown)
+        result.scoring_weights = json.dumps({
+            "skill_match_weight": 0.90,
+            "domain_alignment_bonus_max": 10.0,
+        })
+        result.screened_at = datetime.datetime.now(datetime.timezone.utc)
+        results.append(result)
+
+    db.commit()
+    for r in results:
+        db.refresh(r)
+
+    return results
 
 
 @router.post(

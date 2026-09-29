@@ -134,6 +134,21 @@ def upload_resume(file_bytes: bytes, filename: str, candidate_ref: str | None = 
     return _handle_response(resp)
 
 
+def upload_batch_resumes(file_list: list[tuple[str, bytes]], job_id: str | None = None) -> list[dict]:
+    files = [("files", (filename, content, "application/pdf")) for filename, content in file_list]
+    data = {}
+    if job_id:
+        data["job_id"] = job_id
+    resp = requests.post(
+        f"{API_BASE}/api/v1/resumes/upload-batch",
+        files=files,
+        data=data,
+        headers=_headers(),
+        timeout=120,
+    )
+    return _handle_response(resp)
+
+
 def list_resumes(status_filter: str | None = None) -> list[dict]:
     params = {}
     if status_filter:
@@ -169,6 +184,15 @@ def match_resume_to_job(job_id: str, resume_id: str) -> dict:
     return _handle_response(resp)
 
 
+def match_all_resumes_to_job(job_id: str) -> list[dict]:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/screening/{job_id}/match-all",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
 def get_job_results(job_id: str, review_status: str | None = None) -> list[dict]:
     params = {}
     if review_status:
@@ -186,6 +210,16 @@ def update_review(result_id: str, review_status: str, notes: str | None = None) 
     resp = requests.patch(
         f"{API_BASE}/api/v1/screening/results/{result_id}/review",
         json={"review_status": review_status, "review_notes": notes},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def bulk_update_reviews(result_ids: list[str], review_status: str, notes: str | None = None) -> list[dict]:
+    resp = requests.patch(
+        f"{API_BASE}/api/v1/screening/results/bulk-review",
+        json={"result_ids": result_ids, "review_status": review_status, "review_notes": notes},
         headers=_headers(),
         timeout=_TIMEOUT,
     )
