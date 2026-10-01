@@ -77,3 +77,14 @@ Candiq is an AI-powered candidate intelligence and recruitment platform that aut
 - Integrated **spaCy PhraseMatcher** for skill extraction with evidence snippets and **sentence-transformers (`all-MiniLM-L6-v2`)** for 384-dimensional dense vector semantic search.
 - Built a **6-signal hybrid ranking engine** and a prompt-defended **AI interview kit generator** with multi-provider failover.
 - Verified with an automated **299-test Pytest suite (81% coverage)** and packaged with **Docker & Gunicorn**.
+
+---
+
+### Architecture Showcase
+
+Architecture diagram:
+
+docs/assets/candiq-architecture.png
+
+This diagram demonstrates:
+User → Frontend → FastAPI → Resume Processing → NLP/ML → OOD → Matching → Semantic Search → Database → Recruiter Intelligence.
