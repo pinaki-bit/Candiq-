@@ -337,3 +337,6 @@ def invalidate_model_cache() -> None:
     """Force reload of the model on next inference call."""
     _load_model.cache_clear()
     logger.info("Model cache cleared — will reload on next inference request.")
+
+
+classify_resume = predict

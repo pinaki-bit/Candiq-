@@ -1,7 +1,7 @@
 /**
  * browser_extension/background.js
  * 
- * Manifest v3 Service Worker for Resume Intelligence Extension.
+ * Manifest v3 Service Worker for Candiq Extension.
  * Manages API token storage and dispatches ingestion requests.
  */
 
@@ -29,7 +29,7 @@ async function handleIngestCandidate(payload) {
     const token = tokenObj.access_token;
     
     if (!token) {
-        throw new Error("Not authenticated with Resume Intelligence. Please log in via extension popup.");
+        throw new Error("Not authenticated with Candiq. Please log in via extension popup.");
     }
     
     const response = await fetch(`${API_BASE_URL}/extension/ingest`, {

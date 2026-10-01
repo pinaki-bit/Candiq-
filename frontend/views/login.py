@@ -18,8 +18,8 @@ def render_login():
             """
             <div style="text-align:center; padding: 2rem 0 1rem 0;">
                 <h1 style="font-size:2.8rem;">🎯</h1>
-                <h2 style="font-size:1.8rem; margin:0;">Resume Intelligence</h2>
-                <p style="color:#888; margin:0.5rem 0 2rem 0;">AI-Powered Candidate Screening System</p>
+                <h2 style="font-size:1.8rem; margin:0;">Candiq</h2>
+                <p style="color:#888; margin:0.5rem 0 2rem 0;">Candidate Intelligence & AI-Powered Recruitment Platform</p>
             </div>
             """,
             unsafe_allow_html=True,

@@ -37,6 +37,16 @@ logger = logging.getLogger(__name__)
 DEFAULT_REQUIRED_WEIGHT = 0.70   # 70% of combined score from required skills
 DEFAULT_PREFERRED_WEIGHT = 0.30  # 30% from preferred skills
 
+MATCHING_WEIGHTS = {
+    "required_coverage": 0.35,
+    "preferred_coverage": 0.15,
+    "semantic_similarity": 0.25,
+    "lexical_overlap": 0.10,
+    "experience_depth": 0.10,
+    "domain_alignment": 0.05,
+}
+WEIGHTS = MATCHING_WEIGHTS
+
 
 @dataclass
 class MatchResult:

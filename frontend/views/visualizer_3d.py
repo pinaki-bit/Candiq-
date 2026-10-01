@@ -7,6 +7,7 @@ Phase 13: 3D Talent Visualizer Page View.
 from __future__ import annotations
 
 import streamlit as st
+from services import api_client
 from components.visualization_3d import render_3d_visualization
 
 
@@ -21,4 +22,6 @@ def render_visualizer_3d_page():
         """
     )
 
-    render_3d_visualization(ws_url="ws://localhost:8000/ws/pipeline", height=600)
+    ws_host = api_client.API_BASE.replace("http://", "ws://").replace("https://", "wss://")
+    ws_url = f"{ws_host}/ws/pipeline"
+    render_3d_visualization(ws_url=ws_url, height=600)

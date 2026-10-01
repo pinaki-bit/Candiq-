@@ -1,6 +1,6 @@
-# 🚀 Resume Intel: Production Deployment & Operations Guide
+# 🚀 Candiq: Production Deployment & Operations Guide
 
-This guide provides comprehensive instructions for deploying, configuring, securing, and scaling **Resume Intel** in an enterprise production environment.
+This guide provides comprehensive instructions for deploying, configuring, securing, and scaling **Candiq** in an enterprise production environment.
 
 ---
 
@@ -20,7 +20,7 @@ This guide provides comprehensive instructions for deploying, configuring, secur
 
 ## 1. Architecture Overview
 
-Resume Intel is built as a microservice-ready enterprise platform comprising:
+Candiq is built as a microservice-ready enterprise platform comprising:
 - **FastAPI Backend (Port 8000)**: Asynchronous REST and WebSocket API server.
 - **Streamlit Frontend (Port 8501)**: Interactive recruiter UI with 3D WebGL WebGL visualizations.
 - **Machine Learning Core**: Scikit-Learn TF-IDF domain classifier (`model_latest.joblib`) and spaCy NLP PhraseMatcher pipeline.

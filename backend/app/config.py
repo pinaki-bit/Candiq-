@@ -48,7 +48,7 @@ class Settings(BaseSettings):
     # Application
     # ------------------------------------------------------------------
     app_env: str = "development"
-    app_title: str = "Resume Intelligence API"
+    app_title: str = "Candiq API"
     app_version: str = "0.3.0"
 
     # ------------------------------------------------------------------

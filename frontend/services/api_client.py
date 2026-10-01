@@ -38,6 +38,34 @@ def _headers() -> dict[str, str]:
     return {}
 
 
+# ---------------------------------------------------------------------------
+# Health & System Observability
+# ---------------------------------------------------------------------------
+
+def get_health_status() -> dict[str, Any]:
+    """Fetch base health liveness summary."""
+    resp = requests.get(f"{API_BASE}/health", timeout=5)
+    return _handle_response(resp)
+
+
+def get_liveness_probe() -> dict[str, Any]:
+    """Fetch Kubernetes liveness status."""
+    resp = requests.get(f"{API_BASE}/health/live", timeout=5)
+    return _handle_response(resp)
+
+
+def get_readiness_probe() -> dict[str, Any]:
+    """Fetch comprehensive readiness status."""
+    resp = requests.get(f"{API_BASE}/health/ready", timeout=5)
+    return _handle_response(resp)
+
+
+def get_runtime_metrics() -> dict[str, Any]:
+    """Fetch real-time aggregate performance measurements."""
+    resp = requests.get(f"{API_BASE}/health/metrics", timeout=5)
+    return _handle_response(resp)
+
+
 def _handle_response(resp: requests.Response) -> Any:
     """Raise APIError on non-2xx; otherwise return parsed JSON."""
     if resp.status_code >= 400:
@@ -271,6 +299,143 @@ def get_score_distribution(job_id: str | None = None) -> dict:
     return _handle_response(resp)
 
 
+def get_analytics_funnel(job_id: str | None = None) -> dict:
+    params = {}
+    if job_id:
+        params["job_id"] = job_id
+    resp = requests.get(
+        f"{API_BASE}/api/v1/analytics/funnel",
+        params=params,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_job_analytics(job_id: str | None = None) -> dict:
+    params = {}
+    if job_id:
+        params["job_id"] = job_id
+    resp = requests.get(
+        f"{API_BASE}/api/v1/analytics/jobs",
+        params=params,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_skill_intelligence(job_id: str | None = None, top_n: int = 15) -> dict:
+    params = {"top_n": top_n}
+    if job_id:
+        params["job_id"] = job_id
+    resp = requests.get(
+        f"{API_BASE}/api/v1/analytics/skills",
+        params=params,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_time_series_analytics(days: str = "30d") -> dict:
+    resp = requests.get(
+        f"{API_BASE}/api/v1/analytics/time-series",
+        params={"days": days},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_job_comparison(job_ids: str | None = None) -> dict:
+    params = {}
+    if job_ids:
+        params["job_ids"] = job_ids
+    resp = requests.get(
+        f"{API_BASE}/api/v1/analytics/job-comparison",
+        params=params,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_candidate_pipeline_insights(job_id: str) -> dict:
+    resp = requests.get(
+        f"{API_BASE}/api/v1/analytics/pipeline/{job_id}",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_recruiter_activity(limit: int = 20) -> dict:
+    resp = requests.get(
+        f"{API_BASE}/api/v1/analytics/activity",
+        params={"limit": limit},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+# ---------------------------------------------------------------------------
+# AI Intelligence Layer
+# ---------------------------------------------------------------------------
+
+def get_ai_candidate_explanation(candidate_id: str) -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/ai/candidates/{candidate_id}/explanation",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def generate_ai_interview_questions(candidate_id: str) -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/ai/candidates/{candidate_id}/interview-questions",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def generate_ai_cover_letter(candidate_id: str, company_name: str = "Target Company", tone: str = "PROFESSIONAL") -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/ai/candidates/{candidate_id}/cover-letter",
+        json={"company_name": company_name, "tone": tone},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def rewrite_ai_resume_bullet(
+    resume_id: str,
+    bullet: str,
+    mode: str = "STAR",
+    target_job_title: str | None = None,
+    target_skills: list[str] | None = None,
+) -> dict:
+    payload = {
+        "bullet": bullet,
+        "mode": mode,
+        "target_job_title": target_job_title,
+        "target_skills": target_skills,
+    }
+    resp = requests.post(
+        f"{API_BASE}/api/v1/ai/resumes/{resume_id}/rewrite-bullets",
+        json=payload,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+
+
 # ---------------------------------------------------------------------------
 # Admin
 # ---------------------------------------------------------------------------
@@ -364,6 +529,187 @@ def change_password(current_password: str, new_password: str) -> dict:
     resp = requests.post(
         f"{API_BASE}/api/v1/auth/change-password",
         json={"current_password": current_password, "new_password": new_password},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+# ---------------------------------------------------------------------------
+# Resume Builder (Phase 35)
+# ---------------------------------------------------------------------------
+
+def create_resume_draft(payload: dict) -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/resume-builder",
+        json=payload,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def list_resume_drafts() -> list[dict]:
+    resp = requests.get(
+        f"{API_BASE}/api/v1/resume-builder",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_resume_draft(draft_id: str) -> dict:
+    resp = requests.get(
+        f"{API_BASE}/api/v1/resume-builder/{draft_id}",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def update_resume_draft(draft_id: str, payload: dict) -> dict:
+    resp = requests.patch(
+        f"{API_BASE}/api/v1/resume-builder/{draft_id}",
+        json=payload,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def calculate_resume_match(draft_id: str, payload: dict | None = None) -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/resume-builder/{draft_id}/match",
+        json=payload or {},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def create_resume_version(draft_id: str, label: str | None = None) -> dict:
+    params = {"label": label} if label else {}
+    resp = requests.post(
+        f"{API_BASE}/api/v1/resume-builder/{draft_id}/versions",
+        params=params,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def list_resume_versions(draft_id: str) -> list[dict]:
+    resp = requests.get(
+        f"{API_BASE}/api/v1/resume-builder/{draft_id}/versions",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def restore_resume_version(draft_id: str, version_id: str) -> dict:
+    resp = requests.post(
+        f"{API_BASE}/api/v1/resume-builder/{draft_id}/restore/{version_id}",
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def ai_resume_builder_assist(draft_id: str, assist_type: str, context_text: str = "", target_job_id: str | None = None) -> dict:
+    payload = {
+        "assist_type": assist_type,
+        "context_text": context_text,
+        "target_job_id": target_job_id,
+    }
+    resp = requests.post(
+        f"{API_BASE}/api/v1/resume-builder/{draft_id}/ai-assist",
+        json=payload,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+# ---------------------------------------------------------------------------
+# Candidate Discovery & Hiring Intelligence (Phase 36)
+# ---------------------------------------------------------------------------
+
+def search_discovery_candidates(
+    query: str | None = None,
+    domain: str | None = None,
+    min_required_cov: float | None = None,
+    min_preferred_cov: float | None = None,
+    min_semantic_sim: float | None = None,
+    ood_status: str | None = None,
+    review_status: str | None = None,
+    job_id: str | None = None,
+    page: int = 1,
+    page_size: int = 10,
+) -> dict:
+    params = {"page": page, "page_size": page_size}
+    if query:
+        params["q"] = query
+    if domain:
+        params["domain"] = domain
+    if min_required_cov is not None:
+        params["min_required_cov"] = min_required_cov
+    if min_preferred_cov is not None:
+        params["min_preferred_cov"] = min_preferred_cov
+    if min_semantic_sim is not None:
+        params["min_semantic_sim"] = min_semantic_sim
+    if ood_status:
+        params["ood_status"] = ood_status
+    if review_status:
+        params["review_status"] = review_status
+    if job_id:
+        params["job_id"] = job_id
+
+    resp = requests.get(
+        f"{API_BASE}/api/v1/discovery/search",
+        params=params,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_job_discovery_candidates(job_id: str, page: int = 1, page_size: int = 10, sort_by: str = "screening_score", order: str = "desc") -> dict:
+    params = {"page": page, "page_size": page_size, "sort_by": sort_by, "order": order}
+    resp = requests.get(
+        f"{API_BASE}/api/v1/discovery/jobs/{job_id}/candidates",
+        params=params,
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_similar_candidates(candidate_id: str, limit: int = 5) -> dict:
+    resp = requests.get(
+        f"{API_BASE}/api/v1/discovery/candidates/{candidate_id}/similar",
+        params={"limit": limit},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def get_similar_jobs(job_id: str, limit: int = 5) -> dict:
+    resp = requests.get(
+        f"{API_BASE}/api/v1/discovery/jobs/{job_id}/similar",
+        params={"limit": limit},
+        headers=_headers(),
+        timeout=_TIMEOUT,
+    )
+    return _handle_response(resp)
+
+
+def compare_candidates(candidate_ids: list[str], job_id: str | None = None) -> dict:
+    payload = {"candidate_ids": candidate_ids, "job_id": job_id}
+    resp = requests.post(
+        f"{API_BASE}/api/v1/discovery/compare",
+        json=payload,
         headers=_headers(),
         timeout=_TIMEOUT,
     )

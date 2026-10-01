@@ -10,7 +10,7 @@ from __future__ import annotations
 import streamlit as st
 
 st.set_page_config(
-    page_title="Resume Intelligence",
+    page_title="Candiq",
     page_icon="🎯",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -31,6 +31,13 @@ def _init_session():
             st.session_state[key] = val
 
 _init_session()
+
+# Inject HUD Design System Theme
+try:
+    from styles import inject_theme
+    inject_theme()
+except Exception:
+    pass
 
 
 # ── Auth gate ──────────────────────────────────────────────────────────────
@@ -71,6 +78,14 @@ elif page == "results":
     from views.results import render_results
     render_results()
 
+elif page == "discovery":
+    from views.candidate_discovery import render_candidate_discovery
+    render_candidate_discovery()
+
+elif page == "resume_builder":
+    from views.resume_builder import render_resume_builder
+    render_resume_builder()
+
 elif page == "visualizer_3d":
     from views.visualizer_3d import render_visualizer_3d_page
     render_visualizer_3d_page()
@@ -82,6 +97,10 @@ elif page == "candidate":
 elif page == "analytics":
     from views.analytics import render_analytics
     render_analytics()
+
+elif page == "system_health":
+    from views.system_health import render_system_health_view
+    render_system_health_view()
 
 elif page == "admin":
     from views.admin import render_admin

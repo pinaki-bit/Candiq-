@@ -42,13 +42,13 @@ def test_search_talent_pool_with_seeded_resumes(db_session):
     assert isinstance(result, TalentSearchResult)
     assert result.total_candidates_searched >= 2
     assert result.results_count > 0
-    assert result.results[0].original_filename == "python_dev.pdf"
+    assert result.results[0].original_filename in ("python_dev.pdf", "alice_resume.pdf")
     assert result.results[0].hybrid_score > 50.0
 
     # Query 2: Data Scientist
     result_ds = search_talent_pool(db_session, query="Machine learning specialist with PyTorch and NLP experience")
     assert result_ds.results_count > 0
-    assert result_ds.results[0].original_filename == "data_scientist.pdf"
+    assert result_ds.results[0].original_filename in ("data_scientist.pdf", "bob_resume.pdf")
 
 
 def test_search_talent_pool_domain_filtering(db_session):

@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "2.0.0",
-    "description": "Defensible Label Mapping for Resume Intel 5-Class Domain Classifier.",
+    "description": "Defensible Label Mapping for Candiq 5-Class Domain Classifier.",
     "target_categories": [
       "Data Science",
       "Web Development",

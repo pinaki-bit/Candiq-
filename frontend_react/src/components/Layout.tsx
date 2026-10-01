@@ -30,7 +30,7 @@ export function Layout({ children }: { children: ReactNode }) {
             <Activity className="w-5 h-5 text-white" />
           </div>
           <span className="hidden md:block ml-3 font-semibold text-white tracking-wide">
-            Resume Intel
+            Candiq
           </span>
         </div>
 

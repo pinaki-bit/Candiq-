@@ -50,7 +50,7 @@ export function Login() {
             </div>
           </div>
           
-          <h2 className="text-2xl font-bold text-white text-center mb-2">Resume Intel Portal</h2>
+          <h2 className="text-2xl font-bold text-white text-center mb-2">Candiq Portal</h2>
           <p className="text-gray-400 text-center text-sm mb-8">Sign in to access the command center</p>
 
           <form onSubmit={handleLogin} className="space-y-4">

@@ -1,7 +1,7 @@
 """
 frontend/styles/__init__.py
 
-Premium HUD / Sci-Fi theme system for Resume Intelligence.
+Premium HUD / Sci-Fi theme system for Candiq.
 """
 
 from __future__ import annotations
@@ -12,7 +12,7 @@ _CSS = """
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   RESUME INTELLIGENCE  —  FUTURISTIC HUD THEME
+   CANDIQ  —  FUTURISTIC HUD THEME
    Inspired by: Tron / Sci-Fi command-center aesthetic
    Colors: Deep dark teal + Electric cyan glows
 ============================================================ */

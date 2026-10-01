@@ -133,7 +133,7 @@ class MockATSAdapter(BaseATSAdapter):
                 "candidate_id": candidate_id,
                 "application_id": app_id,
                 "attached_job": job_data.get("title") if job_data else "General Pipeline",
-                "notes": notes or "Exported via Resume Intelligence ATS Adapter.",
+                "notes": notes or "Exported via Candiq ATS Adapter.",
                 "synced_fields": ["name", "email", "skills", "experience_years", "resume_file"],
             },
         )

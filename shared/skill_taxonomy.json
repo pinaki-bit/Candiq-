@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "description": "Configurable skill taxonomy for the Resume Intelligence System. Edit this file to add or rename skills. The NLP service rebuilds its PhraseMatcher from this file on startup.",
+    "description": "Configurable skill taxonomy for Candiq. Edit this file to add or rename skills. The NLP service rebuilds its PhraseMatcher from this file on startup.",
     "instructions": "Each top-level key is a domain. Each domain maps to categories, each category maps to a list of canonical skills. Aliases are listed under each skill entry."
   },
   "domains": {

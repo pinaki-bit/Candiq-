@@ -16,7 +16,7 @@ def render_sidebar():
     name = user.get("full_name") or user.get("email", "User")
 
     with st.sidebar:
-        st.markdown("## 🎯 Resume Intelligence")
+        st.markdown("## 🎯 Candiq")
         st.caption(f"Logged in as **{name}** `[{role}]`")
         st.divider()
 
@@ -34,8 +34,11 @@ def render_sidebar():
             ("💼 Jobs", "jobs"),
             ("📤 Upload Resume", "upload"),
             ("🔍 Screening Results", "results"),
+            ("🔎 Candidate Discovery", "discovery"),
+            ("📝 AI Resume Builder", "resume_builder"),
             ("🌐 3D Talent Visualizer", "visualizer_3d"),
             ("📈 Analytics", "analytics"),
+            ("🖥️ System Health", "system_health"),
         ]
 
         # Admin-only items

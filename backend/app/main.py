@@ -38,6 +38,9 @@ from app.api.v1 import admin as admin_v1
 from app.api.v1 import analytics as analytics_v1
 from app.api.v1 import ats as ats_v1
 from app.api.v1 import extension as extension_v1
+from app.api.v1 import ai as ai_v1
+from app.api.v1 import resume_builder as resume_builder_v1
+from app.api.v1 import discovery as discovery_v1
 
 # Legacy routers (kept for backward compat during migration)
 from app.routers import health
@@ -60,6 +63,8 @@ async def _lifespan(application: FastAPI) -> AsyncGenerator[None, None]:
     _init_db(settings)
     yield
     logger.info("Shutting down %s.", settings.app_title)
+    from app.database import engine
+    engine.dispose()
 
 
 # ---------------------------------------------------------------------------
@@ -73,7 +78,7 @@ def create_app() -> FastAPI:
         title=settings.app_title,
         version=settings.app_version,
         description=(
-            "AI-Powered Resume Screening & Candidate Intelligence System\n\n"
+            "Candiq — Candidate Intelligence & AI-Powered Recruitment Platform\n\n"
             "**Phase 1–3**: Authentication, health checks, job management, "
             "NLP/ML foundation.\n"
             "**Phase 4+**: Resume upload, screening, analytics, admin dashboard."
@@ -87,6 +92,47 @@ def create_app() -> FastAPI:
     # ── Rate limiter state ──────────────────────────────────────────────────
     application.state.limiter = limiter
     application.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+    # ── Global Structured Exception Handler ─────────────────────────────────
+    @application.exception_handler(Exception)
+    async def global_exception_handler(request: Request, exc: Exception):
+        import datetime
+        req_id = getattr(request.state, "request_id", "unknown")
+        logger.error("Unhandled exception [req_id=%s]: %s", req_id, exc, exc_info=not settings.is_production)
+        detail = "An internal server error occurred." if settings.is_production else str(exc)
+        return JSONResponse(
+            status_code=500,
+            content={
+                "detail": detail,
+                "error_code": "INTERNAL_SERVER_ERROR",
+                "request_id": req_id,
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            },
+        )
+
+    # ── Request Correlation & Latency Observability Middleware ───────────────
+    @application.middleware("http")
+    async def request_correlation_and_metrics_middleware(request: Request, call_next):
+        import time
+        import uuid
+        from app.core.metrics import metrics_collector
+
+        req_id = request.headers.get("X-Request-ID") or f"req_{uuid.uuid4().hex[:12]}"
+        request.state.request_id = req_id
+
+        start_time = time.perf_counter()
+        response = await call_next(request)
+        duration_ms = (time.perf_counter() - start_time) * 1000.0
+
+        metrics_collector.record_request(
+            method=request.method,
+            path=request.url.path,
+            status_code=response.status_code,
+            duration_ms=duration_ms,
+        )
+
+        response.headers["X-Request-ID"] = req_id
+        return response
 
     # ── CORS — restricted methods and headers (no wildcards) ────────────────
     application.add_middleware(
@@ -121,6 +167,9 @@ def create_app() -> FastAPI:
     application.include_router(analytics_v1.router)
     application.include_router(ats_v1.router)
     application.include_router(extension_v1.router)
+    application.include_router(ai_v1.router)
+    application.include_router(resume_builder_v1.router)
+    application.include_router(discovery_v1.router)
 
     # ── Real-Time WebSocket Pipeline Event Endpoint ─────────────────────────
     from app.services.websocket_manager import ws_manager
@@ -139,8 +188,9 @@ def create_app() -> FastAPI:
         except Exception:
             ws_manager.disconnect(websocket)
 
-    # ── Legacy routers (deprecated — will be removed in v0.3.0) ────────────
+    # ── Health & Observability Routers ──────────────────────────────────────
     application.include_router(health.router)
+    application.include_router(health.router, prefix="/api/v1")
 
     return application
 

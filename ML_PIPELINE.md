@@ -1,6 +1,6 @@
-# 🧠 Resume Intel: Machine Learning Pipeline Architecture
+# 🧠 Candiq: Machine Learning Pipeline Architecture
 
-This document details the complete end-to-end Machine Learning and Natural Language Processing (NLP) pipeline architecture for domain classification in **Resume Intel**.
+This document details the complete end-to-end Machine Learning and Natural Language Processing (NLP) pipeline architecture for domain classification in **Candiq**.
 
 ---
 
