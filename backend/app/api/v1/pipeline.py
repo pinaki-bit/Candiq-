@@ -26,6 +26,7 @@ from app.models.candidate import Candidate
 from app.models.job import Job
 from app.models.pipeline import PipelineEntry, PipelineHistory, PipelineStage
 from app.models.screening import ScreeningResult
+from app.services.email_service import send_candidate_stage_update
 
 logger = logging.getLogger(__name__)
 
@@ -271,6 +272,7 @@ def move_stage(
     db.refresh(entry)
 
     candidate = db.query(Candidate).filter(Candidate.id == entry.candidate_id).first()
+    job = db.query(Job).filter(Job.id == entry.job_id).first()
     screening = (
         db.query(ScreeningResult)
         .filter(
@@ -285,6 +287,16 @@ def move_stage(
         "Pipeline move: candidate=%d job=%d %s → %s by user=%d",
         entry.candidate_id, entry.job_id, old_stage, payload.to_stage, current_user.id,
     )
+    
+    # Send automated email to the candidate
+    if candidate and candidate.email and job:
+        send_candidate_stage_update(
+            candidate_email=candidate.email,
+            candidate_name=candidate.display_name or "Candidate",
+            job_title=job.title,
+            stage=payload.to_stage,
+            custom_notes=payload.notes
+        )
 
     return {
         "id": entry.id,

@@ -54,6 +54,34 @@ def send_system_health_report(admin_email: str, metrics: dict) -> bool:
     return True
 
 
+def send_candidate_stage_update(candidate_email: str, candidate_name: str, job_title: str, stage: str, custom_notes: str = None) -> bool:
+    """Send automated status updates to candidates based on pipeline stage."""
+    # Format the stage nicely
+    stage_display = stage.title()
+    
+    if stage == "interview":
+        subject = f"Interview Invitation: {job_title} at Candiq"
+        body = f"Hi {candidate_name},\n\nWe are excited to invite you to an interview for the {job_title} position! Our team was very impressed by your background.\n\nPlease let us know your availability for next week."
+    elif stage == "rejected":
+        subject = f"Update on your application for {job_title}"
+        body = f"Hi {candidate_name},\n\nThank you for applying for the {job_title} position. While your qualifications are impressive, we have decided to move forward with other candidates who more closely align with our current needs.\n\nWe will keep your resume on file for future opportunities."
+    elif stage == "offer":
+        subject = f"Job Offer: {job_title} at Candiq!"
+        body = f"Hi {candidate_name},\n\nCongratulations! We are thrilled to offer you the {job_title} position. We will be sending over the official offer letter and compensation details shortly."
+    else:
+        subject = f"Application Update: {job_title} - {stage_display}"
+        body = f"Hi {candidate_name},\n\nYour application for {job_title} has been moved to the '{stage_display}' stage. We will be in touch with the next steps soon."
+
+    if custom_notes:
+        body += f"\n\nAdditional Notes from our team:\n{custom_notes}"
+
+    body += "\n\nBest regards,\nThe Candiq Hiring Team"
+    
+    notification = EmailNotification(candidate_email, subject, body, is_secure=False)
+    _mock_send(notification)
+    return True
+
+
 def _mock_send(notification: EmailNotification) -> None:
     """Mock sending the email by logging it and storing it in memory."""
     _MOCK_INBOX.append(notification)
