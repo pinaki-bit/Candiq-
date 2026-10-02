@@ -4,7 +4,7 @@
 
 ## System Architecture
 
-![Candiq Architecture](docs/assets/candiq-architecture.png)
+[View detailed Architecture Diagram here](ARCHITECTURE.md)
 
 Candiq is an AI-powered candidate intelligence and recruitment platform that processes resumes, extracts skills, classifies candidate domains, evaluates job fit, performs semantic candidate discovery, and provides recruiter-facing analytics and AI-assisted hiring workflows.
 
@@ -31,7 +31,7 @@ Candiq is an AI-powered candidate intelligence and recruitment platform that pro
 ## Overview
 Candiq automates resume understanding while eliminating black-box bias and un-audited automatic candidate rejection. It combines deterministic NLP phrase matching, calibrated Scikit-Learn domain prediction models, an Out-Of-Domain (OOD) abstention policy engine, dense vector semantic search, multi-tenant RBAC security, production health observability, and real-time WebSocket pipeline telemetry. 
 
-Recently, the frontend was completely overhauled to feature a premium "Plum Peach Butter" aesthetic, heavily utilizing **Liquid Glass Button** interfaces, **Fluid GPU Backgrounds (DyeWhorl)**, and interactive navigation hubs for an unparalleled, state-of-the-art user experience.
+Recently, the frontend was completely overhauled to feature a premium "Plum Peach Butter" aesthetic, heavily utilizing **Liquid Glass Button** interfaces, **Fluid GPU Backgrounds (DyeWhorl)**, and interactive navigation hubs for an unparalleled, state-of-the-art user experience. It now includes a fully integrated drag-and-drop Kanban Pipeline that automatically processes candidate uploads into active job pipelines using the AI processing engine.
 
 ## Features
 - **Premium Animated UI**: Liquid glass distortion effects, SVG filters, fluid WebGL backgrounds, and interactive hover panels.
@@ -91,6 +91,6 @@ Comprehensive suite of 299 tests covering E2E processing, role escalation, ML cl
 - Tesseract OCR fallback is attempted only when the local OS binary is present.
 
 ## Documentation
-- [Architecture Details](docs/CANDIQ_ARCHITECTURE.md)
+- [Platform Architecture](ARCHITECTURE.md)
 - [Development Guide](docs/DEVELOPMENT.md)
 - [Technical Decisions](docs/TECHNICAL_DECISIONS.md)

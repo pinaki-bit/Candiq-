@@ -136,7 +136,7 @@ export function CandidatePortal() {
             <LiquidButton 
               onClick={analyzeATS}
               disabled={loading || !file}
-              className="text-[#140F25] font-semibold bg-gradient-to-r from-[#F6B98A] to-[#C4749B] shadow-[0_4px_14px_rgba(246,185,138,0.30)] rounded-xl w-full py-3.5 mt-6 text-base disabled:opacity-50"
+              className="text-[#140F25] font-semibold bg-gradient-to-r from-[#F6B98A] to-[#C4749B] shadow-[0_4px_14px_rgba(246,185,138,0.30)] rounded-full w-full py-3.5 mt-6 text-base disabled:opacity-50"
             >
               {loading ? (
                 <>

@@ -32,7 +32,7 @@ from app.core.security import (
 from app.database import get_db
 from app.models.token_blocklist import TokenBlocklist
 from app.models.user import User
-from app.schemas.user import LoginRequest, TokenResponse, UserRead
+from app.schemas.user import LoginRequest, TokenResponse, UserRead, UserCreate
 
 from app.rate_limiter import limiter
 
@@ -309,3 +309,33 @@ def revoke_all_tokens(
 def get_me(current_user: CurrentUser) -> User:
     """Return the profile of the currently authenticated user."""
     return current_user
+
+
+@router.post(
+    "/register",
+    response_model=UserRead,
+    status_code=status.HTTP_201_CREATED,
+    summary="Register a new user",
+)
+def register(payload: UserCreate, db: Session = Depends(get_db)) -> User:
+    """Register a new user account."""
+    if _get_user_by_email(db, payload.email):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="A user with this email already exists.",
+        )
+
+    user = User(
+        email=payload.email.lower(),
+        hashed_password=hash_password(payload.password),
+        full_name=payload.full_name,
+        role=payload.role,
+        is_active=True,
+    )
+    
+    db.add(user)
+    db.commit()
+    db.refresh(user)
+    
+    return user
+

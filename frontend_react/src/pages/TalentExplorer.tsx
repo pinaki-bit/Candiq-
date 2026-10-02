@@ -4,15 +4,23 @@ import { getResumes, getResumeDetail } from '../services/screening'
 import type { Resume, ResumeDetail } from '../services/screening'
 import { PageShell } from '../components/ui/PageShell'
 import { LiquidButton } from '../components/ui/liquid-glass-button'
+import { getJobs } from '../services/jobs'
+import type { Job } from '../services/jobs'
+import { api } from '../lib/api'
 
 export function TalentExplorer() {
   const [searchTerm, setSearchTerm] = useState('')
   const [resumes, setResumes] = useState<Resume[]>([])
   const [selectedResume, setSelectedResume] = useState<ResumeDetail | null>(null)
   const [loading, setLoading] = useState(true)
+  
+  const [jobs, setJobs] = useState<Job[]>([])
+  const [assignJobId, setAssignJobId] = useState<number | null>(null)
+  const [assigning, setAssigning] = useState(false)
 
   useEffect(() => {
     fetchResumes()
+    getJobs().then(setJobs).catch(console.error)
   }, [])
 
   const fetchResumes = async () => {
@@ -38,13 +46,30 @@ export function TalentExplorer() {
     }
   }
 
+  const handleAssignPipeline = async () => {
+    if (!selectedResume || !selectedResume.candidate_id || !assignJobId) return
+    setAssigning(true)
+    try {
+      await api.post(`/pipeline/${assignJobId}/add`, {
+        candidate_id: selectedResume.candidate_id,
+        stage: 'applied'
+      })
+      alert('Candidate successfully added to pipeline!')
+    } catch (error: any) {
+      console.error('Failed to assign candidate', error)
+      alert(error.response?.data?.detail || 'Failed to assign candidate to pipeline.')
+    } finally {
+      setAssigning(false)
+    }
+  }
+
   // Filter based on candidate name or skills (if available in summary list)
   const filteredResumes = resumes.filter(r => 
     r.original_filename.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   const actionButton = (
-    <LiquidButton className="px-4 py-2.5 bg-[#3A2C6E]/60 border border-[#F6B98A]/25 rounded-xl text-sm font-semibold text-[#FBE6B8] flex items-center gap-2 shadow-md">
+    <LiquidButton className="px-4 py-2.5 bg-[#3A2C6E]/60 border border-[#F6B98A]/25 rounded-full text-sm font-semibold text-[#FBE6B8] flex items-center gap-2 shadow-md">
       <Filter className="w-4 h-4 text-[#F6B98A]" />
       Advanced Filters
     </LiquidButton>
@@ -110,11 +135,32 @@ export function TalentExplorer() {
                       <h2 className="text-xl sm:text-2xl font-bold text-[#FBE6B8] mb-1">{selectedResume.original_filename}</h2>
                       <p className="text-[#F6B98A] text-base font-medium">{selectedResume.predicted_domain || 'Domain Pending'}</p>
                     </div>
-                    <div className="sm:text-right">
+                    <div className="sm:text-right flex flex-col items-end">
                       <div className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#C4749B] to-[#F6B98A]">
                         {selectedResume.status}
                       </div>
-                      <p className="text-xs text-[#FBE6B8]/60 uppercase tracking-wider mt-1">Status</p>
+                      <p className="text-xs text-[#FBE6B8]/60 uppercase tracking-wider mt-1 mb-4">Status</p>
+                      
+                      {/* Pipeline Assignment */}
+                      {selectedResume.candidate_id && (
+                        <div className="flex items-center gap-2">
+                          <select
+                            value={assignJobId || ''}
+                            onChange={(e) => setAssignJobId(Number(e.target.value))}
+                            className="appearance-none pl-3 pr-8 py-1.5 rounded-lg text-[12px] font-medium text-[#FBE6B8] outline-none cursor-pointer border border-[rgba(251,230,184,0.18)] bg-[rgba(58,44,110,0.45)]"
+                          >
+                            <option value="">Select Job...</option>
+                            {jobs.map(j => <option key={j.id} value={j.id}>{j.title}</option>)}
+                          </select>
+                          <LiquidButton
+                            onClick={handleAssignPipeline}
+                            disabled={!assignJobId || assigning}
+                            className="px-3 py-1.5 text-[12px] rounded-full bg-gradient-to-r from-[#F6B98A] to-[#C4749B] text-[#140F25] font-semibold disabled:opacity-50"
+                          >
+                            {assigning ? 'Adding...' : 'Add to Pipeline'}
+                          </LiquidButton>
+                        </div>
+                      )}
                     </div>
                   </div>
                   

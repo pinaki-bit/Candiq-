@@ -8,6 +8,8 @@ import { AdminAnalytics } from './pages/AdminAnalytics'
 import { Login } from './pages/Login'
 import { Jobs } from './pages/Jobs'
 import { CandidatePortal } from './pages/CandidatePortal'
+import { Pipeline } from './pages/Pipeline'
+import { Compare } from './pages/Compare'
 import { PageShell } from './components/ui/PageShell'
 import FeaturesWithPanel from './components/ui/features-with-panel'
 
@@ -15,26 +17,6 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const token = localStorage.getItem('token')
   if (!token) return <Navigate to="/login" replace />
   return <Layout>{children}</Layout>
-}
-
-function StatCard({
-  label, value, icon: Icon, color, sub
-}: {
-  label: string; value: string | number; icon: React.ElementType;
-  color: string; sub?: string
-}) {
-  return (
-    <div className="cq-stat-card group">
-      <div className="flex items-start justify-between mb-3">
-        <p className="text-[11px] font-bold uppercase tracking-[0.10em] text-[rgba(255,247,238,0.45)]">{label}</p>
-        <div className={`p-1.5 rounded-lg bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)] ${color}`}>
-          <Icon className="w-3.5 h-3.5" strokeWidth={2} />
-        </div>
-      </div>
-      <p className="text-3xl font-bold text-[#FFF7EE] tracking-tight">{value}</p>
-      {sub && <p className={`text-[11px] mt-1.5 font-medium ${color}`}>{sub}</p>}
-    </div>
-  )
 }
 
 function Dashboard() {
@@ -70,6 +52,8 @@ function App() {
         <Route path="/analytics" element={<ProtectedRoute><AdminAnalytics /></ProtectedRoute>} />
         <Route path="/admin" element={<ProtectedRoute><AdminAnalytics /></ProtectedRoute>} />
         <Route path="/candidate" element={<ProtectedRoute><CandidatePortal /></ProtectedRoute>} />
+        <Route path="/pipeline" element={<ProtectedRoute><Pipeline /></ProtectedRoute>} />
+        <Route path="/compare" element={<ProtectedRoute><Compare /></ProtectedRoute>} />
       </Routes>
         </div>
       </div>

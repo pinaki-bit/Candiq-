@@ -356,7 +356,10 @@ class Solver {
   >();
   private fbos: FBO[] = [];
   private active: WebGLProgram | null = null;
-  constructor(private canvas: HTMLCanvasElement) {}
+  private canvas: HTMLCanvasElement;
+  constructor(canvas: HTMLCanvasElement) {
+    this.canvas = canvas;
+  }
 
   init(): boolean {
     const gl = this.canvas.getContext("webgl2", {

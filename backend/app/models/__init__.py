@@ -16,6 +16,7 @@ from app.models.notification import Notification  # noqa: F401
 from app.models.audit_event import AuditEvent  # noqa: F401
 from app.models.token_blocklist import TokenBlocklist  # noqa: F401
 from app.models.resume_builder import ResumeDraft, ResumeVersion  # noqa: F401
+from app.models.pipeline import PipelineEntry, PipelineHistory  # noqa: F401
 
 __all__ = [
     "User",
@@ -31,5 +32,8 @@ __all__ = [
     "TokenBlocklist",
     "ResumeDraft",
     "ResumeVersion",
+    "PipelineEntry",
+    "PipelineHistory",
 ]
+
 

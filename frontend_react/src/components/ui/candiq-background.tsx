@@ -1,4 +1,3 @@
-import React from 'react'
 import { ParticleWave } from './particle-wave'
 
 export function GlobalVisualBackground() {

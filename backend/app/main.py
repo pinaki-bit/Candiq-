@@ -41,6 +41,8 @@ from app.api.v1 import extension as extension_v1
 from app.api.v1 import ai as ai_v1
 from app.api.v1 import resume_builder as resume_builder_v1
 from app.api.v1 import discovery as discovery_v1
+from app.api.v1 import pipeline as pipeline_v1
+from app.api.v1 import compare as compare_v1
 
 # Legacy routers (kept for backward compat during migration)
 from app.routers import health
@@ -170,6 +172,8 @@ def create_app() -> FastAPI:
     application.include_router(ai_v1.router)
     application.include_router(resume_builder_v1.router)
     application.include_router(discovery_v1.router)
+    application.include_router(pipeline_v1.router)
+    application.include_router(compare_v1.router)
 
     # ── Real-Time WebSocket Pipeline Event Endpoint ─────────────────────────
     from app.services.websocket_manager import ws_manager

@@ -1,9 +1,9 @@
-import { useState, type ReactNode } from 'react'
+import { useState, useEffect, type ReactNode } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   LayoutDashboard, FileUp, Briefcase, Search, User,
   Activity, Settings, LogOut, Menu, X, ChevronDown,
-  Zap, Bell
+  Zap, Bell, Columns3, GitCompareArrows
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LiquidButton } from './ui/liquid-glass-button'
@@ -15,12 +15,14 @@ const NAV_SECTIONS = [
       { name: 'Overview',         path: '/',          icon: LayoutDashboard },
       { name: 'Upload',           path: '/upload',    icon: FileUp },
       { name: 'Jobs',             path: '/jobs',      icon: Briefcase },
+      { name: 'Pipeline',         path: '/pipeline',  icon: Columns3 },
     ]
   },
   {
     label: 'Intelligence',
     items: [
       { name: 'Talent Explorer',  path: '/explorer',  icon: Search },
+      { name: 'Compare',          path: '/compare',   icon: GitCompareArrows },
       { name: 'Candidate Portal', path: '/candidate', icon: User },
       { name: 'Analytics',        path: '/analytics', icon: Activity },
     ]
@@ -43,6 +45,35 @@ export function Layout({ children }: LayoutProps) {
   const location = useLocation()
   const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [notificationsEnabled, setNotificationsEnabled] = useState(false)
+
+  useEffect(() => {
+    if ("Notification" in window) {
+      setNotificationsEnabled(Notification.permission === "granted")
+    }
+  }, [])
+
+  const handleNotificationClick = async () => {
+    if (!("Notification" in window)) {
+      alert("This browser does not support desktop notifications")
+      return
+    }
+    if (Notification.permission === "granted") {
+      new Notification("Candiq Pipeline", {
+        body: "Notifications are active! You will be alerted for pipeline updates.",
+      })
+    } else if (Notification.permission !== "denied") {
+      const permission = await Notification.requestPermission()
+      if (permission === "granted") {
+        setNotificationsEnabled(true)
+        new Notification("Candiq Pipeline", {
+          body: "Notifications enabled successfully!",
+        })
+      }
+    } else {
+      alert("Notifications are blocked by your browser settings. Please enable them manually.")
+    }
+  }
 
   const handleLogout = () => {
     localStorage.removeItem('token')
@@ -54,7 +85,8 @@ export function Layout({ children }: LayoutProps) {
 
   const SidebarNav = ({ onNav }: { onNav?: () => void }) => (
     <div className="flex flex-col h-full">
-      <div className="px-5 pt-6 pb-7">
+      {/* Logo */}
+      <div className="px-5 pt-6 pb-6">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#C4749B] to-[#F6B98A] flex items-center justify-center shadow-[0_0_14px_rgba(246,185,138,0.30)] shrink-0">
             <Zap className="w-4 h-4 text-[#140F25]" strokeWidth={2.5} />
@@ -66,10 +98,11 @@ export function Layout({ children }: LayoutProps) {
         </div>
       </div>
 
+      {/* Navigation */}
       <nav className="flex-1 px-3 overflow-y-auto custom-scrollbar space-y-5">
         {NAV_SECTIONS.map((section) => (
           <div key={section.label}>
-            <p className="px-3 mb-1.5 text-[9.5px] font-bold uppercase tracking-[0.14em] text-[rgba(255,247,238,0.30)]">
+            <p className="px-3 mb-2 text-[9.5px] font-bold uppercase tracking-[0.14em] text-[rgba(255,247,238,0.30)]">
               {section.label}
             </p>
             <div className="space-y-0.5">
@@ -99,11 +132,12 @@ export function Layout({ children }: LayoutProps) {
         ))}
       </nav>
 
+      {/* Sign Out */}
       <div className="px-3 pb-5 pt-4 mt-auto border-t border-[rgba(255,255,255,0.06)]">
         <LiquidButton
           variant="ghost"
           onClick={handleLogout}
-          className="w-full flex items-center justify-start gap-3 px-3 py-2.5 rounded-lg text-[13px] font-medium text-[rgba(255,247,238,0.45)] hover:text-[#FB7185] hover:bg-[rgba(251,113,133,0.08)] transition-all duration-150 h-auto bg-transparent border-0 ring-0 shadow-none"
+          className="w-full flex items-center justify-start gap-3 px-3 py-2.5 rounded-full text-[13px] font-medium text-[rgba(255,247,238,0.45)] hover:text-[#FB7185] hover:bg-[rgba(251,113,133,0.08)] transition-all duration-150 h-auto bg-transparent border-0 ring-0 shadow-none"
         >
           <LogOut className="w-[15px] h-[15px] shrink-0" strokeWidth={2} />
           <span>Sign Out</span>
@@ -123,6 +157,7 @@ export function Layout({ children }: LayoutProps) {
         transition={{ duration: 0.4, ease: 'easeOut' }}
         className="flex h-full w-full relative z-10"
       >
+        {/* Desktop Sidebar */}
         <aside className="hidden lg:block w-[240px] h-full shrink-0 relative z-20">
           <div className="absolute inset-0 bg-[rgba(20,15,37,0.82)] backdrop-blur-2xl border-r border-[rgba(255,255,255,0.07)]" />
           <div className="relative z-10 h-full">
@@ -130,6 +165,7 @@ export function Layout({ children }: LayoutProps) {
           </div>
         </aside>
 
+        {/* Mobile Sidebar Overlay */}
         <AnimatePresence>
           {mobileOpen && (
             <>
@@ -154,7 +190,7 @@ export function Layout({ children }: LayoutProps) {
                     variant="ghost"
                     size="icon"
                     onClick={() => setMobileOpen(false)}
-                    className="absolute top-4 right-3 z-10 p-1.5 rounded-lg text-[rgba(255,247,238,0.45)] hover:text-[#FFF7EE] hover:bg-[rgba(255,255,255,0.06)] transition-colors h-8 w-8 bg-transparent"
+                    className="absolute top-4 right-3 z-10 p-1.5 rounded-full text-[rgba(255,247,238,0.45)] hover:text-[#FFF7EE] hover:bg-[rgba(255,255,255,0.06)] transition-colors h-8 w-8 bg-transparent"
                   >
                     <X className="w-4 h-4" />
                   </LiquidButton>
@@ -165,14 +201,16 @@ export function Layout({ children }: LayoutProps) {
           )}
         </AnimatePresence>
 
+        {/* Main Content Area */}
         <div className="flex flex-col flex-1 min-w-0 h-full overflow-hidden">
-          <header className="h-14 shrink-0 flex items-center justify-between px-4 lg:px-6 border-b border-[rgba(255,255,255,0.07)] bg-[rgba(20,15,37,0.75)] backdrop-blur-xl z-20">
+          {/* Header Bar */}
+          <header className="h-14 shrink-0 flex items-center justify-between px-4 lg:px-8 border-b border-[rgba(255,255,255,0.07)] bg-[rgba(20,15,37,0.75)] backdrop-blur-xl z-20">
             <div className="flex items-center gap-3">
               <LiquidButton
                 variant="ghost"
                 size="icon"
                 onClick={() => setMobileOpen(true)}
-                className="lg:hidden p-1.5 rounded-lg text-[rgba(255,247,238,0.55)] hover:text-[#FFF7EE] hover:bg-[rgba(255,255,255,0.06)] transition-colors h-8 w-8 bg-transparent"
+                className="lg:hidden p-1.5 rounded-full text-[rgba(255,247,238,0.55)] hover:text-[#FFF7EE] hover:bg-[rgba(255,255,255,0.06)] transition-colors h-8 w-8 bg-transparent"
               >
                 <Menu className="w-5 h-5" strokeWidth={2} />
               </LiquidButton>
@@ -182,17 +220,18 @@ export function Layout({ children }: LayoutProps) {
                 <span className="text-[rgba(255,247,238,0.82)] font-semibold">{currentPage?.name ?? 'Dashboard'}</span>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-[rgba(74,222,128,0.07)] border border-[rgba(74,222,128,0.16)]">
-                <span className="cq-status-dot cq-status-online" />
-                <span className="text-[9.5px] font-bold tracking-[0.10em] uppercase text-[rgba(74,222,128,0.85)]">AI Online</span>
+            <div className="flex items-center gap-3">
+
+              <div className="relative cursor-pointer group flex items-center justify-center w-8 h-8 rounded-full hover:bg-[rgba(255,255,255,0.06)] transition-colors" onClick={handleNotificationClick} title={notificationsEnabled ? "Notifications Active" : "Enable Notifications"}>
+                <Bell className={`w-4 h-4 transition-colors ${notificationsEnabled ? 'text-[#4ADE80] drop-shadow-[0_0_8px_rgba(74,222,128,0.5)]' : 'text-[rgba(255,247,238,0.38)] group-hover:text-[rgba(255,247,238,0.70)]'}`} strokeWidth={2} />
+                {notificationsEnabled && <span className="absolute top-[7px] right-[8px] w-[5px] h-[5px] bg-[#4ADE80] rounded-full shadow-[0_0_4px_#4ADE80]" />}
               </div>
-              <Bell className="w-4 h-4 text-[rgba(255,247,238,0.38)] cursor-pointer hover:text-[rgba(255,247,238,0.70)] transition-colors" strokeWidth={2} />
               <LiquidButton
                 variant="ghost"
+                size="sm"
                 onClick={handleLogout}
                 title="Sign Out"
-                className="flex items-center gap-1.5 pl-1.5 pr-2.5 py-1.5 rounded-lg border border-[rgba(255,255,255,0.08)] bg-[rgba(58,44,110,0.40)] hover:bg-[rgba(58,44,110,0.65)] hover:border-[rgba(246,185,138,0.20)] transition-all h-auto"
+                className="flex items-center gap-1.5 pl-1.5 pr-2 py-1 rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(58,44,110,0.40)] hover:bg-[rgba(58,44,110,0.65)] hover:border-[rgba(246,185,138,0.20)] transition-all h-7 w-auto min-w-0"
               >
                 <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#C4749B] to-[#F6B98A] flex items-center justify-center text-[9px] font-bold text-[#140F25]">A</div>
                 <ChevronDown className="w-3 h-3 text-[rgba(255,247,238,0.38)]" strokeWidth={2.5} />
@@ -200,8 +239,9 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </header>
 
+          {/* Page Content */}
           <main className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
-            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
               {children}
             </div>
           </main>

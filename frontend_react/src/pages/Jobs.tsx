@@ -66,7 +66,7 @@ export function Jobs() {
   const actionButton = (
     <LiquidButton 
       onClick={() => setShowForm(!showForm)}
-      className="text-[#140F25] font-semibold bg-gradient-to-r from-[#F6B98A] to-[#C4749B] shadow-[0_4px_14px_rgba(246,185,138,0.30)] rounded-xl"
+      className="text-[#140F25] font-semibold bg-gradient-to-r from-[#F6B98A] to-[#C4749B] shadow-[0_4px_14px_rgba(246,185,138,0.30)] rounded-full"
     >
       <Plus className="w-4 h-4 text-[#181130]" />
       {showForm ? 'Cancel' : 'New Job'}
@@ -102,7 +102,7 @@ export function Jobs() {
                 <label className="cq-label mb-1.5 block">Description</label>
                 <textarea required value={description} onChange={e => setDescription(e.target.value)} rows={4} className="cq-textarea" placeholder="Detailed job description and requirements..." />
               </div>
-              <LiquidButton type="submit" className="text-[#140F25] font-semibold bg-gradient-to-r from-[#F6B98A] to-[#C4749B] shadow-[0_4px_14px_rgba(246,185,138,0.30)] rounded-xl">Save Job</LiquidButton>
+              <LiquidButton type="submit" className="text-[#140F25] font-semibold bg-gradient-to-r from-[#F6B98A] to-[#C4749B] shadow-[0_4px_14px_rgba(246,185,138,0.30)] rounded-full">Save Job</LiquidButton>
             </form>
           </div>
         )}
