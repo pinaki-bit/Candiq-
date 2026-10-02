@@ -1,96 +1,151 @@
-# Candiq
+# 🚀 Candiq: AI-Powered Candidate Intelligence & Recruitment Platform
 
-## Candidate Intelligence & AI-Powered Recruitment Platform
-
-## System Architecture
-
-[View detailed Architecture Diagram here](ARCHITECTURE.md)
-
-Candiq is an AI-powered candidate intelligence and recruitment platform that processes resumes, extracts skills, classifies candidate domains, evaluates job fit, performs semantic candidate discovery, and provides recruiter-facing analytics and AI-assisted hiring workflows.
+Welcome to **Candiq**, the ultimate, state-of-the-art recruitment and candidate intelligence platform. Candiq doesn't just manage resumes—it actively understands them, evaluates them against live job requirements, and organizes them into an automated Kanban pipeline using advanced AI models and a breathtaking user interface.
 
 ---
 
-## Navigation
-- [Overview](#overview)
-- [Architecture](#system-architecture)
-- [Features](#features)
-- [ML Pipeline](#ml-pipeline)
-- [Matching Engine](#matching-engine)
-- [Candidate Discovery](#candidate-discovery)
-- [AI Intelligence](#ai-intelligence)
-- [Resume Builder](#resume-builder)
-- [Security](#security)
-- [Analytics](#analytics)
-- [Deployment](#deployment)
-- [Testing](#testing)
-- [Limitations](#limitations)
-- [Documentation](#documentation)
+## 🎨 What Makes Candiq Unique?
+
+Candiq sets itself apart through a complete reimagination of both the **Recruiter Experience (RX)** and **AI Safety**.
+
+1. **Unparalleled Aesthetic & Fluid UI:** Unlike rigid, corporate ATS systems, Candiq features a premium "Plum Peach Butter" aesthetic. The interface is built using bespoke **Liquid Glass Button** interfaces, real-time **WebGL Fluid GPU Backgrounds (DyeWhorl)**, and ultra-smooth framer-motion micro-animations. It feels more like a high-end creative suite than HR software.
+2. **Transparent, Explainable AI:** Candiq eliminates black-box bias. Instead of just giving a candidate a generic "Yes/No", it uses a transparent **6-signal hybrid matching engine** (combining deterministic NLP, ML domain prediction, and semantic vector embeddings) to show *exactly* why a candidate matches a job.
+3. **Automated Kanban Auto-Pipelines:** When a recruiter uploads a batch of PDF resumes, they can assign them directly to a job pipeline. The system processes the PDFs, extracts the skills, creates the candidate profiles, and instantly drops them into the `Applied` column of a drag-and-drop Kanban board without a single manual data-entry keystroke.
+4. **Out-of-Domain (OOD) Protection:** The AI knows what it doesn't know. Resumes that the AI is uncertain about are flagged using an OOD threshold and sent to human review, preventing automated unfair rejections.
 
 ---
 
-## Overview
-Candiq automates resume understanding while eliminating black-box bias and un-audited automatic candidate rejection. It combines deterministic NLP phrase matching, calibrated Scikit-Learn domain prediction models, an Out-Of-Domain (OOD) abstention policy engine, dense vector semantic search, multi-tenant RBAC security, production health observability, and real-time WebSocket pipeline telemetry. 
+## 🛠️ Technology Stack & "The Why"
 
-Recently, the frontend was completely overhauled to feature a premium "Plum Peach Butter" aesthetic, heavily utilizing **Liquid Glass Button** interfaces, **Fluid GPU Backgrounds (DyeWhorl)**, and interactive navigation hubs for an unparalleled, state-of-the-art user experience. It now includes a fully integrated drag-and-drop Kanban Pipeline that automatically processes candidate uploads into active job pipelines using the AI processing engine.
+Candiq was purpose-built using the following carefully selected technologies:
 
-## Features
-- **Premium Animated UI**: Liquid glass distortion effects, SVG filters, fluid WebGL backgrounds, and interactive hover panels.
-- **Real PDF resume processing**: Extracts text securely without executing embedded macros.
-- **NLP skill extraction**: Deterministic extraction using spaCy PhraseMatcher.
-- **5-domain ML classification**: Categorizes candidates into distinct tech domains.
-- **Calibrated LinearSVC + TF-IDF**: 97.84% accuracy, 0.981 Macro F1 score.
-- **OOD/abstention policy**: Configured threshold (0.85) catches uncertain resumes for manual human review.
-- **Semantic embeddings**: Powered by ll-MiniLM-L6-v2 for 384-dimensional dense vector embeddings.
-- **Hybrid candidate ranking**: 6-signal hybrid matching engine for deep candidate-job fit.
-- **Candidate discovery**: Semantic search over candidate pools with structured filtering.
-- **Recruiter workflow**: End-to-end recruiter dashboards, job creation, and candidate state management.
-- **AI/LLM intelligence**: Prompt-defended LLM integration (OpenAI/Gemini/Mock) for explanations and cover letters.
-- **AI Resume Builder**: Draft, refine, and optimize resumes against job descriptions.
-- **Analytics**: Database aggregations showing pipeline breakdowns and domain distributions.
-- **RBAC & Multi-tenancy**: Role-based access control and strict tenant scoping.
-- **Security**: OAuth2/JWT token blocklisting, PII redaction, request correlation.
-- **Production observability**: Active health probes, structured metrics.
-- **WebSocket pipeline**: Real-time event broadcasting.
-- **Docker deployment**: Easy containerization and startup.
+### Frontend Layer
+*   **React 19 & Vite:** Selected for lightning-fast module replacement during development and modern concurrent rendering optimizations.
+*   **Tailwind CSS v4 & Framer Motion:** Tailwind allows for rapid, utility-first styling, while Framer Motion drives the fluid, state-based animations (like expanding sidebars and dragging Kanban cards) that make the UI feel alive.
+*   **Zustand:** Chosen over Redux for global state management due to its minimal boilerplate, allowing us to manage complex Kanban states effortlessly.
+*   **React Router v7:** Provides seamless, single-page application navigation without full page reloads.
 
-## ML Pipeline
-Raw resumes are vectorized using a frozen TF-IDF model and classified using a Calibrated Linear SVC across 5 technical domains. Low-confidence predictions fall below the OOD threshold and are routed to manual review.
+### Backend & API Layer
+*   **Python & FastAPI:** FastAPI was the only logical choice for the backend due to its native asynchronous support, making it perfect for handling heavy I/O operations like PDF parsing and ML model inference without blocking the server.
+*   **SQLAlchemy & SQLite:** SQLAlchemy provides a robust ORM that protects against SQL injection, while SQLite allows for immediate, zero-config local deployments (with seamless upgrade paths to PostgreSQL).
 
-## Matching Engine
-- **Required Coverage**: 35%
-- **Semantic Similarity**: 25%
-- **Preferred Coverage**: 15%
-- **Lexical Token Overlap**: 10%
-- **Experience Depth**: 10%
-- **Domain Alignment**: 5%
+### AI & Machine Learning Engine
+*   **spaCy (NLP):** Used for lightning-fast deterministic phrase matching. It physically understands the lexical structure of the resume text to extract skills.
+*   **Scikit-Learn (LinearSVC & TF-IDF):** Chosen for domain classification because it is highly calibrated and explainable, achieving 97.84% accuracy without the unpredictable hallucinations of Generative AI.
+*   **SentenceTransformers (all-MiniLM-L6-v2):** Provides 384-dimensional dense vector semantic search, allowing the system to understand that "React" and "Next.js" are related, even if they don't share keywords.
 
-## Candidate Discovery
-Uses Cosine Similarity on ll-MiniLM-L6-v2 embeddings alongside structured filters (domain, score, skills) to surface candidates without relying solely on deterministic keyword overlap.
+---
 
-## AI Intelligence
-Integrates safely with external LLMs, ensuring prompts are structured carefully to protect against prompt injection while generating interview questions, summaries, and bullet points.
+## 🏗️ Archify System Architecture Diagram
 
-## Resume Builder
-An interactive tool that allows candidates to draft resumes, get live ATS match scoring against specific jobs, and export polished PDFs.
+Below is the automated architecture topology generated for Candiq:
 
-## Security
-Strict JWT validation, API rate limiting, SlowAPI integration, path traversal protection, and role-based endpoints (dmin, hr, 
-eadonly).
+```mermaid
+graph TD
+    %% Frontend Layer
+    subgraph Frontend ["Frontend (React 19 + Vite)"]
+        UI[User Interface]
+        Upload[Upload Portal]
+        Explorer[Talent Explorer]
+        Kanban[Pipeline Board]
+        
+        UI --> Upload
+        UI --> Explorer
+        UI --> Kanban
+    end
 
-## Analytics
-Comprehensive metrics including Time-to-Fill, OOD counts, Domain Distribution, and Pipeline Funnel stages.
+    %% Backend API Layer
+    subgraph Backend ["Backend (FastAPI)"]
+        API[REST API Gateway]
+        UploadRoute[/resumes/upload]
+        PipelineRoute[/pipeline]
+        JobsRoute[/jobs]
+        
+        API --> UploadRoute
+        API --> PipelineRoute
+        API --> JobsRoute
+    end
 
-## Deployment
-Packaged with docker-compose wrapping the FastAPI Uvicorn ASGI server and a Streamlit frontend.
+    %% AI / ML Processing Engine
+    subgraph ML ["AI Processing Engine"]
+        Parser[PDF Text Extractor]
+        NLP[spaCy NLP Pipeline]
+        Model[Domain Classifier]
+        Matcher[Skill Matcher]
+    end
 
-## Testing
-Comprehensive suite of 299 tests covering E2E processing, role escalation, ML classification, and security headers.
+    %% Storage Layer
+    subgraph Storage ["Storage & Database"]
+        DB[(SQLite / SQLAlchemy)]
+        FileStore[Local File System]
+    end
 
-## Limitations
-- Default database is SQLite. Migration to PostgreSQL is recommended for heavy production loads.
-- Tesseract OCR fallback is attempted only when the local OS binary is present.
+    %% Connections
+    Upload --> |"Multipart Form Data"| UploadRoute
+    Explorer --> |"JSON API"| JobsRoute
+    Kanban --> |"JSON API"| PipelineRoute
 
-## Documentation
-- [Platform Architecture](ARCHITECTURE.md)
+    UploadRoute --> |"Save PDF"| FileStore
+    UploadRoute --> |"Analyze"| Parser
+    Parser --> NLP
+    NLP --> Model
+    Model --> Matcher
+    
+    Matcher --> |"Store Candidate, Skills & Scores"| DB
+    PipelineRoute <--> |"Read/Write Stages"| DB
+    JobsRoute <--> |"Job Configs"| DB
+```
+
+---
+
+## ⚙️ Detailed Feature & Function Breakdown
+
+Every component in Candiq has a specific, automated role to streamline recruitment:
+
+### 1. The Global Upload Portal
+*   **Function:** Accepts drag-and-drop uploads of multiple PDF resumes simultaneously.
+*   **How it Works:** Sends multipart form data to the backend, validates the PDF integrity (ignoring macros/malware), and invokes the AI pipeline. 
+*   **Pipeline Integration:** A dropdown allows recruiters to select an active Job. Once uploaded, the AI parses the resume, generates a candidate, and the frontend automatically makes a secondary API call to inject the new candidate directly into the selected job's Pipeline board.
+
+### 2. The Talent Explorer (Global Pool)
+*   **Function:** Acts as the master database for every candidate ever parsed by the system.
+*   **How it Works:** Recruiter can search via keywords or semantic vectors. The UI presents detailed candidate cards displaying their ML-predicted domain (e.g., Software Engineering, Data Science), matching confidence scores, and extracted skills.
+*   **Pipeline Integration:** Clicking "Add to Pipeline" on a candidate card allows recruiters to manually push existing talent from previous jobs into new, active job pipelines.
+
+### 3. The Interactive Kanban Pipeline
+*   **Function:** A visual, drag-and-drop board for tracking candidates through the hiring lifecycle (`Applied` -> `Screened` -> `Shortlisted` -> `Interview` -> `Offer` -> `Hired`).
+*   **How it Works:** Tracks the exact timestamp of every stage movement. The UI features beautifully rounded cards that display the candidate's avatar, match score, domain, and time spent in the current stage.
+*   **Auditing:** Every drag-and-drop movement is logged in the `PipelineHistory` database table, creating a strict, compliance-ready audit trail of who moved a candidate and when.
+
+### 4. Native Desktop Notifications
+*   **Function:** Keeps the recruiter informed without needing to stare at the web app.
+*   **How it Works:** By clicking the interactive neon-green Bell icon in the header, the app hooks into the browser's native `Notification API`. It requests secure permission and allows the system to push critical pipeline updates directly to the recruiter's desktop OS.
+
+### 5. Multi-Tenant Security & Authentication
+*   **Function:** Secures the platform data.
+*   **How it Works:** Implements JWT (JSON Web Tokens) with aggressive token-blocklisting on logout. Includes Role-Based Access Control (RBAC) ensuring that HR admins, standard recruiters, and read-only viewers only see the data they are authorized to access.
+
+---
+
+## 🚀 Getting Started
+
+### Local Deployment
+Candiq comes packaged with a completely containerized deployment configuration.
+
+```bash
+# 1. Start the backend API server (FastAPI)
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python -m uvicorn app.main:app --reload
+
+# 2. Start the Frontend (Vite)
+cd frontend_react
+npm install
+npm run dev
+```
+
+### Documentation
+- [Architecture & ML Decisions](docs/TECHNICAL_DECISIONS.md)
 - [Development Guide](docs/DEVELOPMENT.md)
-- [Technical Decisions](docs/TECHNICAL_DECISIONS.md)
