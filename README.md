@@ -57,9 +57,9 @@ graph TD
     %% Backend API Layer
     subgraph Backend ["Backend (FastAPI)"]
         API[REST API Gateway]
-        UploadRoute[/resumes/upload]
-        PipelineRoute[/pipeline]
-        JobsRoute[/jobs]
+        UploadRoute["/resumes/upload"]
+        PipelineRoute["/pipeline"]
+        JobsRoute["/jobs"]
         
         API --> UploadRoute
         API --> PipelineRoute
