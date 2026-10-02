@@ -26,7 +26,7 @@ function ParticleSwarm({ count = 1000 }) {
   }, [count])
 
   // Animate rotation
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (points.current) {
       points.current.rotation.y -= delta * 0.1
       points.current.rotation.x -= delta * 0.05
@@ -37,8 +37,8 @@ function ParticleSwarm({ count = 1000 }) {
     <Points ref={points} positions={positions} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color="#3b82f6"
-        size={0.03}
+        color="#F6B98A"
+        size={0.035}
         sizeAttenuation={true}
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -50,7 +50,7 @@ function ParticleSwarm({ count = 1000 }) {
 function InnerCore() {
   const mesh = useRef<THREE.Mesh>(null)
   
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (mesh.current) {
       mesh.current.rotation.y += delta * 0.2
       mesh.current.rotation.z += delta * 0.1
@@ -61,12 +61,12 @@ function InnerCore() {
     <mesh ref={mesh}>
       <icosahedronGeometry args={[1.2, 2]} />
       <meshStandardMaterial 
-        color="#8b5cf6" 
+        color="#C4749B" 
         wireframe 
         transparent 
-        opacity={0.3}
-        emissive="#8b5cf6"
-        emissiveIntensity={0.5}
+        opacity={0.4}
+        emissive="#C4749B"
+        emissiveIntensity={0.6}
       />
     </mesh>
   )
@@ -76,8 +76,8 @@ export function IntelligenceCore() {
   return (
     <div className="w-full h-full relative">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }} gl={{ alpha: true }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#3b82f6" />
+        <ambientLight intensity={0.6} />
+        <pointLight position={[10, 10, 10]} intensity={1.2} color="#F6B98A" />
         <ParticleSwarm count={1500} />
         <InnerCore />
       </Canvas>

@@ -31,7 +31,7 @@ from typing import List
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile, status
 from sqlalchemy.orm import Session
 
-from app.api.dependencies import AdminUser, AnyAuthUser, HRUser
+from app.api.dependencies import AdminUser, AnyAuthUser, HRUser, get_current_user
 from app.config import get_settings
 from app.database import get_db
 from app.models.candidate import Candidate
@@ -281,10 +281,17 @@ async def upload_resume(
             candidate = Candidate(reference_code=candidate_reference)
             db.add(candidate)
             db.flush()
+            
+    if not candidate:
+        candidate = Candidate(
+            display_name=original_filename.replace('.pdf', '').replace('_', ' ').title()
+        )
+        db.add(candidate)
+        db.flush()
 
     # --- Create Resume record ---
     resume = Resume(
-        candidate_id=candidate.id if candidate else None,
+        candidate_id=candidate.id,
         original_filename=original_filename,
         stored_filename=stored_filename,
         file_size_bytes=len(content),
@@ -364,8 +371,14 @@ async def upload_batch_resumes(
             logger.error("Failed to store batch upload file.")
             continue
 
+        candidate = Candidate(
+            display_name=original_filename.replace('.pdf', '').replace('_', ' ').title()
+        )
+        db.add(candidate)
+        db.flush()
+
         resume = Resume(
-            candidate_id=None,
+            candidate_id=candidate.id,
             original_filename=original_filename,
             stored_filename=stored_filename,
             file_size_bytes=len(content),
@@ -686,3 +699,55 @@ def check_uploaded_resume_ats(
         warnings=result.warnings,
         actionable_recommendations=result.actionable_recommendations,
     )
+
+
+from app.schemas.candidate import CandidateATSAnalysisResponse
+from app.services.candidate_ats_service import analyze_candidate_resume
+import tempfile
+import os
+
+@router.post(
+    "/candidate-analyze",
+    response_model=CandidateATSAnalysisResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Candidate Portal - REAL PDF ATS Analyzer",
+)
+@limiter.limit(get_settings().rate_limit_default)
+async def analyze_candidate_pdf(
+    request: Request,
+    current_user: AnyAuthUser,
+    file: UploadFile = File(...),
+    job_description: str = Form(None),
+) -> CandidateATSAnalysisResponse:
+    """
+    Extracts text from the PDF, performs OCR if necessary, 
+    and runs a comprehensive ATS Analysis for the Candidate Portal.
+    Does NOT save the candidate to the recruiter database.
+    """
+    content = await file.read()
+    
+    # 1. Validate Upload
+    try:
+        pdf_service.validate_upload(file.filename or "resume.pdf", content, file.content_type)
+    except PDFValidationError as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+        
+    # 2. Save to Temp File and Extract
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
+        tmp.write(content)
+        tmp_path = tmp.name
+        
+    try:
+        extraction = pdf_service.extract_text_from_path(tmp_path)
+        if not extraction.success or not extraction.text:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, 
+                detail=extraction.error or "Failed to extract text from PDF."
+            )
+            
+        # 3. Analyze
+        result = analyze_candidate_resume(extraction.text, job_description)
+        return result
+    finally:
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)

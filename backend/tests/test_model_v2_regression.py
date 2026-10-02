@@ -13,7 +13,17 @@ import pytest
 from app.services.classification_service import ClassificationResult, predict
 
 
-MODEL_V2_PATH = "ml/artifacts/model_v2.joblib"
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+def _resolve(rel_path: str) -> str:
+    if os.path.exists(rel_path):
+        return rel_path
+    p = os.path.join(PROJECT_ROOT, rel_path)
+    if os.path.exists(p):
+        return p
+    return rel_path
+
+MODEL_V2_PATH = _resolve("ml/artifacts/model_v2.joblib")
 
 
 def test_model_v2_file_and_hash_integrity():

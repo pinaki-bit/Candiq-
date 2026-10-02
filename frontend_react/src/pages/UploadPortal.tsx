@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react'
 import { FileUp, File, X, CheckCircle, AlertTriangle, Loader2 } from 'lucide-react'
 import { api } from '../lib/api'
+import { PageShell } from '../components/ui/PageShell'
+import { LiquidButton } from '../components/ui/liquid-glass-button'
 
 export function UploadPortal() {
   const [isDragging, setIsDragging] = useState(false)
@@ -77,35 +79,32 @@ export function UploadPortal() {
   }
 
   return (
-    <div className="w-full h-full flex flex-col gap-6">
-      <div className="flex justify-between items-end">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white mb-2">Resume Upload Portal</h1>
-          <p className="text-gray-400">Securely ingest and analyze candidate documents.</p>
-        </div>
-      </div>
-      
-      <div className="flex-1 w-full flex flex-col lg:flex-row gap-6">
-        <div className="lg:w-2/3 w-full flex flex-col gap-6">
+    <PageShell
+      title="Resume Intelligence"
+      subtitle="Upload candidate resumes and let Candiq extract, classify, and understand every signal."
+    >
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        {/* Upload Zone & Selected Files — 7/12 Cols on Desktop */}
+        <div className="lg:col-span-7 w-full flex flex-col gap-6">
           <div 
-            className={`glass-card rounded-2xl flex flex-col items-center justify-center p-12 border-2 border-dashed transition-all duration-300 ${
-              isDragging ? 'border-primary bg-primary/10' : 'border-white/20'
+            className={`cq-dropzone flex flex-col items-center justify-center p-10 sm:p-14 transition-all duration-200 ${
+              isDragging ? 'cq-dropzone-active' : ''
             }`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
           >
-            <div className="w-16 h-16 rounded-full bg-surface border border-white/10 flex items-center justify-center mb-6 shadow-lg shadow-black/50">
-              <FileUp className={`w-8 h-8 ${isDragging ? 'text-primary' : 'text-gray-400'}`} />
+            <div className="w-14 h-14 rounded-2xl bg-[rgba(58,44,110,0.50)] border border-[rgba(255,255,255,0.10)] flex items-center justify-center mb-5">
+              <FileUp className={`w-8 h-8 ${isDragging ? 'text-[#F6B98A]' : 'text-[#F6B98A]/70'}`} />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Drag and drop resumes here</h3>
-            <p className="text-gray-400 text-sm mb-6">Supports PDF format up to 10MB.</p>
-            <button 
+            <h3 className="text-[16px] font-semibold text-[#FFF7EE] mb-2 text-center">Drag and drop resumes here</h3>
+            <p className="text-[13px] text-[rgba(255,247,238,0.50)] mb-6 text-center">Supports PDF format up to 10MB.</p>
+            <LiquidButton 
               onClick={() => fileInputRef.current?.click()}
-              className="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors shadow-lg shadow-primary/20"
+              className="text-[#140F25] font-semibold bg-gradient-to-r from-[#F6B98A] to-[#C4749B] shadow-[0_4px_14px_rgba(246,185,138,0.30)] rounded-xl"
             >
               Browse Files
-            </button>
+            </LiquidButton>
             <input 
               type="file" 
               ref={fileInputRef} 
@@ -117,82 +116,87 @@ export function UploadPortal() {
           </div>
 
           {files.length > 0 && (
-            <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">Selected Files ({files.length})</h3>
-              <div className="space-y-3 max-h-[300px] overflow-y-auto pr-2">
+            <div className="cq-card-elevated rounded-2xl p-5">
+              <h3 className="text-[13px] font-bold text-[#FFF7EE] mb-4">Selected Files ({files.length})</h3>
+              <div className="space-y-3 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
                 {files.map((file, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-surface/50 border border-white/5 group">
+                  <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-[rgba(58,44,110,0.35)] border border-[rgba(255,255,255,0.06)] group hover:border-[rgba(246,185,138,0.15)] transition-colors">
                     <div className="flex items-center gap-3 overflow-hidden">
-                      <File className="w-5 h-5 text-primary shrink-0" />
-                      <span className="text-sm text-gray-200 truncate">{file.name}</span>
-                      <span className="text-xs text-gray-500 shrink-0">{(file.size / 1024 / 1024).toFixed(2)} MB</span>
+                      <File className="w-5 h-5 text-[#F6B98A] shrink-0" />
+                      <span className="text-[12px] text-[#FFF7EE] truncate">{file.name}</span>
+                      <span className="text-[11px] text-[rgba(255,247,238,0.40)] shrink-0">{(file.size / 1024 / 1024).toFixed(2)} MB</span>
                     </div>
-                    <button 
+                    <LiquidButton 
                       onClick={() => removeFile(index)}
-                      className="p-1 rounded-md text-gray-400 hover:text-red-400 hover:bg-red-400/10 transition-colors opacity-0 group-hover:opacity-100"
+                      variant="destructive"
+                      size="icon"
+                      className="p-1 h-6 w-6 opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all"
                     >
-                      <X className="w-4 h-4" />
-                    </button>
+                      <X className="w-3 h-3" />
+                    </LiquidButton>
                   </div>
                 ))}
               </div>
               <div className="mt-6 flex justify-end">
-                <button 
+                <LiquidButton 
                   onClick={handleUpload}
                   disabled={isUploading}
-                  className="px-6 py-2 bg-primary hover:bg-primary/90 disabled:bg-surface disabled:text-gray-500 text-white rounded-lg font-medium transition-colors flex items-center gap-2 shadow-lg shadow-primary/20"
+                  className="text-[#140F25] font-semibold bg-gradient-to-r from-[#F6B98A] to-[#C4749B] shadow-[0_4px_14px_rgba(246,185,138,0.30)] rounded-xl disabled:opacity-50"
                 >
                   {isUploading ? (
                     <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <Loader2 className="w-4 h-4 animate-spin text-[#181130]" />
                       Processing...
                     </>
                   ) : (
                     <>
-                      <FileUp className="w-4 h-4" />
+                      <FileUp className="w-4 h-4 text-[#181130]" />
                       Upload to Pipeline
                     </>
                   )}
-                </button>
+                </LiquidButton>
               </div>
             </div>
           )}
         </div>
 
-        <div className="lg:w-1/3 w-full flex flex-col gap-6">
-          <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
-            <h3 className="text-lg font-semibold text-white mb-4">Processing Rules</h3>
-            <ul className="space-y-4 text-sm text-gray-400 flex-1">
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400 shrink-0" />
-                <span>Files are securely encrypted in transit and at rest.</span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400 shrink-0" />
-                <span>Text is extracted using pdfminer.six with optional OCR fallback.</span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400 shrink-0" />
-                <span>NLP Pipeline identifies named entities and structures sections.</span>
-              </li>
-              <li className="flex gap-3">
-                <AlertTriangle className="w-5 h-5 text-yellow-400 shrink-0" />
-                <span>Duplicate uploads (based on file hash) will be skipped.</span>
-              </li>
-            </ul>
+        {/* Processing Rules & Ingest Results — 5/12 Cols on Desktop */}
+        <div className="lg:col-span-5 w-full flex flex-col gap-6">
+          <div className="cq-card-elevated rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <h3 className="text-[13px] font-bold text-[#FFF7EE] mb-4">Processing Rules</h3>
+              <ul className="space-y-4 text-[13px] text-[rgba(255,247,238,0.65)]">
+                <li className="flex gap-3 items-start">
+                  <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Files are securely encrypted in transit and at rest.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Text is extracted using pdfminer.six with optional OCR fallback.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>NLP Pipeline identifies named entities and structures sections.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <AlertTriangle className="w-5 h-5 text-[#F6B98A] shrink-0 mt-0.5" />
+                  <span>Duplicate uploads (based on file hash) will be skipped.</span>
+                </li>
+              </ul>
+            </div>
 
             {results && (
-              <div className="mt-6 p-4 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400 text-sm flex gap-3 items-start">
-                <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" />
+              <div className="mt-5 p-4 rounded-xl bg-[rgba(74,222,128,0.07)] border border-[rgba(74,222,128,0.18)] text-[#4ADE80] text-[13px] flex gap-3 items-start">
+                <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-emerald-400" />
                 <div>
-                  <p className="font-medium mb-1">{results.message}</p>
-                  <p className="text-green-400/80">Analyzed {results.processed_count} documents. They are now available in the Talent Explorer.</p>
+                  <p className="font-semibold mb-0.5">{results.message}</p>
+                  <p className="text-[rgba(74,222,128,0.70)]">Analyzed {results.processed_count} documents. Available in Talent Explorer.</p>
                 </div>
               </div>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </PageShell>
   )
 }

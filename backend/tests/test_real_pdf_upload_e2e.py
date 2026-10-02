@@ -19,12 +19,23 @@ from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 
 from app.models.resume import Resume, ProcessingStatus
+from app.models.candidate import Candidate
 
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+def _resolve(rel_path: str) -> str:
+    if os.path.exists(rel_path):
+        return rel_path
+    p = os.path.join(PROJECT_ROOT, rel_path)
+    if os.path.exists(p):
+        return p
+    return rel_path
 
 def test_real_technical_pdf_upload_e2e(client: TestClient, hr_token: str):
     """Verify real technical PDF upload workflow."""
     headers = {"Authorization": f"Bearer {hr_token}"}
-    pdf_path = "ml/data/test_pdfs/technical_resume.pdf"
+    pdf_path = _resolve("ml/data/test_pdfs/technical_resume.pdf")
     assert os.path.exists(pdf_path), "Technical PDF test asset missing!"
 
     with open(pdf_path, "rb") as f:
@@ -58,7 +69,7 @@ def test_real_technical_pdf_upload_e2e(client: TestClient, hr_token: str):
 def test_real_accountant_ood_pdf_upload_e2e(client: TestClient, hr_token: str):
     """Verify real non-target Accountant OOD PDF upload workflow."""
     headers = {"Authorization": f"Bearer {hr_token}"}
-    pdf_path = "ml/data/test_pdfs/accountant_ood_resume.pdf"
+    pdf_path = _resolve("ml/data/test_pdfs/accountant_ood_resume.pdf")
     assert os.path.exists(pdf_path), "Accountant OOD PDF test asset missing!"
 
     with open(pdf_path, "rb") as f:
@@ -85,7 +96,7 @@ def test_real_accountant_ood_pdf_upload_e2e(client: TestClient, hr_token: str):
 def test_scanned_image_pdf_upload_handling(client: TestClient, hr_token: str):
     """Verify scanned image-only PDF handling."""
     headers = {"Authorization": f"Bearer {hr_token}"}
-    pdf_path = "ml/data/test_pdfs/scanned_image_resume.pdf"
+    pdf_path = _resolve("ml/data/test_pdfs/scanned_image_resume.pdf")
     assert os.path.exists(pdf_path), "Scanned PDF test asset missing!"
 
     with open(pdf_path, "rb") as f:
@@ -143,3 +154,45 @@ def test_unauthorized_upload_rejected(client: TestClient):
         files={"file": ("test.pdf", b"%PDF-1.4 sample", "application/pdf")},
     )
     assert resp.status_code == 401
+
+
+def test_resume_upload_creates_discoverable_candidate(client: TestClient, hr_token: str, db_session: Session):
+    """Verify that uploading a PDF without a candidate_reference creates a Candidate that is discoverable."""
+    headers = {"Authorization": f"Bearer {hr_token}"}
+    pdf_path = _resolve("ml/data/test_pdfs/technical_resume.pdf")
+    assert os.path.exists(pdf_path), "Technical PDF test asset missing!"
+
+    with open(pdf_path, "rb") as f:
+        pdf_bytes = f.read()
+
+    # 1. Upload the resume
+    resp = client.post(
+        "/api/v1/resumes/upload",
+        headers=headers,
+        files={"file": ("test_discoverable_resume.pdf", pdf_bytes, "application/pdf")},
+    )
+    assert resp.status_code == 201
+    data = resp.json()
+    
+    # 2. Verify candidate_id is not null
+    assert data["candidate_id"] is not None
+    int_candidate_id = data["candidate_id"]
+    candidate_obj = db_session.query(Candidate).filter(Candidate.id == int_candidate_id).first()
+    assert candidate_obj is not None
+
+    # 3. Verify it is discoverable via Talent Explorer search API
+    search_resp = client.get(
+        "/api/v1/discovery/search",
+        headers=headers,
+        params={"page": 1, "page_size": 100}
+    )
+    assert search_resp.status_code == 200
+    search_data = search_resp.json()
+    
+    candidate_found = False
+    for res in search_data["results"]:
+        if res.get("candidate_id") in (candidate_obj.public_id, candidate_obj.id, str(candidate_obj.id)) or res.get("public_id") == candidate_obj.public_id:
+            candidate_found = True
+            break
+            
+    assert candidate_found, "The newly created candidate was not found in the discovery search results!"

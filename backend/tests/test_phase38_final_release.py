@@ -155,6 +155,10 @@ def test_request_id_correlation(client):
 
 # ── 17. Frontend API Configuration ────────────────────────────────────────
 def test_frontend_api_config():
+    import sys, os
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    if root_dir not in sys.path:
+        sys.path.insert(0, root_dir)
     from frontend.services.api_client import API_BASE
     assert API_BASE != ""
 

@@ -220,9 +220,20 @@ def test_case_i_pii_logging_audit(caplog):
         assert "123 Tech Way" not in msg, "PII Address leaked into log!"
 
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+def _resolve(rel_path: str) -> str:
+    if os.path.exists(rel_path):
+        return rel_path
+    p = os.path.join(PROJECT_ROOT, rel_path)
+    if os.path.exists(p):
+        return p
+    return rel_path
+
+
 def test_case_j_model_output_preservation():
     """TEST CASE J: Model Output Preservation Verification (Direct vs Service)."""
-    model_path = "ml/artifacts/model_latest.joblib"
+    model_path = _resolve("ml/artifacts/model_latest.joblib")
     artifact = joblib.load(model_path)
     pipeline = artifact["pipeline"]
 

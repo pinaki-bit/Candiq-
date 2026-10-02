@@ -29,9 +29,12 @@ Candiq is an AI-powered candidate intelligence and recruitment platform that pro
 ---
 
 ## Overview
-Candiq automates resume understanding while eliminating black-box bias and un-audited automatic candidate rejection. It combines deterministic NLP phrase matching, calibrated Scikit-Learn domain prediction models, an Out-Of-Domain (OOD) abstention policy engine, dense vector semantic search, multi-tenant RBAC security, production health observability, and real-time WebSocket pipeline telemetry.
+Candiq automates resume understanding while eliminating black-box bias and un-audited automatic candidate rejection. It combines deterministic NLP phrase matching, calibrated Scikit-Learn domain prediction models, an Out-Of-Domain (OOD) abstention policy engine, dense vector semantic search, multi-tenant RBAC security, production health observability, and real-time WebSocket pipeline telemetry. 
+
+Recently, the frontend was completely overhauled to feature a premium "Plum Peach Butter" aesthetic, heavily utilizing **Liquid Glass Button** interfaces, **Fluid GPU Backgrounds (DyeWhorl)**, and interactive navigation hubs for an unparalleled, state-of-the-art user experience.
 
 ## Features
+- **Premium Animated UI**: Liquid glass distortion effects, SVG filters, fluid WebGL backgrounds, and interactive hover panels.
 - **Real PDF resume processing**: Extracts text securely without executing embedded macros.
 - **NLP skill extraction**: Deterministic extraction using spaCy PhraseMatcher.
 - **5-domain ML classification**: Categorizes candidates into distinct tech domains.

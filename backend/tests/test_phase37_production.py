@@ -253,6 +253,10 @@ def test_secret_exposure_prevention(client):
 
 # ── 26 & 27. Frontend API Configuration & Production URL ────────────────
 def test_frontend_api_configuration():
+    import sys, os
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    if root_dir not in sys.path:
+        sys.path.insert(0, root_dir)
     from frontend.services.api_client import API_BASE
     assert API_BASE != ""
     assert isinstance(API_BASE, str)

@@ -23,7 +23,7 @@ export const getJobs = async (): Promise<Job[]> => {
   return response.data
 }
 
-export const createJob = async (jobData: Omit<Job, 'id' | 'is_active'>): Promise<Job> => {
+export const createJob = async (jobData: Omit<Job, 'id' | 'public_id' | 'is_active'> & { public_id?: string }): Promise<Job> => {
   const response = await api.post('/jobs', jobData)
   return response.data
 }
