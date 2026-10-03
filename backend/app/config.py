@@ -138,6 +138,7 @@ class Settings(BaseSettings):
     # ------------------------------------------------------------------
     # Email / SMTP
     # ------------------------------------------------------------------
+    resend_api_key: str = ""
     smtp_host: str = ""
     smtp_port: int = 587
     smtp_username: str = ""

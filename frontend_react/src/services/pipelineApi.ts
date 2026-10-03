@@ -102,6 +102,11 @@ export async function getPipelineStats(jobId: number): Promise<PipelineStats> {
   return res.data
 }
 
+export async function sendPipelineEmail(entryId: number): Promise<{ message: string }> {
+  const res = await api.post(`/pipeline/${entryId}/send-email`)
+  return res.data
+}
+
 export async function getJobsList(): Promise<Job[]> {
   const res = await api.get('/jobs/')
   return res.data

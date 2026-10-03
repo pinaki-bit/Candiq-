@@ -7,8 +7,12 @@ In a production environment, this would integrate with SendGrid, SES, or Mailgun
 
 import logging
 import json
+import os
 from datetime import datetime
 from pathlib import Path
+import google.generativeai as genai
+import resend
+from app.config import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -56,10 +60,61 @@ def send_system_health_report(admin_email: str, metrics: dict) -> bool:
 
 def send_candidate_stage_update(candidate_email: str, candidate_name: str, job_title: str, stage: str, custom_notes: str = None) -> bool:
     """Send automated status updates to candidates based on pipeline stage."""
-    # Format the stage nicely
     stage_display = stage.title()
+    subject = ""
+    body = ""
     
-    if stage == "interview":
+    # ---------------------------------------------------------
+    # SMART GENERATION (LLM) & REAL EMAIL SENDING FOR "HIRED"
+    # ---------------------------------------------------------
+    if stage == "hired":
+        settings = get_settings()
+        gemini_key = settings.gemini_api_key
+        resend_key = settings.resend_api_key
+        
+        if gemini_key and resend_key:
+            try:
+                # 1. Generate customized onboarding email via Gemini
+                genai.configure(api_key=gemini_key)
+                model = genai.GenerativeModel("gemini-1.5-flash")
+                
+                prompt = f"""
+                You are the Hiring Manager at Candiq. Write a warm, enthusiastic, and highly professional
+                welcome email to {candidate_name} who was just hired for the role of {job_title}.
+                Include next steps for onboarding and tell them how excited we are to have them on the team.
+                Keep it under 3 paragraphs.
+                """
+                if custom_notes:
+                    prompt += f"\nInclude this specific note from the team: {custom_notes}"
+                    
+                response = model.generate_content(prompt)
+                smart_body = response.text.strip()
+                smart_subject = f"Welcome to Candiq, {candidate_name}! (Next Steps for {job_title})"
+                
+                # 2. Send the real email via Resend
+                resend.api_key = resend_key
+                resend.Emails.send({
+                    "from": "onboarding@resend.dev", # Uses Resend's testing domain by default
+                    "to": candidate_email,
+                    "subject": smart_subject,
+                    "text": smart_body
+                })
+                
+                logger.info(f"REAL SMART EMAIL SENT to {candidate_email} via Resend!")
+                return True
+                
+            except Exception as e:
+                logger.error(f"Failed to send smart email via Gemini/Resend: {e}")
+                # Fallback to mock email if API fails
+        
+        # Fallback if keys are missing or API fails
+        subject = f"Welcome to the team! ({job_title})"
+        body = f"Hi {candidate_name},\n\nWelcome to Candiq! We are incredibly excited to have you join us as our new {job_title}.\n\nHR will reach out shortly with your onboarding packet."
+        
+    # ---------------------------------------------------------
+    # STANDARD TEMPLATES (Mock Send)
+    # ---------------------------------------------------------
+    elif stage == "interview":
         subject = f"Interview Invitation: {job_title} at Candiq"
         body = f"Hi {candidate_name},\n\nWe are excited to invite you to an interview for the {job_title} position! Our team was very impressed by your background.\n\nPlease let us know your availability for next week."
     elif stage == "rejected":
@@ -72,10 +127,11 @@ def send_candidate_stage_update(candidate_email: str, candidate_name: str, job_t
         subject = f"Application Update: {job_title} - {stage_display}"
         body = f"Hi {candidate_name},\n\nYour application for {job_title} has been moved to the '{stage_display}' stage. We will be in touch with the next steps soon."
 
-    if custom_notes:
+    if custom_notes and stage != "hired": # handled in prompt for hired
         body += f"\n\nAdditional Notes from our team:\n{custom_notes}"
 
-    body += "\n\nBest regards,\nThe Candiq Hiring Team"
+    if stage != "hired":
+        body += "\n\nBest regards,\nThe Candiq Hiring Team"
     
     notification = EmailNotification(candidate_email, subject, body, is_secure=False)
     _mock_send(notification)

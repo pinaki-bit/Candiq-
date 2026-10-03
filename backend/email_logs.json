@@ -1,0 +1,23 @@
+[
+  {
+    "to": "test@example.com",
+    "subject": "Job Offer: Software Engineer at Candiq!",
+    "body": "Hi Pinaki Choudhuri,\n\nCongratulations! We are thrilled to offer you the Software Engineer position. We will be sending over the official offer letter and compensation details shortly.\n\nAdditional Notes from our team:\nGreat interview!\n\nBest regards,\nThe Candiq Hiring Team",
+    "secure": false,
+    "timestamp": "2026-10-03T07:54:13.367030"
+  },
+  {
+    "to": "pinakichoudhuri04@example.com",
+    "subject": "Welcome to the team! (software engineer)",
+    "body": "Hi Pinaki Choudhuri Resume Revised-Pdf,\n\nWelcome to Candiq! We are incredibly excited to have you join us as our new software engineer.\n\nHR will reach out shortly with your onboarding packet.",
+    "secure": false,
+    "timestamp": "2026-10-03T08:24:38.363936"
+  },
+  {
+    "to": "pinakichoudhuri04@gmail.com",
+    "subject": "Welcome to the team! (software engineer)",
+    "body": "Hi Pinaki Choudhuri Resume Revised-Pdf,\n\nWelcome to Candiq! We are incredibly excited to have you join us as our new software engineer.\n\nHR will reach out shortly with your onboarding packet.",
+    "secure": false,
+    "timestamp": "2026-10-03T08:35:55.552784"
+  }
+]

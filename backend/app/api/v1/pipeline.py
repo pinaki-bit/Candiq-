@@ -402,3 +402,38 @@ def get_pipeline_stats(
         "avg_time_in_stage_hours": avg_time,
         "conversion_rates": conversion_rates,
     }
+
+@router.post("/{entry_id}/send-email", response_model=dict)
+def trigger_stage_email(
+    entry_id: int,
+    current_user: AnyAuthUser,
+    db: Session = Depends(get_db),
+) -> dict:
+    """Manually trigger the automated stage email for a candidate (e.g., onboarding for Hired)."""
+    entry = db.query(PipelineEntry).filter(PipelineEntry.id == entry_id).first()
+    if not entry:
+        raise HTTPException(status_code=404, detail="Pipeline entry not found.")
+
+    candidate = db.query(Candidate).filter(Candidate.id == entry.candidate_id).first()
+    job = db.query(Job).filter(Job.id == entry.job_id).first()
+
+    if not candidate or not candidate.email:
+        raise HTTPException(status_code=400, detail="Candidate has no valid email address.")
+    
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found.")
+
+    logger.info("Manual email trigger requested for candidate=%d in stage=%s", entry.candidate_id, entry.stage)
+
+    success = send_candidate_stage_update(
+        candidate_email=candidate.email,
+        candidate_name=candidate.display_name or "Candidate",
+        job_title=job.title,
+        stage=entry.stage,
+        custom_notes=entry.notes
+    )
+
+    if success:
+        return {"message": f"Email triggered successfully for {candidate.display_name}"}
+    else:
+        raise HTTPException(status_code=500, detail="Failed to send email. Check logs.")

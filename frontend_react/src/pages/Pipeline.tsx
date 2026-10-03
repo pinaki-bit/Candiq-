@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import {
   Users, ArrowRight, Clock, TrendingUp, ChevronDown,
-  Briefcase, User, GripVertical, History, BarChart3
+  Briefcase, User, GripVertical, History, BarChart3, Mail
 } from 'lucide-react'
 import {
   getPipelineForJob, movePipelineStage, getPipelineStats, getPipelineHistory,
-  PIPELINE_STAGES, STAGE_CONFIG,
+  sendPipelineEmail, PIPELINE_STAGES, STAGE_CONFIG,
 } from '../services/pipelineApi'
 import type { PipelineEntry, PipelineStats, PipelineHistoryItem } from '../services/pipelineApi'
 import { getJobs } from '../services/jobs'
@@ -25,6 +25,7 @@ export function Pipeline() {
   const [loading, setLoading] = useState(true)
   const [showHistory, setShowHistory] = useState(false)
   const [movingEntry, setMovingEntry] = useState<number | null>(null)
+  const [emailingEntry, setEmailingEntry] = useState<number | null>(null)
 
   useEffect(() => {
     fetchJobs()
@@ -77,6 +78,19 @@ export function Pipeline() {
       alert(detail)
     } finally {
       setMovingEntry(null)
+    }
+  }
+
+  const handleSendEmail = async (entryId: number) => {
+    setEmailingEntry(entryId)
+    try {
+      const res = await sendPipelineEmail(entryId)
+      alert(res.message || 'Email sent successfully!')
+    } catch (err: any) {
+      const detail = err.response?.data?.detail || 'Failed to send email.'
+      alert(detail)
+    } finally {
+      setEmailingEntry(null)
     }
   }
 
@@ -288,29 +302,44 @@ export function Pipeline() {
                         </div>
 
                         {/* Action Buttons */}
-                        {getNextStages(stage).length > 0 && (
-                          <div className="flex flex-wrap gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                            {getNextStages(stage).map(nextStage => {
-                              const nextConfig = STAGE_CONFIG[nextStage]
-                              return (
-                                <button
-                                  key={nextStage}
-                                  onClick={() => handleMoveStage(entry.id, nextStage)}
-                                  disabled={movingEntry === entry.id}
-                                  className="flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-medium transition-all hover:brightness-110 disabled:opacity-50"
-                                  style={{
-                                    color: nextConfig.color,
-                                    background: nextConfig.bgColor,
-                                    border: `1px solid ${nextConfig.color}25`,
-                                  }}
-                                >
-                                  <ArrowRight className="w-2.5 h-2.5" />
-                                  {nextConfig.label}
-                                </button>
-                              )
-                            })}
-                          </div>
-                        )}
+                        <div className="flex flex-wrap gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                          {getNextStages(stage).length > 0 && getNextStages(stage).map(nextStage => {
+                            const nextConfig = STAGE_CONFIG[nextStage]
+                            return (
+                              <button
+                                key={nextStage}
+                                onClick={() => handleMoveStage(entry.id, nextStage)}
+                                disabled={movingEntry === entry.id || emailingEntry === entry.id}
+                                className="flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-medium transition-all hover:brightness-110 disabled:opacity-50"
+                                style={{
+                                  color: nextConfig.color,
+                                  background: nextConfig.bgColor,
+                                  border: `1px solid ${nextConfig.color}25`,
+                                }}
+                              >
+                                <ArrowRight className="w-2.5 h-2.5" />
+                                {nextConfig.label}
+                              </button>
+                            )
+                          })}
+                          
+                          {/* Dedicated Email Button for Hired */}
+                          {stage === 'hired' && (
+                            <button
+                                onClick={() => handleSendEmail(entry.id)}
+                                disabled={emailingEntry === entry.id}
+                                className="flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-medium transition-all hover:brightness-110 disabled:opacity-50"
+                                style={{
+                                  color: '#38BDF8',
+                                  background: 'rgba(56,189,248,0.12)',
+                                  border: `1px solid rgba(56,189,248,0.25)`,
+                                }}
+                              >
+                                <Mail className="w-2.5 h-2.5" />
+                                {emailingEntry === entry.id ? 'Sending...' : 'Send Welcome Email'}
+                            </button>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
